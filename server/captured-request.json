@@ -1,0 +1,3006 @@
+[
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:06:51.874Z"
+  },
+  {
+    "type": "request",
+    "url": "http://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:06:54.021Z"
+  },
+  {
+    "type": "response",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1",
+    "status": 301,
+    "resourceType": "document",
+    "headers": {
+      "content-length": "239",
+      "content-type": "text/html",
+      "date": "Wed, 13 May 2026 05:06:53 GMT",
+      "location": "http://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+      "server": "Byte-nginx",
+      "via": "cache49.gdfoshan-mp02,cache06.lfct",
+      "x-bdcdn-cache-status": "TCP_MISS,TCP_MISS",
+      "x-request-id": "57661b7bffba92d76db687490f3aec11",
+      "x-request-ip": "27.128.214.147",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "27.128.214.147",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "",
+    "time": "2026-05-13T05:06:54.023Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:06:54.040Z"
+  },
+  {
+    "type": "response",
+    "url": "http://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+    "status": 301,
+    "resourceType": "document",
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "242",
+      "content-type": "text/html",
+      "date": "Wed, 13 May 2026 05:06:53 GMT",
+      "location": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+      "server": "Byte-nginx",
+      "via": "cache07.lfct",
+      "x-request-id": "ecc8f12268813cb792596ea7ede16539",
+      "x-request-ip": "106.112.242.82",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "106.112.242.82",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "",
+    "time": "2026-05-13T05:06:54.042Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/0b6c97c.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.740Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b9e598a.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.747Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.750Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/eb88040.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.753Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/57362b6.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.756Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b558f28.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.760Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90dbbf5.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.763Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/30d1dbe.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.767Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/aba2746.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.770Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/10de317.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.773Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/runtime~app.0f404fc0a985be54bd6d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.776Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-index-vue/index.1e7ed8d89fcd8d43e559.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.779Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-area-vue/index.market-index-vue/index.market-trending-vue/index.ssr/market/area.ssr/market/in.0b371c6a.841b9e0b46bf54922be4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.782Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/vant-2.2.12.a8f2b232b79f210df0ac.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.785Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-com-7.5.5.ad5c307c4bb4b8b75b9b.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.788Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-core-7.5.8.be26094bec787bcd963a.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.791Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-ui-7.4.21.233a2dad978398a4ca07.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.796Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/nuxt-2.9.2.5e9e093588169e4ba12d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.800Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-wap-7.6.30.fc0404f3c8734ee0f9c2.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.803Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/app.90c2728d1d40b04c73c0.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.806Z"
+  },
+  {
+    "type": "response",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "accept-ranges": "none",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 13 May 2026 05:06:54 GMT",
+      "etag": "\"7696b-E+AXIgt8qTb+DsZ1b+/5mEPT8hc\"",
+      "server": "Byte-nginx",
+      "vary": "Accept-Encoding",
+      "via": "cache46.zjtaizhou-mp02,cache06.lfct",
+      "x-bdcdn-cache-status": "TCP_MISS,TCP_MISS",
+      "x-request-id": "b82a962bd8a6c7e6fb8159b22495ff92",
+      "x-request-ip": "27.128.214.147",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "27.128.214.147",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "<!doctype html>\n<html data-n-head-ssr>\n<head >\n    <title> 黄金百香果最新产地行情_黄金百香果产地行情数据_黄金百香果批发价格查询 - 惠农网</title><meta data-n-head=\"ssr\" charset=\"utf-8\"><meta data-n-head=\"ssr\" name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta data-n-head=\"ssr\" name=\"applicable-device\" content=\"pc\"><meta data-n-head=\"ssr\" name=\"robots\" content=\"index,follow\"><meta data-n-head=\"ssr\" name=\"baidu-site-verification\" content=\"84FlZTfdd0\"><meta data-n-head=\"ssr\" data-hid=\"description\" name=\"description\" content=\"惠农网提供实时精准的黄金百香果产地行情查询功能，汇聚最新最全的水果蔬菜、畜牧水产、农副产品等农产品产地行情数据。\"><meta data-n-head=\"ssr\" name=\"keywords\" content=\"黄金百香果产地行情,黄金百香果产地行情数据,黄金百香果批发价\"><link data-n-head=\"ssr\" rel=\"icon\" type=\"image/x-icon\" href=\"//files.cnhnb.com/h5/assets/favicon.ico\"><link data-n-head=\"ssr\" rel=\"canonical\" href=\"https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/\"><link data-n-head=\"ssr\" rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"https://m.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/\"><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/app.v1.0.0.js\"></script><script data-n-head=\"ssr\" src=\"https://files.cnhnb.com/eyejs/pc-sso.v2.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/peach.v1.1.1.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/cp.v1.0.5.js\"></script><base href=\"/\"><style data-vue-ssr-id=\"150203e6:0\">@font-face {font-family: \"iconfont\";\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817'); /* IE9 */\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817#iefix') format('embedded-opentype'), /* IE6-IE8 */\n  url('data:application/x-font-woff2;charset=utf-8;base64,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",
+    "time": "2026-05-13T05:06:54.819Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90503b8.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.992Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/bigdata/market-fixeright.gif",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:54.995Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/ssr/market/index.b45376bec9288db317d4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:55.145Z"
+  },
+  {
+    "type": "request",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "{\"pageNumber\":8}",
+    "headers": {
+      "x-client-sign": "f0008fc890217462bd4d52b4aabab0fa5f2e63f3b38856f01bc412fe48b14b0611712769b16d3e7e70e20d178361d544",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "x-client-sid": "S_0MP3LKX6988W5RI8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "application/json, text/plain, */*",
+      "x-client-appid": "5",
+      "content-type": "application/json",
+      "x-client-id": "1b3d6fc-0ea7-4d01-bfe2-a5af0ffd3",
+      "x-client-nonce": "9f1a58b2b67d687632a0ad4f277b124e",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "x-hn-job": "If you see these message, I hope you dont hack us, I hope you can join us! Please visit https://www.cnhnkj.com/job.html",
+      "x-client-time": "1778648815219",
+      "x-client-environment": "pro",
+      "x-client-page": "/hangqing/cdlist-2001332-12167-0-0-0-1/",
+      "x-b3-traceid": "0MP3LKX9VU8FP6EZ",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    },
+    "time": "2026-05-13T05:06:55.242Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&rnd=1151523056&si=b99541cbfb0edd202bb49abf3a0bef84&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&tt=%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:55.250Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&rnd=2089528808&si=91cf34f62b9bedb16460ca36cf192f4c&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&tt=%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:55.261Z"
+  },
+  {
+    "type": "response",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "x-response-trace-id": "6a0406ef8699fa6ec12e9298bf586197",
+      "access-control-max-age": "604800",
+      "access-control-expose-headers": "*",
+      "content-encoding": "gzip",
+      "code": "0",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "date": "Wed, 13 May 2026 05:06:55 GMT",
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "bodyPreview": "{\"code\":0,\"msg\":\"success\",\"traceId\":\"6a0406ef8699fa6ec12e9298bf586197\",\"data\":[{\"cateId\":\"2001243\",\"cate1Id\":2003191,\"cateName\":\"西瓜\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/97adf27eb2f845acbc8a42db1d13ced0.png\"},{\"cateId\":\"2001307\",\"cate1Id\":2003191,\"cateName\":\"榴莲\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/95c06666f94548a2badf395be746b3e3.png\"},{\"cateId\":\"2001302\",\"cate1Id\":2003191,\"cateName\":\"荔枝\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/28/6f947b82d33943f2832e0b40716ade83.png\"},{\"cateId\":\"2001093\",\"cate1Id\":2003193,\"cateName\":\"鸡蛋\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/29/c9da4f4df58d49cdba91a04ba9eec2f9.png\"},{\"cateId\":\"2001950\",\"cate1Id\":2003199,\"cateName\":\"杀虫剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2020/12/11/dff567abb2a744d49f4a441f07f2a10e.png\"},{\"cateId\":\"2001180\",\"cate1Id\":2003193,\"cateName\":\"鸡\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/e912bf53d9eb400a8743bd944dd10f30.png\"},{\"cateId\":\"2001127\",\"cate1Id\":2003193,\"cateName\":\"鸡苗\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/b1a6b51c62d64470a1c7d528e1901c13.png\"},{\"cateId\":\"2001951\",\"cate1Id\":2003199,\"cateName\":\"杀菌剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2023/06/15/86e9e126d25140bebb862f24930c9f51.png\"}]}",
+    "time": "2026-05-13T05:06:55.286Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:55.409Z"
+  },
+  {
+    "type": "request",
+    "url": "https://ysf.nosdn.127.net/webapi/38a7410cdf36ef88290e0136e0f86998",
+    "method": "GET",
+    "resourceType": "media",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept-encoding": "identity;q=1, *;q=0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "range": "bytes=0-"
+    },
+    "time": "2026-05-13T05:06:55.412Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778648815532",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:06:55.537Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778648815538",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:06:55.541Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406ef0ac920f3ec047c4373713af1",
+      "date": "Wed, 13 May 2026 05:06:55 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"bid\":\"0\",\"analyticSwitch\":0,\"userVisitSwitch\":0,\"userPhoneCheckSwitch\":0,\"sdkSetting\":{\"layout\":4,\"image\":null,\"imageName\":null,\"bgColor\":\"#bdc1c7\",\"tone\":null,\"theme\":0,\"portrait\":null},\"hidden\":0,\"inviteSetting\":{\"switchType\":0,\"createTime\":1560506205000,\"h5Style\":{\"bdImageUrl\":null,\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":240,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"invitePatternVo\":{\"inviteAvatar\":\"\",\"mode\":0,\"realName\":\"\",\"robotSwitch\":0,\"welcomeTemplateId\":0,\"humanWelcomePrompt\":null,\"robotWelcomeTemplateId\":0,\"screenType\":1,\"inviteGroupId\":0,\"robotWelcomePrompt\":null,\"robotId\":0},\"name\":\"\",\"rejectType\":0,\"style\":{\"bdImageUrl\":\"\",\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":400,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"id\":0,\"timesLimitType\":false,\"waitTime\":15,\"timesLimit\":3,\"intervalTime\":45},\"corpSetting\":{\"dialogStyle\":1,\"corpInfo\":0,\"dialogMobileStyle\":1},\"sdkTemplateId\":null,\"showNavBarNew\":null,\"shuntId\":null,\"sessionInvite\":1,\"preloadIframe\":0,\"isGa\":0,\"accessDomain\":\"hnwszzlteam1.qiyukf.com\",\"isUpInfoToServer\":0,\"globalSetting\":null,\"forceCdnUrl\":\"https://res.qiyukf.net\",\"cdomain\":null},\"total\":0}",
+    "time": "2026-05-13T05:06:55.545Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778648815538",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406ef21f0f580d01ed02504faeab8",
+      "date": "Wed, 13 May 2026 05:06:55 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":8112,\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:06:55.584Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778648815532",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "content-disposition": "inline;filename=f.txt",
+      "content-encoding": "gzip",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Wed, 13 May 2026 05:06:55 GMT",
+      "server": "nginx",
+      "vary": "Accept-Encoding"
+    },
+    "bodyPreview": "<script>\n  !(function () {\n    if (window.localStorage && window.postMessage) {\n      var e,\n        t = {\n          findLocalItems: function (e, t) {\n            var a,\n              o,\n              r = [];\n            for (a in localStorage)\n              (a.match(e) || (!e && \"string\" == typeof a)) &&\n              ((o = t\n                ? JSON.parse(localStorage.getItem(a))\n                : localStorage.getItem(a)),\n                r.push({ key: a, val: o }));\n            return r;\n          },\n          clearLocalItems: function (e) {\n            for (var t = 0; t < e.length; t++)\n              window.localStorage.removeItem(e[t].key);\n          },\n          _$string2object: function(_string,_split){\n            var _obj = {};\n            (_string||'').split(_split).forEach(\n              function(_name){\n                var _brr = _name.split('=');\n                if (!_brr||!_brr.length) return;\n                var _key = _brr.shift();\n                if (!_key) return;\n                _obj[decodeURIComponent(_key)] =\n                  decodeURIComponent(_brr.join('='));\n              }\n            );\n            return _obj;\n          }\n        },\n        a = {\n          key: function (t) {\n            e = t || \"\";\n          },\n          usr: function (x) {\n            if (e) {\n              var obj = {};\n              try {\n                obj = t._$string2object(x, '&');\n              } catch(e) {\n                console.warn(e, 'usr 报错了')\n              }\n              var a = \"X-\" + e.toUpperCase() + obj.deviceId + \"-YSF-INFO\";\n              localStorage.setItem(a, x);\n            }\n          },\n\n          synckey: function (t) {\n            if (e) {\n              var a = \"YSF-\" + e.toUpperCase() + \"-UID\";\n              localStorage.setItem(a, t);\n            }\n          },\n          dvcnumbers: function (e) {\n            try {\n              var t = JSON.parse(e),\n                a = \"YSF-\" + t.deviceid + \"-NUMBERS\";\n              localStorage.setItem(a, t.number);\n            } catch (e) {}\n          },\n          webanalytics: function (e) {\n            try {\n              var a = e.substring(e.indexOf(\"=\") + 1, e.indexOf(\"&\"));\n              t.clearLocalItems(t.findLocalItems(/-YSF-WEBANALYTICS/gi));\n              var o = \"X-\" + a.toUpperCase() + \"-YSF-WEBANALYTICS\";\n              localStorage.setItem(o, e);\n            } catch (e) {\n              console.error(e);\n            }\n          },\n\n          // 商品消息\n          product: function (a) {\n            if (e) {\n              var o = a.split(\"&\"),\n                r = o[o.length - 1].split(\"=\");\n              if (\"bid\" == r[0]) var n = r[1];\n              if (n) {\n                i = \"X-\" + e.toUpperCase() + \"-\" + n + \"-YSF-PRODUCT\";\n                delete a.bid, localStorage.removeItem(i);\n              } else {\n                t.clearLocalItems(t.findLocalItems(/-YSF-PRODUCT/gi));\n                var i = \"X-\" + e.toUpperCase() + \"-YSF-PRODUCT\";\n              }\n              if (a === 'null') { // 删除商品信息\n                localStorage.removeItem(i);\n                return;\n              }\n              localStorage.setItem(i, a);\n            }\n          },\n\n          // 卡片消息\n          cardMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CARD-INFO';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n\n          // 自定义消息\n          customMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CUSTOM-MESSAGE';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n        },\n        o = function (e) {\n          parent.postMessage(e, \"*\");\n        },\n        r = function (e) {\n          try {\n            try {\n              var data = JSON.parse(e.data);\n              if (data && a[data.type]) {\n                a[data.type](data);\n              }\n            } catch (error) {\n              var t = (e.data || \"\").split(\":\"),\n                o = a[(t.shift() || \"\").toLowerCase()];\n              o && o(t.join(\":\"));\n            }\n          } catch (e) {}\n        };\n      window.addEventListener\n        ? window.addEventListener(\"message\", r, !1)\n        : window.attachEvent(\"onmessage\", r);\n      var n = function () {\n        if (e) {\n          var t = \"X-\" + e.toUpperCase() + \"-YSF-ACK\",\n            a = localStorage.getItem(t);\n          o(\"ACK:\" + a);\n        }\n      };\n      o(\"RDY:\" + +new Date()), window.setInterval(n, 2e3), n();\n    }\n  })();\n</script>\n",
+    "time": "2026-05-13T05:06:55.682Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "content-type": "application/x-www-form-urlencoded",
+      "sec-ch-ua-mobile": "?0",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8"
+    },
+    "time": "2026-05-13T05:06:56.547Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406f086d95e06c672b8d9ee881ca8",
+      "date": "Wed, 13 May 2026 05:06:56 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"pushSwitch\":\"0\",\"dvcSwitch\":\"0\"},\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:06:56.593Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:07:03.735Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:07:03.739Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=9366%2C9366&et=3&ja=0&ln=zh-cn&lo=0&rnd=73394037&si=b99541cbfb0edd202bb49abf3a0bef84&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.610Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=9356%2C9355&et=3&ja=0&ln=zh-cn&lo=0&rnd=2141637886&si=91cf34f62b9bedb16460ca36cf192f4c&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.613Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/0b6c97c.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.631Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b9e598a.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b9e598a5b15426e5da122efbc0e66f7f\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.652Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/eb88040.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"eb880407212f51b6cb83e93dcc4fc824\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.655Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/57362b6.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.691Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b558f28.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.695Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90dbbf5.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.698Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/30d1dbe.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"30d1dbeb853ef2a9f5cc409499d0d1ef\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.702Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/aba2746.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"aba274690d7578c18738ce303d5be924\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.704Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/10de317.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"10de3174c4ed38d82e5a1a76f7299ff2\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.708Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.711Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/runtime~app.0f404fc0a985be54bd6d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.715Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-index-vue/index.1e7ed8d89fcd8d43e559.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.718Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-area-vue/index.market-index-vue/index.market-trending-vue/index.ssr/market/area.ssr/market/in.0b371c6a.841b9e0b46bf54922be4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.721Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/vant-2.2.12.a8f2b232b79f210df0ac.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"bcbad88f00eb8dea1f9bd9954fd32f9e\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.724Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-com-7.5.5.ad5c307c4bb4b8b75b9b.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.728Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-core-7.5.8.be26094bec787bcd963a.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.732Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-ui-7.4.21.233a2dad978398a4ca07.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.734Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/nuxt-2.9.2.5e9e093588169e4ba12d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.737Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-wap-7.6.30.fc0404f3c8734ee0f9c2.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b72437ef69ee4782bf147650138343b4\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.741Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/app.90c2728d1d40b04c73c0.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"82561bf0febcd111102e12ce115bd188\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.745Z"
+  },
+  {
+    "type": "response",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "accept-ranges": "none",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 13 May 2026 05:07:04 GMT",
+      "etag": "\"76975-nlJgThfzXMZYk796n2/+H8pAjgY\"",
+      "server": "Byte-nginx",
+      "vary": "Accept-Encoding",
+      "via": "cache38.heshijiazhuang-mp02,cache06.lfct",
+      "x-bdcdn-cache-status": "TCP_MISS,TCP_MISS",
+      "x-request-id": "cd0956273a950bd8812731ac2db84c96",
+      "x-request-ip": "27.128.214.147",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "27.128.214.147",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "<!doctype html>\n<html data-n-head-ssr>\n<head >\n    <title>[第2页] 黄金百香果最新产地行情_黄金百香果产地行情数据_黄金百香果批发价格查询 - 惠农网</title><meta data-n-head=\"ssr\" charset=\"utf-8\"><meta data-n-head=\"ssr\" name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta data-n-head=\"ssr\" name=\"applicable-device\" content=\"pc\"><meta data-n-head=\"ssr\" name=\"robots\" content=\"index,follow\"><meta data-n-head=\"ssr\" name=\"baidu-site-verification\" content=\"84FlZTfdd0\"><meta data-n-head=\"ssr\" data-hid=\"description\" name=\"description\" content=\"惠农网提供实时精准的黄金百香果产地行情查询功能，汇聚最新最全的水果蔬菜、畜牧水产、农副产品等农产品产地行情数据。\"><meta data-n-head=\"ssr\" name=\"keywords\" content=\"黄金百香果产地行情,黄金百香果产地行情数据,黄金百香果批发价\"><link data-n-head=\"ssr\" rel=\"icon\" type=\"image/x-icon\" href=\"//files.cnhnb.com/h5/assets/favicon.ico\"><link data-n-head=\"ssr\" rel=\"canonical\" href=\"https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/\"><link data-n-head=\"ssr\" rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"https://m.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/\"><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/app.v1.0.0.js\"></script><script data-n-head=\"ssr\" src=\"https://files.cnhnb.com/eyejs/pc-sso.v2.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/peach.v1.1.1.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/cp.v1.0.5.js\"></script><base href=\"/\"><style data-vue-ssr-id=\"150203e6:0\">@font-face {font-family: \"iconfont\";\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817'); /* IE9 */\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817#iefix') format('embedded-opentype'), /* IE6-IE8 */\n  url('data:application/x-font-woff2;charset=utf-8;base64,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",
+    "time": "2026-05-13T05:07:04.757Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90503b8.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"90503b803dfe03808090ceb667e9af8a\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.782Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/bigdata/market-fixeright.gif",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.786Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/ssr/market/index.b45376bec9288db317d4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b847b22930b4806346c92a77716809bf\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:07:04.790Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=9356%2C9355&et=3&ja=0&ln=zh-cn&lo=0&rnd=2141637886&si=91cf34f62b9bedb16460ca36cf192f4c&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.833Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=206740983&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&tt=%5B%E7%AC%AC2%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.837Z"
+  },
+  {
+    "type": "request",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "{\"pageNumber\":8}",
+    "headers": {
+      "x-client-sign": "a89610ed001c9053320faff05b092ab831a0b354c3de04be6f68f7cd9c997e560e84284f5581a049ceaf6762da1c96ff",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "x-client-sid": "S_0MP3LL4LC77T740X",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "application/json, text/plain, */*",
+      "x-client-appid": "5",
+      "content-type": "application/json",
+      "x-client-id": "1b3d6fc-0ea7-4d01-bfe2-a5af0ffd3",
+      "x-client-nonce": "ad79afaab095a96e378c262eb5fee529",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "x-hn-job": "If you see these message, I hope you dont hack us, I hope you can join us! Please visit https://www.cnhnkj.com/job.html",
+      "x-client-time": "1778648824818",
+      "x-client-environment": "pro",
+      "x-client-page": "/hangqing/cdlist-2001332-12167-0-0-0-2/",
+      "x-b3-traceid": "0MP3LL4OIJKXG53H",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    },
+    "time": "2026-05-13T05:07:04.844Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=9366%2C9366&et=3&ja=0&ln=zh-cn&lo=0&rnd=73394037&si=b99541cbfb0edd202bb49abf3a0bef84&v=1.3.2&lv=1&sn=28915&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.852Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1712311072&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&tt=%5B%E7%AC%AC2%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.855Z"
+  },
+  {
+    "type": "response",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "x-response-trace-id": "6a0406f83ef708ee63bd1f3fb7d8a764",
+      "access-control-max-age": "604800",
+      "access-control-expose-headers": "*",
+      "content-encoding": "gzip",
+      "code": "0",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "date": "Wed, 13 May 2026 05:07:04 GMT",
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "bodyPreview": "{\"code\":0,\"msg\":\"success\",\"traceId\":\"6a0406f83ef708ee63bd1f3fb7d8a764\",\"data\":[{\"cateId\":\"2001243\",\"cate1Id\":2003191,\"cateName\":\"西瓜\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/97adf27eb2f845acbc8a42db1d13ced0.png\"},{\"cateId\":\"2001307\",\"cate1Id\":2003191,\"cateName\":\"榴莲\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/95c06666f94548a2badf395be746b3e3.png\"},{\"cateId\":\"2001302\",\"cate1Id\":2003191,\"cateName\":\"荔枝\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/28/6f947b82d33943f2832e0b40716ade83.png\"},{\"cateId\":\"2001093\",\"cate1Id\":2003193,\"cateName\":\"鸡蛋\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/29/c9da4f4df58d49cdba91a04ba9eec2f9.png\"},{\"cateId\":\"2001950\",\"cate1Id\":2003199,\"cateName\":\"杀虫剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2020/12/11/dff567abb2a744d49f4a441f07f2a10e.png\"},{\"cateId\":\"2001180\",\"cate1Id\":2003193,\"cateName\":\"鸡\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/e912bf53d9eb400a8743bd944dd10f30.png\"},{\"cateId\":\"2001127\",\"cate1Id\":2003193,\"cateName\":\"鸡苗\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/b1a6b51c62d64470a1c7d528e1901c13.png\"},{\"cateId\":\"2001951\",\"cate1Id\":2003199,\"cateName\":\"杀菌剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2023/06/15/86e9e126d25140bebb862f24930c9f51.png\"}]}",
+    "time": "2026-05-13T05:07:04.868Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.887Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778648824934",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:07:04.937Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778648824937",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:07:04.940Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406f80ff6511b1eb8ac62d363f0c4",
+      "date": "Wed, 13 May 2026 05:07:04 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"bid\":\"0\",\"analyticSwitch\":0,\"userVisitSwitch\":0,\"userPhoneCheckSwitch\":0,\"sdkSetting\":{\"layout\":4,\"image\":null,\"imageName\":null,\"bgColor\":\"#bdc1c7\",\"tone\":null,\"theme\":0,\"portrait\":null},\"hidden\":0,\"inviteSetting\":{\"switchType\":0,\"createTime\":1560506205000,\"h5Style\":{\"bdImageUrl\":null,\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":240,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"invitePatternVo\":{\"inviteAvatar\":\"\",\"mode\":0,\"realName\":\"\",\"robotSwitch\":0,\"welcomeTemplateId\":0,\"humanWelcomePrompt\":null,\"robotWelcomeTemplateId\":0,\"screenType\":1,\"inviteGroupId\":0,\"robotWelcomePrompt\":null,\"robotId\":0},\"name\":\"\",\"rejectType\":0,\"style\":{\"bdImageUrl\":\"\",\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":400,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"id\":0,\"timesLimitType\":false,\"waitTime\":15,\"timesLimit\":3,\"intervalTime\":45},\"corpSetting\":{\"dialogStyle\":1,\"corpInfo\":0,\"dialogMobileStyle\":1},\"sdkTemplateId\":null,\"showNavBarNew\":null,\"shuntId\":null,\"sessionInvite\":1,\"preloadIframe\":0,\"isGa\":0,\"accessDomain\":\"hnwszzlteam1.qiyukf.com\",\"isUpInfoToServer\":0,\"globalSetting\":null,\"forceCdnUrl\":\"https://res.qiyukf.net\",\"cdomain\":null},\"total\":0}",
+    "time": "2026-05-13T05:07:04.943Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778648824937",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406f845bcc363aa5238405e43159e",
+      "date": "Wed, 13 May 2026 05:07:04 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":8112,\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:07:04.988Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778648824934",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "content-disposition": "inline;filename=f.txt",
+      "content-encoding": "gzip",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Wed, 13 May 2026 05:07:04 GMT",
+      "server": "nginx",
+      "vary": "Accept-Encoding"
+    },
+    "bodyPreview": "<script>\n  !(function () {\n    if (window.localStorage && window.postMessage) {\n      var e,\n        t = {\n          findLocalItems: function (e, t) {\n            var a,\n              o,\n              r = [];\n            for (a in localStorage)\n              (a.match(e) || (!e && \"string\" == typeof a)) &&\n              ((o = t\n                ? JSON.parse(localStorage.getItem(a))\n                : localStorage.getItem(a)),\n                r.push({ key: a, val: o }));\n            return r;\n          },\n          clearLocalItems: function (e) {\n            for (var t = 0; t < e.length; t++)\n              window.localStorage.removeItem(e[t].key);\n          },\n          _$string2object: function(_string,_split){\n            var _obj = {};\n            (_string||'').split(_split).forEach(\n              function(_name){\n                var _brr = _name.split('=');\n                if (!_brr||!_brr.length) return;\n                var _key = _brr.shift();\n                if (!_key) return;\n                _obj[decodeURIComponent(_key)] =\n                  decodeURIComponent(_brr.join('='));\n              }\n            );\n            return _obj;\n          }\n        },\n        a = {\n          key: function (t) {\n            e = t || \"\";\n          },\n          usr: function (x) {\n            if (e) {\n              var obj = {};\n              try {\n                obj = t._$string2object(x, '&');\n              } catch(e) {\n                console.warn(e, 'usr 报错了')\n              }\n              var a = \"X-\" + e.toUpperCase() + obj.deviceId + \"-YSF-INFO\";\n              localStorage.setItem(a, x);\n            }\n          },\n\n          synckey: function (t) {\n            if (e) {\n              var a = \"YSF-\" + e.toUpperCase() + \"-UID\";\n              localStorage.setItem(a, t);\n            }\n          },\n          dvcnumbers: function (e) {\n            try {\n              var t = JSON.parse(e),\n                a = \"YSF-\" + t.deviceid + \"-NUMBERS\";\n              localStorage.setItem(a, t.number);\n            } catch (e) {}\n          },\n          webanalytics: function (e) {\n            try {\n              var a = e.substring(e.indexOf(\"=\") + 1, e.indexOf(\"&\"));\n              t.clearLocalItems(t.findLocalItems(/-YSF-WEBANALYTICS/gi));\n              var o = \"X-\" + a.toUpperCase() + \"-YSF-WEBANALYTICS\";\n              localStorage.setItem(o, e);\n            } catch (e) {\n              console.error(e);\n            }\n          },\n\n          // 商品消息\n          product: function (a) {\n            if (e) {\n              var o = a.split(\"&\"),\n                r = o[o.length - 1].split(\"=\");\n              if (\"bid\" == r[0]) var n = r[1];\n              if (n) {\n                i = \"X-\" + e.toUpperCase() + \"-\" + n + \"-YSF-PRODUCT\";\n                delete a.bid, localStorage.removeItem(i);\n              } else {\n                t.clearLocalItems(t.findLocalItems(/-YSF-PRODUCT/gi));\n                var i = \"X-\" + e.toUpperCase() + \"-YSF-PRODUCT\";\n              }\n              if (a === 'null') { // 删除商品信息\n                localStorage.removeItem(i);\n                return;\n              }\n              localStorage.setItem(i, a);\n            }\n          },\n\n          // 卡片消息\n          cardMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CARD-INFO';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n\n          // 自定义消息\n          customMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CUSTOM-MESSAGE';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n        },\n        o = function (e) {\n          parent.postMessage(e, \"*\");\n        },\n        r = function (e) {\n          try {\n            try {\n              var data = JSON.parse(e.data);\n              if (data && a[data.type]) {\n                a[data.type](data);\n              }\n            } catch (error) {\n              var t = (e.data || \"\").split(\":\"),\n                o = a[(t.shift() || \"\").toLowerCase()];\n              o && o(t.join(\":\"));\n            }\n          } catch (e) {}\n        };\n      window.addEventListener\n        ? window.addEventListener(\"message\", r, !1)\n        : window.attachEvent(\"onmessage\", r);\n      var n = function () {\n        if (e) {\n          var t = \"X-\" + e.toUpperCase() + \"-YSF-ACK\",\n            a = localStorage.getItem(t);\n          o(\"ACK:\" + a);\n        }\n      };\n      o(\"RDY:\" + +new Date()), window.setInterval(n, 2e3), n();\n    }\n  })();\n</script>\n",
+    "time": "2026-05-13T05:07:04.992Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "content-type": "application/x-www-form-urlencoded",
+      "sec-ch-ua-mobile": "?0",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8"
+    },
+    "time": "2026-05-13T05:07:05.947Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a0406f91f74bca62968008cbe5d16d4",
+      "date": "Wed, 13 May 2026 05:07:05 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"pushSwitch\":\"0\",\"dvcSwitch\":\"0\"},\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:07:05.992Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:22:31.264Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-2/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:22:31.272Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=929075%2C929074&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=103383524&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.908Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=929056%2C929055&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1206588137&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.912Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/0b6c97c.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.944Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b9e598a.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b9e598a5b15426e5da122efbc0e66f7f\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:33.951Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.957Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/eb88040.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"eb880407212f51b6cb83e93dcc4fc824\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:33.963Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/57362b6.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.967Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b558f28.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.972Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90dbbf5.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:33.984Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/30d1dbe.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"30d1dbeb853ef2a9f5cc409499d0d1ef\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:33.989Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/aba2746.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"aba274690d7578c18738ce303d5be924\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:33.995Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/10de317.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"10de3174c4ed38d82e5a1a76f7299ff2\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:34.004Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/runtime~app.0f404fc0a985be54bd6d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.011Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-index-vue/index.1e7ed8d89fcd8d43e559.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.018Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-area-vue/index.market-index-vue/index.market-trending-vue/index.ssr/market/area.ssr/market/in.0b371c6a.841b9e0b46bf54922be4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.024Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/vant-2.2.12.a8f2b232b79f210df0ac.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"bcbad88f00eb8dea1f9bd9954fd32f9e\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:34.044Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-com-7.5.5.ad5c307c4bb4b8b75b9b.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.051Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-core-7.5.8.be26094bec787bcd963a.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.057Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-ui-7.4.21.233a2dad978398a4ca07.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.062Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/nuxt-2.9.2.5e9e093588169e4ba12d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.067Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-wap-7.6.30.fc0404f3c8734ee0f9c2.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b72437ef69ee4782bf147650138343b4\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:34.073Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/app.90c2728d1d40b04c73c0.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"82561bf0febcd111102e12ce115bd188\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:34.077Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90503b8.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"90503b803dfe03808090ceb667e9af8a\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:34.094Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/5ac1f4f.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.099Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/bigdata/market-fixeright.gif",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.103Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=929056%2C929055&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1206588137&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.108Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1144698990&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F&tt=%5B%E7%AC%AC3%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.112Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=929075%2C929074&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=103383524&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-1%2F&v=1.3.2&lv=2&sn=28925&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.118Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=695443569&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F&tt=%5B%E7%AC%AC3%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:34.123Z"
+  },
+  {
+    "type": "response",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "accept-ranges": "none",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 13 May 2026 05:22:33 GMT",
+      "etag": "\"76a5a-dwOFzpilhL6yhr77OR8UMzGo37c\"",
+      "server": "Byte-nginx",
+      "vary": "Accept-Encoding",
+      "via": "cache50.jslianyungang-mp01,cache05.lfct",
+      "x-bdcdn-cache-status": "TCP_MISS,TCP_MISS",
+      "x-request-id": "1d63519c87690ab31670ee5ad9290173",
+      "x-request-ip": "106.112.242.82",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "106.112.242.82",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "<!doctype html>\n<html data-n-head-ssr>\n<head >\n    <title>[第3页] 黄金百香果最新产地行情_黄金百香果产地行情数据_黄金百香果批发价格查询 - 惠农网</title><meta data-n-head=\"ssr\" charset=\"utf-8\"><meta data-n-head=\"ssr\" name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta data-n-head=\"ssr\" name=\"applicable-device\" content=\"pc\"><meta data-n-head=\"ssr\" name=\"robots\" content=\"index,follow\"><meta data-n-head=\"ssr\" name=\"baidu-site-verification\" content=\"84FlZTfdd0\"><meta data-n-head=\"ssr\" data-hid=\"description\" name=\"description\" content=\"惠农网提供实时精准的黄金百香果产地行情查询功能，汇聚最新最全的水果蔬菜、畜牧水产、农副产品等农产品产地行情数据。\"><meta data-n-head=\"ssr\" name=\"keywords\" content=\"黄金百香果产地行情,黄金百香果产地行情数据,黄金百香果批发价\"><link data-n-head=\"ssr\" rel=\"icon\" type=\"image/x-icon\" href=\"//files.cnhnb.com/h5/assets/favicon.ico\"><link data-n-head=\"ssr\" rel=\"canonical\" href=\"https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/\"><link data-n-head=\"ssr\" rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"https://m.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/\"><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/app.v1.0.0.js\"></script><script data-n-head=\"ssr\" src=\"https://files.cnhnb.com/eyejs/pc-sso.v2.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/peach.v1.1.1.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/cp.v1.0.5.js\"></script><base href=\"/\"><style data-vue-ssr-id=\"150203e6:0\">@font-face {font-family: \"iconfont\";\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817'); /* IE9 */\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817#iefix') format('embedded-opentype'), /* IE6-IE8 */\n  url('data:application/x-font-woff2;charset=utf-8;base64,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",
+    "time": "2026-05-13T05:22:34.135Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/ssr/market/index.b45376bec9288db317d4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b847b22930b4806346c92a77716809bf\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:22:36.526Z"
+  },
+  {
+    "type": "request",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "{\"pageNumber\":8}",
+    "headers": {
+      "x-client-sign": "aaef4ffbf4529cbbb32baae88e72593cd911be4f4e34bd95a68e359848abb1ade11ced320ef345dd9bb3f4938c777725",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "x-client-sid": "S_0MP3M53K8183J8SK",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "application/json, text/plain, */*",
+      "x-client-appid": "5",
+      "content-type": "application/json",
+      "x-client-id": "1b3d6fc-0ea7-4d01-bfe2-a5af0ffd3",
+      "x-client-nonce": "5249c7d61114e8119784030539789cce",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "x-hn-job": "If you see these message, I hope you dont hack us, I hope you can join us! Please visit https://www.cnhnkj.com/job.html",
+      "x-client-time": "1778649756573",
+      "x-client-environment": "pro",
+      "x-client-page": "/hangqing/cdlist-2001332-12167-0-0-0-3/",
+      "x-b3-traceid": "0MP3M53MLLUCFRO9",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    },
+    "time": "2026-05-13T05:22:36.615Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:37.981Z"
+  },
+  {
+    "type": "request",
+    "url": "https://ysf.nosdn.127.net/webapi/38a7410cdf36ef88290e0136e0f86998",
+    "method": "GET",
+    "resourceType": "media",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept-encoding": "identity;q=1, *;q=0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "range": "bytes=0-"
+    },
+    "time": "2026-05-13T05:22:37.989Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778649758105",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:22:38.110Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778649758109",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:22:38.113Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040a9d7e1bb22c5639ba4bf0a6ada9",
+      "date": "Wed, 13 May 2026 05:22:37 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"bid\":\"0\",\"analyticSwitch\":0,\"userVisitSwitch\":0,\"userPhoneCheckSwitch\":0,\"sdkSetting\":{\"layout\":4,\"image\":null,\"imageName\":null,\"bgColor\":\"#bdc1c7\",\"tone\":null,\"theme\":0,\"portrait\":null},\"hidden\":0,\"inviteSetting\":{\"switchType\":0,\"createTime\":1560506205000,\"h5Style\":{\"bdImageUrl\":null,\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":240,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"invitePatternVo\":{\"inviteAvatar\":\"\",\"mode\":0,\"realName\":\"\",\"robotSwitch\":0,\"welcomeTemplateId\":0,\"humanWelcomePrompt\":null,\"robotWelcomeTemplateId\":0,\"screenType\":1,\"inviteGroupId\":0,\"robotWelcomePrompt\":null,\"robotId\":0},\"name\":\"\",\"rejectType\":0,\"style\":{\"bdImageUrl\":\"\",\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":400,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"id\":0,\"timesLimitType\":false,\"waitTime\":15,\"timesLimit\":3,\"intervalTime\":45},\"corpSetting\":{\"dialogStyle\":1,\"corpInfo\":0,\"dialogMobileStyle\":1},\"sdkTemplateId\":null,\"showNavBarNew\":null,\"shuntId\":null,\"sessionInvite\":1,\"preloadIframe\":0,\"isGa\":0,\"accessDomain\":\"hnwszzlteam1.qiyukf.com\",\"isUpInfoToServer\":0,\"globalSetting\":null,\"forceCdnUrl\":\"https://res.qiyukf.net\",\"cdomain\":null},\"total\":0}",
+    "time": "2026-05-13T05:22:38.116Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778649758109",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040a9da458277d5ff2d573de92a386",
+      "date": "Wed, 13 May 2026 05:22:37 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":8112,\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:22:38.154Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778649758105",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "content-disposition": "inline;filename=f.txt",
+      "content-encoding": "gzip",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Wed, 13 May 2026 05:22:38 GMT",
+      "server": "nginx",
+      "vary": "Accept-Encoding"
+    },
+    "bodyPreview": "<script>\n  !(function () {\n    if (window.localStorage && window.postMessage) {\n      var e,\n        t = {\n          findLocalItems: function (e, t) {\n            var a,\n              o,\n              r = [];\n            for (a in localStorage)\n              (a.match(e) || (!e && \"string\" == typeof a)) &&\n              ((o = t\n                ? JSON.parse(localStorage.getItem(a))\n                : localStorage.getItem(a)),\n                r.push({ key: a, val: o }));\n            return r;\n          },\n          clearLocalItems: function (e) {\n            for (var t = 0; t < e.length; t++)\n              window.localStorage.removeItem(e[t].key);\n          },\n          _$string2object: function(_string,_split){\n            var _obj = {};\n            (_string||'').split(_split).forEach(\n              function(_name){\n                var _brr = _name.split('=');\n                if (!_brr||!_brr.length) return;\n                var _key = _brr.shift();\n                if (!_key) return;\n                _obj[decodeURIComponent(_key)] =\n                  decodeURIComponent(_brr.join('='));\n              }\n            );\n            return _obj;\n          }\n        },\n        a = {\n          key: function (t) {\n            e = t || \"\";\n          },\n          usr: function (x) {\n            if (e) {\n              var obj = {};\n              try {\n                obj = t._$string2object(x, '&');\n              } catch(e) {\n                console.warn(e, 'usr 报错了')\n              }\n              var a = \"X-\" + e.toUpperCase() + obj.deviceId + \"-YSF-INFO\";\n              localStorage.setItem(a, x);\n            }\n          },\n\n          synckey: function (t) {\n            if (e) {\n              var a = \"YSF-\" + e.toUpperCase() + \"-UID\";\n              localStorage.setItem(a, t);\n            }\n          },\n          dvcnumbers: function (e) {\n            try {\n              var t = JSON.parse(e),\n                a = \"YSF-\" + t.deviceid + \"-NUMBERS\";\n              localStorage.setItem(a, t.number);\n            } catch (e) {}\n          },\n          webanalytics: function (e) {\n            try {\n              var a = e.substring(e.indexOf(\"=\") + 1, e.indexOf(\"&\"));\n              t.clearLocalItems(t.findLocalItems(/-YSF-WEBANALYTICS/gi));\n              var o = \"X-\" + a.toUpperCase() + \"-YSF-WEBANALYTICS\";\n              localStorage.setItem(o, e);\n            } catch (e) {\n              console.error(e);\n            }\n          },\n\n          // 商品消息\n          product: function (a) {\n            if (e) {\n              var o = a.split(\"&\"),\n                r = o[o.length - 1].split(\"=\");\n              if (\"bid\" == r[0]) var n = r[1];\n              if (n) {\n                i = \"X-\" + e.toUpperCase() + \"-\" + n + \"-YSF-PRODUCT\";\n                delete a.bid, localStorage.removeItem(i);\n              } else {\n                t.clearLocalItems(t.findLocalItems(/-YSF-PRODUCT/gi));\n                var i = \"X-\" + e.toUpperCase() + \"-YSF-PRODUCT\";\n              }\n              if (a === 'null') { // 删除商品信息\n                localStorage.removeItem(i);\n                return;\n              }\n              localStorage.setItem(i, a);\n            }\n          },\n\n          // 卡片消息\n          cardMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CARD-INFO';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n\n          // 自定义消息\n          customMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CUSTOM-MESSAGE';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n        },\n        o = function (e) {\n          parent.postMessage(e, \"*\");\n        },\n        r = function (e) {\n          try {\n            try {\n              var data = JSON.parse(e.data);\n              if (data && a[data.type]) {\n                a[data.type](data);\n              }\n            } catch (error) {\n              var t = (e.data || \"\").split(\":\"),\n                o = a[(t.shift() || \"\").toLowerCase()];\n              o && o(t.join(\":\"));\n            }\n          } catch (e) {}\n        };\n      window.addEventListener\n        ? window.addEventListener(\"message\", r, !1)\n        : window.attachEvent(\"onmessage\", r);\n      var n = function () {\n        if (e) {\n          var t = \"X-\" + e.toUpperCase() + \"-YSF-ACK\",\n            a = localStorage.getItem(t);\n          o(\"ACK:\" + a);\n        }\n      };\n      o(\"RDY:\" + +new Date()), window.setInterval(n, 2e3), n();\n    }\n  })();\n</script>\n",
+    "time": "2026-05-13T05:22:38.245Z"
+  },
+  {
+    "type": "response",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "x-response-trace-id": "6a040a9efea373af028f4ec679f3ce09",
+      "access-control-max-age": "604800",
+      "access-control-expose-headers": "*",
+      "content-encoding": "gzip",
+      "code": "0",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "date": "Wed, 13 May 2026 05:22:38 GMT",
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "bodyPreview": "{\"code\":0,\"msg\":\"success\",\"traceId\":\"6a040a9efea373af028f4ec679f3ce09\",\"data\":[{\"cateId\":\"2001243\",\"cate1Id\":2003191,\"cateName\":\"西瓜\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/97adf27eb2f845acbc8a42db1d13ced0.png\"},{\"cateId\":\"2001307\",\"cate1Id\":2003191,\"cateName\":\"榴莲\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/95c06666f94548a2badf395be746b3e3.png\"},{\"cateId\":\"2001302\",\"cate1Id\":2003191,\"cateName\":\"荔枝\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/28/6f947b82d33943f2832e0b40716ade83.png\"},{\"cateId\":\"2001093\",\"cate1Id\":2003193,\"cateName\":\"鸡蛋\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/29/c9da4f4df58d49cdba91a04ba9eec2f9.png\"},{\"cateId\":\"2001950\",\"cate1Id\":2003199,\"cateName\":\"杀虫剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2020/12/11/dff567abb2a744d49f4a441f07f2a10e.png\"},{\"cateId\":\"2001180\",\"cate1Id\":2003193,\"cateName\":\"鸡\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/e912bf53d9eb400a8743bd944dd10f30.png\"},{\"cateId\":\"2001127\",\"cate1Id\":2003193,\"cateName\":\"鸡苗\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/b1a6b51c62d64470a1c7d528e1901c13.png\"},{\"cateId\":\"2001951\",\"cate1Id\":2003199,\"cateName\":\"杀菌剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2023/06/15/86e9e126d25140bebb862f24930c9f51.png\"}]}",
+    "time": "2026-05-13T05:22:39.080Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "content-type": "application/x-www-form-urlencoded",
+      "sec-ch-ua-mobile": "?0",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8"
+    },
+    "time": "2026-05-13T05:22:39.115Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040a9ee6651a2a10b4d1f157dac619",
+      "date": "Wed, 13 May 2026 05:22:38 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"pushSwitch\":\"0\",\"dvcSwitch\":\"0\"},\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:22:39.161Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-4/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:24:10.705Z"
+  },
+  {
+    "type": "request",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-4/",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-3/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:24:10.710Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=97559%2C97558&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1768069906&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.529Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=97497%2C97496&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=595459682&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cache-control": "max-age=0",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.534Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/0b6c97c.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.549Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b9e598a.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b9e598a5b15426e5da122efbc0e66f7f\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.554Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.558Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/eb88040.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"eb880407212f51b6cb83e93dcc4fc824\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.563Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/57362b6.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.573Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/b558f28.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.577Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/90dbbf5.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.582Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/30d1dbe.svg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"30d1dbeb853ef2a9f5cc409499d0d1ef\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.588Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/aba2746.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"aba274690d7578c18738ce303d5be924\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.593Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/10de317.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"10de3174c4ed38d82e5a1a76f7299ff2\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.598Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/runtime~app.0f404fc0a985be54bd6d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.603Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-index-vue/index.1e7ed8d89fcd8d43e559.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.614Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/market-area-vue/index.market-index-vue/index.market-trending-vue/index.ssr/market/area.ssr/market/in.0b371c6a.841b9e0b46bf54922be4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.620Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/vant-2.2.12.a8f2b232b79f210df0ac.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"bcbad88f00eb8dea1f9bd9954fd32f9e\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.625Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-com-7.5.5.ad5c307c4bb4b8b75b9b.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.630Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-core-7.5.8.be26094bec787bcd963a.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.635Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-ui-7.4.21.233a2dad978398a4ca07.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.640Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/nuxt-2.9.2.5e9e093588169e4ba12d.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.647Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/eye-wap-7.6.30.fc0404f3c8734ee0f9c2.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b72437ef69ee4782bf147650138343b4\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.652Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/app.90c2728d1d40b04c73c0.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"82561bf0febcd111102e12ce115bd188\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.658Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/bigdata/market-fixeright.gif",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.670Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/ssr/market/index.b45376bec9288db317d4.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "if-none-match": "\"b847b22930b4806346c92a77716809bf\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "if-modified-since": "Mon, 15 Dec 2025 08:08:46 GMT"
+    },
+    "time": "2026-05-13T05:24:11.680Z"
+  },
+  {
+    "type": "response",
+    "url": "https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-4/",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "accept-ranges": "none",
+      "content-encoding": "gzip",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Wed, 13 May 2026 05:24:11 GMT",
+      "etag": "\"74e06-vqg921d1zjyn2gZGtKt1OfPrXS0\"",
+      "server": "Byte-nginx",
+      "vary": "Accept-Encoding",
+      "via": "cache26.zjwenzhou-mp02,cache05.lfct",
+      "x-bdcdn-cache-status": "TCP_MISS,TCP_MISS",
+      "x-request-id": "65761eb7d1b148deca4f055060f9fbd8",
+      "x-request-ip": "106.112.242.82",
+      "x-response-cache": "miss",
+      "x-response-cinfo": "106.112.242.82",
+      "x-tt-trace-tag": "id=5"
+    },
+    "bodyPreview": "<!doctype html>\n<html data-n-head-ssr>\n<head >\n    <title>[第4页] 黄金百香果最新产地行情_黄金百香果产地行情数据_黄金百香果批发价格查询 - 惠农网</title><meta data-n-head=\"ssr\" charset=\"utf-8\"><meta data-n-head=\"ssr\" name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\"><meta data-n-head=\"ssr\" name=\"applicable-device\" content=\"pc\"><meta data-n-head=\"ssr\" name=\"robots\" content=\"index,follow\"><meta data-n-head=\"ssr\" name=\"baidu-site-verification\" content=\"84FlZTfdd0\"><meta data-n-head=\"ssr\" data-hid=\"description\" name=\"description\" content=\"惠农网提供实时精准的黄金百香果产地行情查询功能，汇聚最新最全的水果蔬菜、畜牧水产、农副产品等农产品产地行情数据。\"><meta data-n-head=\"ssr\" name=\"keywords\" content=\"黄金百香果产地行情,黄金百香果产地行情数据,黄金百香果批发价\"><link data-n-head=\"ssr\" rel=\"icon\" type=\"image/x-icon\" href=\"//files.cnhnb.com/h5/assets/favicon.ico\"><link data-n-head=\"ssr\" rel=\"canonical\" href=\"https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-4/\"><link data-n-head=\"ssr\" rel=\"alternate\" media=\"only screen and (max-width: 640px)\" href=\"https://m.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-4/\"><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/app.v1.0.0.js\"></script><script data-n-head=\"ssr\" src=\"https://files.cnhnb.com/eyejs/pc-sso.v2.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/peach.v1.1.1.js\"></script><script data-n-head=\"ssr\" src=\"//files.cnhnb.com/eyejs/cp.v1.0.5.js\"></script><base href=\"/\"><style data-vue-ssr-id=\"150203e6:0\">@font-face {font-family: \"iconfont\";\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817'); /* IE9 */\n  src: url('//at.alicdn.com/t/font_1695417_48nt56isk7v.eot?t=1617688274817#iefix') format('embedded-opentype'), /* IE6-IE8 */\n  url('data:application/x-font-woff2;charset=utf-8;base64,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",
+    "time": "2026-05-13T05:24:11.699Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=97559%2C97558&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=1768069906&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.745Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=534303185&si=b99541cbfb0edd202bb49abf3a0bef84&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F&v=1.3.2&lv=2&sn=29952&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-4%2F&tt=%5B%E7%AC%AC4%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.750Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=4808CE14921CEC26&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&ep=97497%2C97496&et=3&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=595459682&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-2%2F&v=1.3.2&lv=2&sn=29854&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.758Z"
+  },
+  {
+    "type": "request",
+    "url": "https://hm.baidu.com/hm.gif?hca=8462F62F52487F05&cc=1&ck=1&cl=32-bit&ds=1400x900&vl=900&et=0&ja=0&ln=zh-cn&lo=0&lt=1778648815&rnd=881426433&si=91cf34f62b9bedb16460ca36cf192f4c&su=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-3%2F&v=1.3.2&lv=2&sn=29952&r=0&ww=1400&u=https%3A%2F%2Fwww.cnhnb.com%2Fhangqing%2Fcdlist-2001332-12167-0-0-0-4%2F&tt=%5B%E7%AC%AC4%E9%A1%B5%5D%20%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%9C%80%E6%96%B0%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E4%BA%A7%E5%9C%B0%E8%A1%8C%E6%83%85%E6%95%B0%E6%8D%AE_%E9%BB%84%E9%87%91%E7%99%BE%E9%A6%99%E6%9E%9C%E6%89%B9%E5%8F%91%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2%20-%20%E6%83%A0%E5%86%9C%E7%BD%91",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.763Z"
+  },
+  {
+    "type": "request",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "{\"pageNumber\":8}",
+    "headers": {
+      "x-client-sign": "003d67297fcb2afecd9337f4f130bb7f2531b02688d33b8efc6c734869b84daa31db58118da6ff86dc1e1a4a5d84330b",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "x-client-sid": "S_0MP3M74YNYPRV0CV",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept": "application/json, text/plain, */*",
+      "x-client-appid": "5",
+      "content-type": "application/json",
+      "x-client-id": "1b3d6fc-0ea7-4d01-bfe2-a5af0ffd3",
+      "x-client-nonce": "dc70ac915c52b97dcc809e0e2af3d573",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "x-hn-job": "If you see these message, I hope you dont hack us, I hope you can join us! Please visit https://www.cnhnkj.com/job.html",
+      "x-client-time": "1778649851731",
+      "x-client-environment": "pro",
+      "x-client-page": "/hangqing/cdlist-2001332-12167-0-0-0-4/",
+      "x-b3-traceid": "0MP3M751V2SYTYT5",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    },
+    "time": "2026-05-13T05:24:11.774Z"
+  },
+  {
+    "type": "response",
+    "url": "https://pcapi.cnhnb.com/hn-biz-gateway/api/biz-gateway/pc/hot/search/cate",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "x-response-trace-id": "6a040afbdb1e1f18291dde2770788dd0",
+      "access-control-max-age": "604800",
+      "access-control-expose-headers": "*",
+      "content-encoding": "gzip",
+      "code": "0",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "date": "Wed, 13 May 2026 05:24:11 GMT",
+      "content-type": "application/json;charset=UTF-8"
+    },
+    "bodyPreview": "{\"code\":0,\"msg\":\"success\",\"traceId\":\"6a040afbdb1e1f18291dde2770788dd0\",\"data\":[{\"cateId\":\"2001243\",\"cate1Id\":2003191,\"cateName\":\"西瓜\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/97adf27eb2f845acbc8a42db1d13ced0.png\"},{\"cateId\":\"2001307\",\"cate1Id\":2003191,\"cateName\":\"榴莲\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/95c06666f94548a2badf395be746b3e3.png\"},{\"cateId\":\"2001302\",\"cate1Id\":2003191,\"cateName\":\"荔枝\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/28/6f947b82d33943f2832e0b40716ade83.png\"},{\"cateId\":\"2001093\",\"cate1Id\":2003193,\"cateName\":\"鸡蛋\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/29/c9da4f4df58d49cdba91a04ba9eec2f9.png\"},{\"cateId\":\"2001950\",\"cate1Id\":2003199,\"cateName\":\"杀虫剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2020/12/11/dff567abb2a744d49f4a441f07f2a10e.png\"},{\"cateId\":\"2001180\",\"cate1Id\":2003193,\"cateName\":\"鸡\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/e912bf53d9eb400a8743bd944dd10f30.png\"},{\"cateId\":\"2001127\",\"cate1Id\":2003193,\"cateName\":\"鸡苗\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2019/08/27/b1a6b51c62d64470a1c7d528e1901c13.png\"},{\"cateId\":\"2001951\",\"cate1Id\":2003199,\"cateName\":\"杀菌剂\",\"hotSort\":0,\"searchCount\":0,\"totalSearchCount\":0,\"hotFlag\":false,\"catePicUrl\":\"https://image.cnhnb.com/image/png/miniapp/2023/06/15/86e9e126d25140bebb862f24930c9f51.png\"}]}",
+    "time": "2026-05-13T05:24:11.791Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.800Z"
+  },
+  {
+    "type": "request",
+    "url": "https://ysf.nosdn.127.net/webapi/38a7410cdf36ef88290e0136e0f86998",
+    "method": "GET",
+    "resourceType": "media",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "accept-encoding": "identity;q=1, *;q=0",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "range": "bytes=0-"
+    },
+    "time": "2026-05-13T05:24:11.806Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778649851846",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null,
+    "headers": {
+      "referer": "https://www.cnhnb.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "accept-language": "zh-CN",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\""
+    },
+    "time": "2026-05-13T05:24:11.850Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778649851849",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:11.855Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdk/setting/data?appKey=4220f037ab100ce0b7188635f2bdb46c",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040afb9ba6db4008129b87e35be79a",
+      "date": "Wed, 13 May 2026 05:24:11 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"bid\":\"0\",\"analyticSwitch\":0,\"userVisitSwitch\":0,\"userPhoneCheckSwitch\":0,\"sdkSetting\":{\"layout\":4,\"image\":null,\"imageName\":null,\"bgColor\":\"#bdc1c7\",\"tone\":null,\"theme\":0,\"portrait\":null},\"hidden\":0,\"inviteSetting\":{\"switchType\":0,\"createTime\":1560506205000,\"h5Style\":{\"bdImageUrl\":null,\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":240,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"invitePatternVo\":{\"inviteAvatar\":\"\",\"mode\":0,\"realName\":\"\",\"robotSwitch\":0,\"welcomeTemplateId\":0,\"humanWelcomePrompt\":null,\"robotWelcomeTemplateId\":0,\"screenType\":1,\"inviteGroupId\":0,\"robotWelcomePrompt\":null,\"robotId\":0},\"name\":\"\",\"rejectType\":0,\"style\":{\"bdImageUrl\":\"\",\"bdImageY\":0,\"bdHeight\":280,\"bdWidth\":400,\"oprs\":null,\"welcomeText\":\"您好，请问有什么可以帮助您？\",\"type\":0,\"bdImageX\":0},\"id\":0,\"timesLimitType\":false,\"waitTime\":15,\"timesLimit\":3,\"intervalTime\":45},\"corpSetting\":{\"dialogStyle\":1,\"corpInfo\":0,\"dialogMobileStyle\":1},\"sdkTemplateId\":null,\"showNavBarNew\":null,\"shuntId\":null,\"sessionInvite\":1,\"preloadIframe\":0,\"isGa\":0,\"accessDomain\":\"hnwszzlteam1.qiyukf.com\",\"isUpInfoToServer\":0,\"globalSetting\":null,\"forceCdnUrl\":\"https://res.qiyukf.net\",\"cdomain\":null},\"total\":0}",
+    "time": "2026-05-13T05:24:11.858Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/getUnread.action?appKey=4220f037ab100ce0b7188635f2bdb46c&foreignId=&deviceId=v5aysjsxzno8uwcmpfgm&bid=&ts=1778649851849",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040afb401def0aed7135be096f4352",
+      "date": "Wed, 13 May 2026 05:24:11 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":8112,\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:24:11.896Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/sdkres/delegate.html?1778649851846",
+    "status": 200,
+    "resourceType": "document",
+    "headers": {
+      "content-disposition": "inline;filename=f.txt",
+      "content-encoding": "gzip",
+      "content-type": "text/html;charset=UTF-8",
+      "date": "Wed, 13 May 2026 05:24:11 GMT",
+      "server": "nginx",
+      "vary": "Accept-Encoding"
+    },
+    "bodyPreview": "<script>\n  !(function () {\n    if (window.localStorage && window.postMessage) {\n      var e,\n        t = {\n          findLocalItems: function (e, t) {\n            var a,\n              o,\n              r = [];\n            for (a in localStorage)\n              (a.match(e) || (!e && \"string\" == typeof a)) &&\n              ((o = t\n                ? JSON.parse(localStorage.getItem(a))\n                : localStorage.getItem(a)),\n                r.push({ key: a, val: o }));\n            return r;\n          },\n          clearLocalItems: function (e) {\n            for (var t = 0; t < e.length; t++)\n              window.localStorage.removeItem(e[t].key);\n          },\n          _$string2object: function(_string,_split){\n            var _obj = {};\n            (_string||'').split(_split).forEach(\n              function(_name){\n                var _brr = _name.split('=');\n                if (!_brr||!_brr.length) return;\n                var _key = _brr.shift();\n                if (!_key) return;\n                _obj[decodeURIComponent(_key)] =\n                  decodeURIComponent(_brr.join('='));\n              }\n            );\n            return _obj;\n          }\n        },\n        a = {\n          key: function (t) {\n            e = t || \"\";\n          },\n          usr: function (x) {\n            if (e) {\n              var obj = {};\n              try {\n                obj = t._$string2object(x, '&');\n              } catch(e) {\n                console.warn(e, 'usr 报错了')\n              }\n              var a = \"X-\" + e.toUpperCase() + obj.deviceId + \"-YSF-INFO\";\n              localStorage.setItem(a, x);\n            }\n          },\n\n          synckey: function (t) {\n            if (e) {\n              var a = \"YSF-\" + e.toUpperCase() + \"-UID\";\n              localStorage.setItem(a, t);\n            }\n          },\n          dvcnumbers: function (e) {\n            try {\n              var t = JSON.parse(e),\n                a = \"YSF-\" + t.deviceid + \"-NUMBERS\";\n              localStorage.setItem(a, t.number);\n            } catch (e) {}\n          },\n          webanalytics: function (e) {\n            try {\n              var a = e.substring(e.indexOf(\"=\") + 1, e.indexOf(\"&\"));\n              t.clearLocalItems(t.findLocalItems(/-YSF-WEBANALYTICS/gi));\n              var o = \"X-\" + a.toUpperCase() + \"-YSF-WEBANALYTICS\";\n              localStorage.setItem(o, e);\n            } catch (e) {\n              console.error(e);\n            }\n          },\n\n          // 商品消息\n          product: function (a) {\n            if (e) {\n              var o = a.split(\"&\"),\n                r = o[o.length - 1].split(\"=\");\n              if (\"bid\" == r[0]) var n = r[1];\n              if (n) {\n                i = \"X-\" + e.toUpperCase() + \"-\" + n + \"-YSF-PRODUCT\";\n                delete a.bid, localStorage.removeItem(i);\n              } else {\n                t.clearLocalItems(t.findLocalItems(/-YSF-PRODUCT/gi));\n                var i = \"X-\" + e.toUpperCase() + \"-YSF-PRODUCT\";\n              }\n              if (a === 'null') { // 删除商品信息\n                localStorage.removeItem(i);\n                return;\n              }\n              localStorage.setItem(i, a);\n            }\n          },\n\n          // 卡片消息\n          cardMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CARD-INFO';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n\n          // 自定义消息\n          customMessage: function(data){\n            if(!data.appkey){\n              return;\n            }\n            var bid = -1;\n            var key = 'X-' + data.appkey.toUpperCase() + '-' + bid + '-YSF-CUSTOM-MESSAGE';\n            localStorage.removeItem(key);\n            if (data.data === null) {\n              return;\n            }\n            localStorage.setItem(key,JSON.stringify(data.data));\n          },\n        },\n        o = function (e) {\n          parent.postMessage(e, \"*\");\n        },\n        r = function (e) {\n          try {\n            try {\n              var data = JSON.parse(e.data);\n              if (data && a[data.type]) {\n                a[data.type](data);\n              }\n            } catch (error) {\n              var t = (e.data || \"\").split(\":\"),\n                o = a[(t.shift() || \"\").toLowerCase()];\n              o && o(t.join(\":\"));\n            }\n          } catch (e) {}\n        };\n      window.addEventListener\n        ? window.addEventListener(\"message\", r, !1)\n        : window.attachEvent(\"onmessage\", r);\n      var n = function () {\n        if (e) {\n          var t = \"X-\" + e.toUpperCase() + \"-YSF-ACK\",\n            a = localStorage.getItem(t);\n          o(\"ACK:\" + a);\n        }\n      };\n      o(\"RDY:\" + +new Date()), window.setInterval(n, 2e3), n();\n    }\n  })();\n</script>\n",
+    "time": "2026-05-13T05:24:11.903Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:24:12.717Z"
+  },
+  {
+    "type": "request",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "content-type": "application/x-www-form-urlencoded",
+      "sec-ch-ua-mobile": "?0",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8"
+    },
+    "time": "2026-05-13T05:24:12.859Z"
+  },
+  {
+    "type": "response",
+    "url": "https://qiyukf.com/webapi/user/dvcSession.action?appKey=4220f037ab100ce0b7188635f2bdb46c&d=v5aysjsxzno8uwcmpfgm&f=",
+    "status": 200,
+    "resourceType": "xhr",
+    "headers": {
+      "content-encoding": "gzip",
+      "access-control-expose-header": "Set-Cookie,Max-Age",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-methods": "GET,POST,OPTIONS",
+      "access-control-allow-origin": "https://www.cnhnb.com",
+      "tid": "6a040afc9ef200eabd06fc55e34bb01e",
+      "date": "Wed, 13 May 2026 05:24:12 GMT",
+      "content-type": "application/json;charset=UTF-8",
+      "vary": "Accept-Encoding",
+      "server": "nginx",
+      "access-control-allow-headers": "*"
+    },
+    "bodyPreview": "{\"code\":200,\"result\":{\"pushSwitch\":\"0\",\"dvcSwitch\":\"0\"},\"message\":\"user is not exist\",\"total\":0}",
+    "time": "2026-05-13T05:24:12.908Z"
+  },
+  {
+    "type": "request",
+    "url": "https://files.cnhnb.com/master-ssr/market/img/2a7149c.jpg",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null,
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "https://www.cnhnb.com/",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"147\", \"Not.A/Brand\";v=\"8\"",
+      "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "time": "2026-05-13T05:27:18.435Z"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "testDate": "2026-05-13T18:15:20.491Z",
+  "dataSource": "北京新发地百香果",
+  "collectedData": [
+    {
+      "category1": "水果",
+      "category2": "其他类",
+      "name": "百香果",
+      "lowPrice": "8.0",
+      "avgPrice": "9.0",
+      "highPrice": "10.0",
+      "spec": "",
+      "origin": "",
+      "unit": "斤",
+      "recordDate": "2026-05-13"
+    }
+  ]
+}
