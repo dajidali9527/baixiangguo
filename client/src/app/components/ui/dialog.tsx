@@ -40,7 +40,7 @@ export function DialogContent({ className, ...props }: DialogContentProps) {
   return (
     <div
       className={cn(
-        'bg-white rounded-lg shadow-lg max-w-[85vw max-h-[85vh] overflow-auto',
+        'bg-white rounded-lg shadow-lg max-w-[85vw] max-h-[85vh] overflow-auto',
         className
       )}
       {...props}

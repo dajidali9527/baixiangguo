@@ -130,7 +130,7 @@ export async function getHuinongTrendChart(req: Request, res: Response) {
     const limit = Number(days) || 7;
 
     const [records] = await pool.query(
-      `SELECT avg_price as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
        FROM price_records
        WHERE source_type = 'huinong' AND origin = ?
        ORDER BY record_date DESC
@@ -159,7 +159,7 @@ export async function getXinfadiTrendChart(req: Request, res: Response) {
     const limit = Number(days) || 30;
 
     const [records] = await pool.query(
-      `SELECT avg_price as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
        FROM price_records
        WHERE source_type = 'xinfadi'
        ORDER BY record_date DESC
@@ -177,6 +177,35 @@ export async function getXinfadiTrendChart(req: Request, res: Response) {
     });
   } catch (err) {
     console.error('Get xinfadi trend error:', err);
+    res.status(500).json({ code: 500, data: null, message: '服务器内部错误' });
+  }
+}
+
+// 获取广州江南的近1个月走势图数据
+export async function getJiangnanTrendChart(req: Request, res: Response) {
+  try {
+    const { days = 30 } = req.query;
+    const limit = Number(days) || 30;
+
+    const [records] = await pool.query(
+      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+       FROM price_records
+       WHERE source_type = 'jiangnan'
+       ORDER BY record_date DESC
+       LIMIT ?`,
+      [limit]
+    );
+
+    // 反转顺序，按日期从旧到新
+    const orderedRecords = (records as Array<{ price: number; date: string }>).reverse();
+
+    res.json({
+      code: 200,
+      data: orderedRecords,
+      message: 'ok',
+    });
+  } catch (err) {
+    console.error('Get jiangnan trend error:', err);
     res.status(500).json({ code: 500, data: null, message: '服务器内部错误' });
   }
 }

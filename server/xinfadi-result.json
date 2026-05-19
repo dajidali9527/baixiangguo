@@ -1,5 +1,5 @@
 {
-  "testDate": "2026-05-13T18:15:20.491Z",
+  "testDate": "2026-05-15T12:29:26.580Z",
   "dataSource": "北京新发地百香果",
   "collectedData": [
     {
@@ -12,7 +12,7 @@
       "spec": "",
       "origin": "",
       "unit": "斤",
-      "recordDate": "2026-05-13"
+      "recordDate": "2026-05-15"
     }
   ]
 }

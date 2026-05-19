@@ -3,7 +3,7 @@ import { Sidebar } from './components/Sidebar';
 import { ConfigPage } from './components/ConfigPage';
 import { DashboardPage } from './components/DashboardPage';
 import { HistoryPage } from './components/HistoryPage';
-import { PreviewPage } from './components/PreviewPage';
+import { OpenclawConfigPage } from './components/OpenclawConfigPage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -17,7 +17,7 @@ export default function App() {
       case 'history':
         return <HistoryPage />;
       case 'preview':
-        return <PreviewPage />;
+        return <OpenclawConfigPage />;
       default:
         return <DashboardPage />;
     }

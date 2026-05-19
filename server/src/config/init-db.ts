@@ -73,14 +73,24 @@ export async function initTables(): Promise<void> {
       }
     }
     
-    // 清理错误数据（2026-05-13，星期三，不是有效数据日期）
+    try {
+      const [result] = await connection.query(
+        `UPDATE task_executions SET status = 'failed', error_message = '服务重启，任务中断' WHERE status = 'running'`
+      );
+      const affected = (result as any).affectedRows || 0;
+      if (affected > 0) {
+        console.log(`Cleaned up ${affected} orphaned running tasks`);
+      }
+    } catch (err) {
+      console.log('No orphaned tasks to clean up');
+    }
+    
     try {
       await connection.query(
-        `DELETE FROM price_records WHERE record_date = '2026-05-13'`
+        `UPDATE data_sources SET status = 'success' WHERE status = 'running'`
       );
-      console.log('Cleaned up invalid data (2026-05-13)');
     } catch (err) {
-      console.log('No invalid data to clean up or error cleaning:', (err as any).message);
+      console.log('No data sources need status reset');
     }
     
     console.log('Tables initialized successfully');

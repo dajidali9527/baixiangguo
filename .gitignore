@@ -95,3 +95,8 @@ server/article.html
 server/search-*.html
 server/debug-*.html
 server/huinong-*.html
+
+# OpenClaw 配置（含敏感信息，严禁提交）
+.openclaw/openclaw.json
+.openclaw/secrets/
+.openclaw/storage/

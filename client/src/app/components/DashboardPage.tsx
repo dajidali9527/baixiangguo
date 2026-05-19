@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { fetchDashboardData, fetchHuinongTrend, fetchXinfadiTrend } from '../../api/dashboard';
+import { fetchDashboardData, fetchHuinongTrend, fetchXinfadiTrend, fetchJiangnanTrend } from '../../api/dashboard';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
 interface BxxRecord {
@@ -77,7 +77,7 @@ export function DashboardPage() {
   const [trendDialogOpen, setTrendDialogOpen] = useState(false);
   const [trendData, setTrendData] = useState<TrendData[]>([]);
   const [selectedOrigin, setSelectedOrigin] = useState('');
-  const [trendType, setTrendType] = useState<'huinong' | 'xinfadi'>('huinong');
+  const [trendType, setTrendType] = useState<'huinong' | 'xinfadi' | 'jiangnan'>('huinong');
   const [loadingTrend, setLoadingTrend] = useState(false);
 
   const loadData = async () => {
@@ -94,7 +94,7 @@ export function DashboardPage() {
     }
   };
 
-  const loadTrendData = async (origin: string, type: 'huinong' | 'xinfadi' = 'huinong') => {
+  const loadTrendData = async (origin: string, type: 'huinong' | 'xinfadi' | 'jiangnan' = 'huinong') => {
     setLoadingTrend(true);
     setSelectedOrigin(origin);
     setTrendType(type);
@@ -102,8 +102,10 @@ export function DashboardPage() {
       let res: any;
       if (type === 'huinong') {
         res = await fetchHuinongTrend(origin);
-      } else {
+      } else if (type === 'xinfadi') {
         res = await fetchXinfadiTrend(30);
+      } else {
+        res = await fetchJiangnanTrend(30);
       }
       if (res.code === 200 && res.data) {
         setTrendData(res.data);
@@ -115,7 +117,7 @@ export function DashboardPage() {
     }
   };
 
-  const openTrendDialog = async (origin: string, type: 'huinong' | 'xinfadi' = 'huinong') => {
+  const openTrendDialog = async (origin: string, type: 'huinong' | 'xinfadi' | 'jiangnan' = 'huinong') => {
     await loadTrendData(origin, type);
     setTrendDialogOpen(true);
   };
@@ -130,9 +132,21 @@ export function DashboardPage() {
     return <Minus className="w-4 h-4 text-gray-400" />;
   };
 
+  const [activeTab, setActiveTab] = useState('bxx');
+  
   useEffect(() => {
     loadData();
+    // 自动加载新发地趋势图
+    loadTrendData('', 'xinfadi');
   }, []);
+  
+  useEffect(() => {
+    if (activeTab === 'jiangnan') {
+      loadTrendData('', 'jiangnan');
+    } else if (activeTab === 'xinfadi') {
+      loadTrendData('', 'xinfadi');
+    }
+  }, [activeTab]);
 
   const bxxRecords = dashboardData?.bxx?.records || [];
   const huinongRecords = dashboardData?.huinong?.records || [];
@@ -162,7 +176,7 @@ export function DashboardPage() {
         <h2 className="text-2xl">黄金百香果行情</h2>
       </div>
 
-      <Tabs defaultValue="bxx" className="w-full">
+      <Tabs defaultValue="bxx" className="w-full" onValueChange={setActiveTab} value={activeTab}>
         <TabsList className="grid w-full grid-cols-4 mb-6">
           <TabsTrigger value="bxx">百香果信息平台</TabsTrigger>
           <TabsTrigger value="huinong">惠农网黄金百香果</TabsTrigger>
@@ -285,12 +299,7 @@ export function DashboardPage() {
               <p className="text-gray-500 text-center py-8">暂无数据</p>
             ) : (
               <>
-                <div className="mb-6">
-                  <Button variant="ghost" size="sm" onClick={() => openTrendDialog('', 'xinfadi')}>
-                    查看近1月走势
-                  </Button>
-                </div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mb-8">
                   <Table>
                     <TableHeader>
                       <TableRow>
@@ -324,6 +333,42 @@ export function DashboardPage() {
                     </TableBody>
                   </Table>
                 </div>
+                
+                <div className="border-t pt-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold">近1月价格走势图</h3>
+                    {trendType === 'xinfadi' && trendData.length > 0 && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-500">近1月均价:</span>
+                        <span className="text-xl font-semibold text-red-500">
+                          {(trendData.reduce((sum, item) => sum + Number(item.price), 0) / trendData.length).toFixed(1)}
+                        </span>
+                        <span className="text-sm text-gray-500">元/斤</span>
+                      </div>
+                    )}
+                  </div>
+                  {loadingTrend ? (
+                    <div className="flex items-center justify-center h-80">
+                      <p className="text-gray-500">加载中...</p>
+                    </div>
+                  ) : trendData.length === 0 ? (
+                    <div className="flex items-center justify-center h-80">
+                      <p className="text-gray-500">暂无历史数据</p>
+                    </div>
+                  ) : (
+                    <div className="h-80 w-full">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={trendData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="date" />
+                          <YAxis domain={['auto', 'auto']} tickFormatter={(v) => v.toFixed(1)} />
+                          <Tooltip formatter={(value: number) => [`${Number(value).toFixed(2)} 元/斤`, '价格']} />
+                          <Line type="monotone" dataKey="price" stroke="#8884d8" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )}
+                </div>
               </>
             )}
           </Card>
@@ -336,38 +381,86 @@ export function DashboardPage() {
               <span className="text-sm text-gray-500">当前数据源均价:</span>
               <span className="text-xl font-semibold">{Number(jiangnanAvg).toFixed(1)}</span>
               <span className="text-sm text-gray-500">元/公斤</span>
+              <span className="text-xl font-semibold text-red-500 ml-4">
+                {(Number(jiangnanAvg) / 2).toFixed(1)}
+              </span>
+              <span className="text-sm text-gray-500">元/斤</span>
             </div>
           </div>
           <Card className="p-6">
             {jiangnanRecords.length === 0 ? (
               <p className="text-gray-500 text-center py-8">暂无数据</p>
             ) : (
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>产品名称</TableHead>
-                    <TableHead>产地</TableHead>
-                    <TableHead>最高价(元/公斤)</TableHead>
-                    <TableHead>最低价(元/公斤)</TableHead>
-                    <TableHead>参考价(元/公斤)</TableHead>
-                    <TableHead>规格</TableHead>
-                    <TableHead>日期</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {jiangnanRecords.map((item) => (
-                    <TableRow key={item.id}>
-                      <TableCell>{item.name}</TableCell>
-                      <TableCell>{item.origin}</TableCell>
-                      <TableCell>{Number(item.highPrice).toFixed(1)}</TableCell>
-                      <TableCell>{Number(item.lowPrice).toFixed(1)}</TableCell>
-                      <TableCell>{Number(item.refPrice).toFixed(1)}</TableCell>
-                      <TableCell>{item.spec}</TableCell>
-                      <TableCell>{item.date}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              <>
+                <div className="overflow-x-auto mb-8">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>产品名称</TableHead>
+                        <TableHead>产地</TableHead>
+                        <TableHead>最高价(元/公斤)</TableHead>
+                        <TableHead>最低价(元/公斤)</TableHead>
+                        <TableHead>参考价(元/公斤)</TableHead>
+                        <TableHead>规格</TableHead>
+                        <TableHead>日期</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {jiangnanRecords.slice(0, 1).map((item) => (
+                        <TableRow key={item.id}>
+                          <TableCell>{item.name}</TableCell>
+                          <TableCell>{item.origin}</TableCell>
+                          <TableCell>{Number(item.highPrice).toFixed(1)}</TableCell>
+                          <TableCell>{Number(item.lowPrice).toFixed(1)}</TableCell>
+                          <TableCell>{Number(item.refPrice).toFixed(1)}</TableCell>
+                          <TableCell>{item.spec}</TableCell>
+                          <TableCell>{item.date}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+                
+                <div className="border-t pt-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold">近1月价格走势图</h3>
+                    {trendType === 'jiangnan' && trendData.length > 0 && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-500">近1月均价:</span>
+                        <span className="text-xl font-semibold text-red-500">
+                          {(trendData.reduce((sum, item) => sum + Number(item.price), 0) / trendData.length).toFixed(1)}
+                        </span>
+                        <span className="text-sm text-gray-500">元/公斤</span>
+                        <span className="text-xl font-semibold text-red-500 ml-4">
+                          {((trendData.reduce((sum, item) => sum + Number(item.price), 0) / trendData.length) / 2).toFixed(1)}
+                        </span>
+                        <span className="text-sm text-gray-500">元/斤</span>
+                      </div>
+                    )}
+                  </div>
+                  {loadingTrend && trendType === 'jiangnan' ? (
+                    <div className="flex items-center justify-center h-80">
+                      <p className="text-gray-500">加载中...</p>
+                    </div>
+                  ) : trendData.length === 0 && trendType === 'jiangnan' ? (
+                    <div className="flex items-center justify-center h-80">
+                      <p className="text-gray-500">暂无历史数据</p>
+                    </div>
+                  ) : (
+                    <div className="h-80 w-full">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={trendType === 'jiangnan' ? trendData : []} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="date" />
+                          <YAxis domain={['auto', 'auto']} tickFormatter={(v) => v.toFixed(1)} />
+                          <Tooltip formatter={(value: number) => [`${Number(value).toFixed(2)} 元/公斤`, '价格']} />
+                          <Line type="monotone" dataKey="price" stroke="#82ca9d" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )}
+                </div>
+              </>
             )}
           </Card>
         </TabsContent>
@@ -377,11 +470,15 @@ export function DashboardPage() {
         <DialogContent className="max-w-3xl">
           <DialogHeader>
             <DialogTitle>
-              {trendType === 'huinong' ? `${selectedOrigin} 近7日价格走势图` : '北京新发地 近1月价格走势图'}
+              {trendType === 'huinong' 
+                ? `${selectedOrigin} 近7日价格走势图` 
+                : trendType === 'xinfadi' 
+                ? '北京新发地 近1月价格走势图' 
+                : '广州江南 近1月价格走势图'}
             </DialogTitle>
-            <DialogDescription>价格单位: {trendType === 'huinong' ? '元/斤' : '元/斤'}</DialogDescription>
+            <DialogDescription>价格单位: {trendType === 'jiangnan' ? '元/公斤' : '元/斤'}</DialogDescription>
           </DialogHeader>
-          <div className="h-80">
+          <div className="h-80 w-full">
             {loadingTrend ? (
               <div className="flex items-center justify-center h-full">
                 <p className="text-gray-500">加载中...</p>
@@ -392,12 +489,22 @@ export function DashboardPage() {
               </div>
             ) : (
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={trendData}>
+                <LineChart data={trendData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="date" />
-                  <YAxis domain={['dataMin - 0.5', 'dataMax + 0.5']} />
-                  <Tooltip formatter={(value: number) => [`${value.toFixed(2)} 元/斤`, '价格']} />
-                  <Line type="monotone" dataKey="price" stroke="#8884d8" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                  <YAxis domain={['auto', 'auto']} tickFormatter={(v) => v.toFixed(1)} />
+                  <Tooltip formatter={(value: number) => [
+                    `${Number(value).toFixed(2)} ${trendType === 'jiangnan' ? '元/公斤' : '元/斤'}`, 
+                    '价格'
+                  ]} />
+                  <Line 
+                    type="monotone" 
+                    dataKey="price" 
+                    stroke={trendType === 'jiangnan' ? '#82ca9d' : '#8884d8'} 
+                    strokeWidth={2} 
+                    dot={{ r: 4 }} 
+                    activeDot={{ r: 6 }} 
+                  />
                 </LineChart>
               </ResponsiveContainer>
             )}

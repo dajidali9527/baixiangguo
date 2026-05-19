@@ -15,3 +15,9 @@ export function fetchXinfadiTrend(days?: number) {
   if (days) params.days = days;
   return apiClient.get('/dashboard/xinfadi-trend', { params });
 }
+
+export function fetchJiangnanTrend(days?: number) {
+  const params: any = {};
+  if (days) params.days = days;
+  return apiClient.get('/dashboard/jiangnan-trend', { params });
+}

@@ -35,6 +35,10 @@ services:
       DB_PASSWORD: ${DB_PASSWORD:-root}
       DB_NAME: ${DB_NAME:-passion_fruit}
       PORT: 3001
+      OPENCLAW_STATE_DIR: /openclaw_data/openclaw-weixin
+    volumes:
+      - openclaw_data:/openclaw_data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     depends_on:
       mysql:
         condition: service_healthy
@@ -50,11 +54,35 @@ services:
     container_name: passion-fruit-client
     restart: unless-stopped
     ports:
-      - "${CLIENT_PORT:-80}:80"
+      - "3000:80"
     environment:
       TZ: Asia/Shanghai
     depends_on:
       - server
 
+  openclaw:
+    # 官方镜像 ghcr.io/openclaw/openclaw:latest
+    # 国内加速备选：ghcr.nju.edu.cn/openclaw/openclaw:latest（南京大学镜像站）
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: passion-fruit-openclaw
+    restart: unless-stopped
+    ports:
+      - "${OPENCLAW_PORT:-18789}:18789"
+    environment:
+      TZ: Asia/Shanghai
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      DB_NAME: ${DB_NAME:-passion_fruit}
+    volumes:
+      - openclaw_data:/home/node/.openclaw
+      - ./server/src/config:/home/node/.openclaw/db-scripts:ro
+      - ./.openclaw/skills:/home/node/.openclaw/skills:ro
+      - ./.openclaw/scripts/query-db.js:/usr/local/bin/query-db.js:ro
+    depends_on:
+      - mysql
+
 volumes:
   mysql_data:
+  openclaw_data:

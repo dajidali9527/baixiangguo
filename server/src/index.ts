@@ -5,6 +5,7 @@ import { dashboardRouter } from './routes/dashboard.js';
 import { historyRouter } from './routes/history.js';
 import { configRouter } from './routes/config.js';
 import { crawlerRouter } from './routes/crawler.js';
+import { openclawRouter } from './routes/openclaw.js';
 import { initTables } from './config/init-db.js';
 import { runInitialCrawl, startScheduler } from './services/schedulerService.js';
 
@@ -18,6 +19,7 @@ app.use('/api/dashboard', dashboardRouter);
 app.use('/api/history', historyRouter);
 app.use('/api/config', configRouter);
 app.use('/api/crawler', crawlerRouter);
+app.use('/api/openclaw', openclawRouter);
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

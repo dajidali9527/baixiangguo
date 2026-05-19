@@ -14,9 +14,9 @@ export async function getHistoryData(req: Request, res: Response) {
     const params: (string | number)[] = [source];
 
     if (keyword) {
-      whereClause += ` AND (province LIKE ? OR region LIKE ? OR product LIKE ? OR origin LIKE ? OR price_type LIKE ? OR spec LIKE ?)`;
+      whereClause += ` AND (province LIKE ? OR region LIKE ? OR product LIKE ? OR name LIKE ? OR origin LIKE ? OR price_type LIKE ? OR spec LIKE ?)`;
       const kw = `%${keyword}%`;
-      params.push(kw, kw, kw, kw, kw, kw);
+      params.push(kw, kw, kw, kw, kw, kw, kw);
     }
     if (date) {
       whereClause += ` AND record_date = ?`;
@@ -30,7 +30,7 @@ export async function getHistoryData(req: Request, res: Response) {
     const total = (countResult as Record<string, number>[])[0].total;
 
     const [records] = await pool.query(
-      `SELECT id, province, region, product, origin, high_price as highPrice, low_price as lowPrice,
+      `SELECT id, name, province, region, product, origin, high_price as highPrice, low_price as lowPrice,
               avg_price as avgPrice, avg7_price as avg7Price, rise_fall as riseFall, trend_chart as trendChart,
               price_type as priceType, spec, unit, category1, category2,
               remark, DATE_FORMAT(record_date, '%Y-%m-%d') as date

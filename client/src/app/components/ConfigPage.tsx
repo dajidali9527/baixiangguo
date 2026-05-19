@@ -5,9 +5,9 @@ import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { CheckCircle2, XCircle, Clock, Play, RefreshCw } from 'lucide-react';
+import { CheckCircle2, XCircle, Clock, Play, RefreshCw, X } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { fetchTaskStatus, fetchExecutionLogs, manualCrawl } from '../../api/config';
 import type { DataSource, TaskLog } from '../../api/types';
 
@@ -59,6 +59,22 @@ const dataSourceConfig3: DataSource = {
   executionType: ''
 };
 
+const dataSourceConfig4: DataSource = {
+  id: 4,
+  type: '大型批发市场',
+  platform: '广州江南果菜批发市场',
+  name: '广州江南百香果',
+  url: 'https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice',
+  scope: '最新价格与最近1月的均价与走势',
+  schedule: '系统启动后；手动点击立即执行；每日晚上22:00',
+  enabled: true,
+  status: 'success',
+  lastRun: '',
+  duration: '',
+  records: 0,
+  executionType: ''
+};
+
 const initialLogs: TaskLog[] = [
   { time: '00:00:00', level: 'info', message: '等待系统启动...' },
 ];
@@ -67,22 +83,31 @@ const defaultTasks: DataSource[] = [
   { id: 1, type: '自媒体', platform: '', name: '百香果信息平台', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
   { id: 2, type: '电商平台', platform: '', name: '惠农网黄金百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
   { id: 3, type: '大型批发市场', platform: '', name: '北京新发地百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
+  { id: 4, type: '大型批发市场', platform: '', name: '广州江南百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
 ];
 
 const configuredSources = [
   { id: 1, name: '百香果信息平台' },
   { id: 2, name: '惠农网黄金百香果' },
-  { id: 3, name: '北京新发地百香果' }
+  { id: 3, name: '北京新发地百香果' },
+  { id: 4, name: '广州江南百香果' }
 ];
 
 export function ConfigPage() {
   const [taskList, setTaskList] = useState<DataSource[]>(defaultTasks);
   const [logs, setLogs] = useState<TaskLog[]>(initialLogs);
   const [isCrawling, setIsCrawling] = useState(false);
+  const [notification, setNotification] = useState<{ type: 'success' | 'error' | 'info'; message: string } | null>(null);
+  const crawlTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const hasRunningTask = taskList.some(t => t.status === 'running');
   const isBusy = isCrawling || hasRunningTask;
 
-  const loadData = async () => {
+  const clearNotification = useCallback(() => {
+    setNotification(null);
+  }, []);
+
+  const loadData = useCallback(async () => {
     try {
       const [sourcesRes, logsRes] = await Promise.all([
         fetchTaskStatus(),
@@ -102,11 +127,16 @@ export function ConfigPage() {
     } catch (error) {
       console.error('加载数据失败:', error);
     }
-  };
+  }, []);
 
   useEffect(() => {
     loadData();
-  }, []);
+    return () => {
+      if (crawlTimerRef.current) {
+        clearTimeout(crawlTimerRef.current);
+      }
+    };
+  }, [loadData]);
 
   const handleCrawlSingle = async (sourceId: number, sourceName: string) => {
     if (isBusy) return;
@@ -114,15 +144,19 @@ export function ConfigPage() {
     try {
       const res: any = await manualCrawl(sourceId);
       if (res.code === 200) {
-        alert(`${sourceName} ${res.message}`);
+        setNotification({ type: 'success', message: `${sourceName} ${res.message}` });
         await loadData();
       } else {
-        alert(`${sourceName} ${res.message || '执行失败'}`);
+        setNotification({ type: 'error', message: `${sourceName} ${res.message || '执行失败'}` });
       }
     } catch (error: any) {
-      alert(`${sourceName} ${error.response?.data?.message || '执行失败，请稍后重试'}`);
+      setNotification({ type: 'error', message: `${sourceName} ${error.response?.data?.message || '执行失败，请稍后重试'}` });
     } finally {
       setIsCrawling(false);
+      if (crawlTimerRef.current) {
+        clearTimeout(crawlTimerRef.current);
+      }
+      crawlTimerRef.current = setTimeout(() => setNotification(null), 5000);
     }
   };
 
@@ -145,10 +179,16 @@ export function ConfigPage() {
           failCount++;
         }
       }
-      let msg = `全部执行完成：成功 ${successCount} 个，失败 ${failCount} 个`;
-      alert(msg);
+      const msg = `全部执行完成：成功 ${successCount} 个，失败 ${failCount} 个`;
+      setNotification({ type: successCount > 0 ? 'success' : 'error', message: msg });
+    } catch {
+      setNotification({ type: 'error', message: '采集任务执行异常' });
     } finally {
       setIsCrawling(false);
+      if (crawlTimerRef.current) {
+        clearTimeout(crawlTimerRef.current);
+      }
+      crawlTimerRef.current = setTimeout(() => setNotification(null), 5000);
     }
   };
 
@@ -170,6 +210,24 @@ export function ConfigPage() {
           )}
         </Button>
       </div>
+
+      {notification && (
+        <div className={`mb-4 p-3 rounded-md flex items-center justify-between text-sm ${
+          notification.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' :
+          notification.type === 'error' ? 'bg-red-50 text-red-800 border border-red-200' :
+          'bg-blue-50 text-blue-800 border border-blue-200'
+        }`}>
+          <div className="flex items-center gap-2">
+            {notification.type === 'success' && <CheckCircle2 className="w-4 h-4" />}
+            {notification.type === 'error' && <XCircle className="w-4 h-4" />}
+            {notification.type === 'info' && <Clock className="w-4 h-4" />}
+            <span>{notification.message}</span>
+          </div>
+          <button onClick={clearNotification} className="hover:opacity-70">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       <Tabs defaultValue="sources" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
@@ -269,6 +327,37 @@ export function ConfigPage() {
               <div>
                 <Label className="text-sm">采集数据周期</Label>
                 <Input value={dataSourceConfig3.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 mt-6">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <h3 className="text-lg">{dataSourceConfig4.name}</h3>
+                  <Badge variant="outline">{dataSourceConfig4.type}</Badge>
+                </div>
+                <p className="text-sm text-gray-500">{dataSourceConfig4.platform}</p>
+              </div>
+              <Button onClick={() => handleCrawlSingle(dataSourceConfig4.id, dataSourceConfig4.name)} disabled={isBusy}>
+                <Play className="w-4 h-4 mr-2" />
+                立即执行采集
+              </Button>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <Label className="text-sm">数据源URL</Label>
+                <Input value={dataSourceConfig4.url} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
+              </div>
+              <div>
+                <Label className="text-sm">采集数据范围</Label>
+                <Textarea value={dataSourceConfig4.scope} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
+              </div>
+              <div>
+                <Label className="text-sm">采集数据周期</Label>
+                <Input value={dataSourceConfig4.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
               </div>
             </div>
           </Card>
