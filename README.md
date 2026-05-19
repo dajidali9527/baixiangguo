@@ -870,3 +870,138 @@ ghcr.nju.edu.cn/openclaw/openclaw:latest
 
 - React + Vite 前端脚手架
 - 基础百香果价格展示功能
+
+## 常见问题与故障排查
+
+### Docker 镜像拉取失败
+
+#### 问题 1："unable to fetch descriptor which reports content size of zero"
+
+**错误信息：**
+```
+ERROR: unable to fetch descriptor (sha256:...) which reports content size of zero: invalid argument
+```
+
+**解决方案：**
+
+##### 方案一：清理 Docker 缓存（推荐首先尝试）
+
+```bash
+# 1. 清理 Docker 构建缓存
+docker builder prune -af
+
+# 2. 清理未使用的镜像
+docker image prune -af
+
+# 3. 如果还不行，清理所有缓存（谨慎使用）
+docker system prune -af
+```
+
+清理完成后，重新运行：
+```bash
+docker-compose up -d --build
+```
+
+##### 方案二：更换 OpenClaw 镜像源
+
+在 [docker-compose.yml](file:///e:/AI2026/11baixiangguo2/docker-compose.yml#L63-L70) 中尝试不同的镜像源：
+
+```yaml
+# 尝试 1：南京大学镜像（当前）
+image: ghcr.nju.edu.cn/openclaw/openclaw:latest
+
+# 尝试 2：同济大学镜像
+image: ghcrproxy.tongjionline.org/openclaw/openclaw:latest
+
+# 尝试 3：1Panel 镜像
+image: docker.1panel.live/ghcr/openclaw/openclaw:latest
+
+# 尝试 4：官方源（可能较慢）
+image: ghcr.io/openclaw/openclaw:latest
+```
+
+更换后重新运行：
+```bash
+docker-compose up -d --build
+```
+
+##### 方案三：手动拉取镜像
+
+```bash
+# 先尝试手动拉取镜像
+docker pull ghcr.nju.edu.cn/openclaw/openclaw:latest
+
+# 如果成功，再启动
+docker-compose up -d --build
+```
+
+##### 方案四：重启 Docker Desktop
+
+1. 完全退出 Docker Desktop
+2. 重新启动 Docker Desktop
+3. 再次运行 `docker-compose up -d --build`
+
+### MySQL 相关问题
+
+#### 问题：MySQL 容器启动失败或无法连接
+
+**解决方案：**
+
+```bash
+# 查看 MySQL 容器日志
+docker logs passion-fruit-mysql
+
+# 如果数据卷损坏，可以尝试（注意：这会删除所有数据！）
+# docker-compose down -v
+# docker-compose up -d --build
+```
+
+#### 问题：端口被占用
+
+如果 3307、3000、3001 或 18789 端口被占用，可以修改 [docker-compose.yml](file:///e:/AI2026/11baixiangguo2/docker-compose.yml) 中的端口映射：
+
+```yaml
+ports:
+  - "3308:3306"  # 将左侧改为其他端口
+```
+
+### 容器无法启动
+
+**诊断步骤：**
+
+```bash
+# 1. 查看所有容器状态
+docker-compose ps
+
+# 2. 查看具体容器的日志
+docker logs passion-fruit-server
+docker logs passion-fruit-client
+docker logs passion-fruit-openclaw
+
+# 3. 尝试逐个启动服务
+docker-compose up -d mysql
+# 等待 MySQL 启动后
+docker-compose up -d server
+docker-compose up -d client
+docker-compose up -d openclaw
+```
+
+### 网络问题
+
+如果容器之间无法通信：
+
+```bash
+# 重启 Docker 网络
+docker-compose down
+docker network ls
+docker network rm 11baixiangguo2_default  # 如果网络存在
+docker-compose up -d --build
+```
+
+### 获取帮助
+
+如果以上方案都无法解决问题：
+1. 保存完整的错误日志
+2. 记录 Docker 版本：`docker --version`
+3. 记录系统环境（Windows/Linux，版本号）
+4. 查阅项目 Issues 或寻求技术支持
