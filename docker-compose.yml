@@ -63,7 +63,7 @@ services:
   openclaw:
     # 官方镜像 ghcr.io/openclaw/openclaw:latest
     # 国内加速备选：ghcr.nju.edu.cn/openclaw/openclaw:latest（南京大学镜像站）
-    image: ghcr.io/openclaw/openclaw:latest
+    image: ghcr.nju.edu.cn/openclaw/openclaw:latest
     container_name: passion-fruit-openclaw
     restart: unless-stopped
     ports:
