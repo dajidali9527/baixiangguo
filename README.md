@@ -715,7 +715,18 @@ docker exec -it passion-fruit-openclaw openclaw channels login --channel opencla
 
 按终端提示用手机微信扫描二维码完成配对。
 
-#### 3. 访问 OpenClaw
+#### 3. 配置网络绑定（首次部署必须）
+
+OpenClaw 默认绑定 `loopback`（127.0.0.1），Docker 端口映射后宿主机无法访问。**首次部署必须改为 `lan`**：
+
+```bash
+docker exec passion-fruit-openclaw openclaw config set gateway.bind lan
+docker restart passion-fruit-openclaw
+```
+
+> `gateway.bind` 可选值：`auto` | `lan` | `loopback` | `custom` | `tailnet`。Docker 部署必须用 `lan`。
+
+#### 4. 访问 OpenClaw
 
 - 方式一：前端侧边栏点击「数据通知与配置」→ 新窗口打开
 - 方式二：直接访问 http://localhost:18789
