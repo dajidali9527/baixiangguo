@@ -769,7 +769,15 @@ ghcr.nju.edu.cn/openclaw/openclaw:latest
 
 ## 版本历史
 
-### V7.2 — 微信绑定自动化（当前）
+### V7.3 — 修复 OpenClaw Docker 网络绑定（当前）
+
+- **修复 OpenClaw 无法从宿主机访问**：`gateway.bind` 默认为 `loopback`（127.0.0.1），Docker 端口映射后宿主机无法连接
+- **解决方案**：`openclaw config set gateway.bind lan`，使 OpenClaw 监听所有网络接口
+- **修复 docker-compose.yml 被还原问题**：重新添加 `openclaw` 服务定义、`openclaw_data` 共享卷、Docker socket 挂载、`OPENCLAW_STATE_DIR` 环境变量
+- **修复 server Dockerfile**：重新添加 Docker CLI 安装（阿里云镜像加速）
+- **修复微信绑定状态检测**：支持检测 `.sync.json` 文件（OpenClaw 微信插件存储格式）
+
+### V7.2 — 微信绑定自动化
 
 - **修改「绑定微信」功能**：按钮文字从「获取绑定命令」改为「绑定微信」
 - **实现自动执行绑定**：点击按钮后，系统自动执行 `docker exec` 命令，无需用户手动操作
