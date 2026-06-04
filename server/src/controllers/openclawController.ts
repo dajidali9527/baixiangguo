@@ -19,11 +19,24 @@ function readAccountsIndex(): string[] {
 }
 
 function readAccountData(accountId: string): any | null {
+  // 尝试读取主文件
   const filePath = path.join(ACCOUNTS_DIR, `${accountId}.json`);
+  // 也检查 sync 文件
+  const syncFilePath = path.join(ACCOUNTS_DIR, `${accountId}.sync.json`);
+  
   try {
-    if (!fs.existsSync(filePath)) return null;
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    } else if (fs.existsSync(syncFilePath)) {
+      // 有sync文件说明已经连接
+      return { hasSync: true };
+    }
+    return null;
   } catch {
+    // 即使读不出内容，只要有文件就认为已绑定
+    if (fs.existsSync(filePath) || fs.existsSync(syncFilePath)) {
+      return { hasFile: true };
+    }
     return null;
   }
 }
@@ -32,17 +45,45 @@ export async function getWeixinStatus(_req: Request, res: Response) {
   const accountIds = readAccountsIndex();
   const accounts = accountIds.map((id) => {
     const data = readAccountData(id);
+    const hasSyncFile = fs.existsSync(path.join(ACCOUNTS_DIR, `${id}.sync.json`));
     return {
       accountId: id,
-      bound: !!data?.token,
+      bound: !!data || hasSyncFile,
       userId: data?.userId || null,
       savedAt: data?.savedAt || null,
     };
   });
+  
+  // 如果 accounts.json 是空的，但有 sync 文件，说明也已绑定
+  let hasBound = accounts.some((a) => a.bound);
+  if (!hasBound) {
+    // 直接检查是否有任何 account 相关文件
+    try {
+      if (fs.existsSync(ACCOUNTS_DIR)) {
+        const files = fs.readdirSync(ACCOUNTS_DIR);
+        hasBound = files.some(f => f.endsWith('.sync.json') || f.endsWith('.json'));
+        
+        // 如果找到文件但没在 accounts 列表里，补充进去
+        if (hasBound && accounts.length === 0) {
+          const syncFiles = files.filter(f => f.endsWith('.sync.json'));
+          if (syncFiles.length > 0) {
+            const accountId = syncFiles[0].replace('.sync.json', '');
+            accounts.push({
+              accountId,
+              bound: true,
+              userId: null,
+              savedAt: null,
+            });
+          }
+        }
+      }
+    } catch {}
+  }
+  
   res.json({
     code: 0,
     data: {
-      bound: accounts.some((a) => a.bound),
+      bound: hasBound,
       accounts,
       loginCommand: 'docker exec -it passion-fruit-openclaw openclaw channels login --channel openclaw-weixin',
     },
@@ -133,6 +174,16 @@ export async function unbindWeixin(_req: Request, res: Response) {
     });
     unbound.push(id);
   }
+  // 即使 accounts.json 是空的，也检查并删除目录下的所有文件
+  try {
+    if (fs.existsSync(ACCOUNTS_DIR)) {
+      const files = fs.readdirSync(ACCOUNTS_DIR);
+      files.forEach(file => {
+        const filePath = path.join(ACCOUNTS_DIR, file);
+        try { fs.unlinkSync(filePath); } catch {}
+      });
+    }
+  } catch {}
   try {
     if (fs.existsSync(ACCOUNTS_INDEX)) {
       fs.writeFileSync(ACCOUNTS_INDEX, '[]', 'utf-8');
@@ -140,6 +191,6 @@ export async function unbindWeixin(_req: Request, res: Response) {
   } catch {}
   res.json({
     code: 0,
-    data: { unbound: unbound.length, message: `已解绑 ${unbound.length} 个微信账号，重启OpenClaw后生效` },
+    data: { unbound: unbound.length, message: `已解绑微信账号，重启OpenClaw后生效` },
   });
 }

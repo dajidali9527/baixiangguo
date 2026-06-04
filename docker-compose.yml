@@ -38,11 +38,12 @@ services:
       OPENCLAW_STATE_DIR: /openclaw_data/openclaw-weixin
     volumes:
       - openclaw_data:/openclaw_data
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       mysql:
         condition: service_healthy
-    # Playwright 在容器中需要的权限
+      openclaw:
+        condition: service_started
     shm_size: '2gb'
     cap_add:
       - SYS_ADMIN
@@ -61,31 +62,22 @@ services:
       - server
 
   openclaw:
-    # 官方镜像 ghcr.io/openclaw/openclaw:latest
-    # 国内加速备选：
-    # 1. ghcr.nju.edu.cn/openclaw/openclaw:latest（南京大学镜像站）
-    # 2. ghcrproxy.tongjionline.org/openclaw/openclaw:latest（同济大学镜像站）
-    # 3. docker.1panel.live/ghcr/openclaw/openclaw:latest（1Panel 镜像站）
-    # 如果某个镜像拉取失败，请尝试其他镜像源
     image: ghcr.nju.edu.cn/openclaw/openclaw:latest
     container_name: passion-fruit-openclaw
     restart: unless-stopped
-    ports:
-      - "${OPENCLAW_PORT:-18789}:18789"
     environment:
       TZ: Asia/Shanghai
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_USER: root
-      DB_PASSWORD: ${DB_PASSWORD:-root}
-      DB_NAME: ${DB_NAME:-passion_fruit}
+    ports:
+      - "18789:18789"
     volumes:
       - openclaw_data:/home/node/.openclaw
-      - ./server/src/config:/home/node/.openclaw/db-scripts:ro
       - ./.openclaw/skills:/home/node/.openclaw/skills:ro
       - ./.openclaw/scripts/query-db.js:/usr/local/bin/query-db.js:ro
-    depends_on:
-      - mysql
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
 
 volumes:
   mysql_data:

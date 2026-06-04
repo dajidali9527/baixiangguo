@@ -292,14 +292,13 @@ npm run dev
 │   │   │   └── types.ts                 # API 公共类型定义
 │   │   ├── app/
 │   │   │   ├── components/
-│   │   │   │   ├── ui/                  # shadcn/ui 10个组件
+│   │   │   │   ├── ui/                  # shadcn/ui 9个组件
 │   │   │   │   │   ├── badge.tsx        # 徽章
 │   │   │   │   │   ├── button.tsx       # 按钮
 │   │   │   │   │   ├── card.tsx         # 卡片
 │   │   │   │   │   ├── dialog.tsx       # 对话框（走势图弹窗）
 │   │   │   │   │   ├── input.tsx        # 输入框
 │   │   │   │   │   ├── label.tsx        # 标签
-│   │   │   │   │   ├── switch.tsx       # 开关
 │   │   │   │   │   ├── table.tsx        # 表格
 │   │   │   │   │   ├── tabs.tsx         # 标签页
 │   │   │   │   │   ├── textarea.tsx     # 文本域
@@ -345,8 +344,7 @@ npm run dev
 │   ├── tsconfig.json
 │   └── package.json
 │
-├── docker-compose.yml                   # 三容器编排（MySQL + Server + Client）
-├── pnpm-workspace.yaml                  # pnpm monorepo 声明
+├── docker-compose.yml                   # 三容器编排（MySQL + Server + Client + OpenClaw）
 ├── .gitignore
 └── README.md
 ```
@@ -640,7 +638,6 @@ registry=https://registry.npmmirror.com
 - 前端样式使用 **Tailwind CSS 3** + CSS Variables 主题（shadcn/ui 风格），遵循原子化 CSS 原则
 - 后端使用 **ESM**（`"type": "module"`）
 - 数据库字符集统一 **utf8mb4**，时区 **+08:00**（Asia/Shanghai）
-- 项目根目录有 `pnpm-workspace.yaml`（声明 monorepo 结构），但日常开发使用 npm 命令
 - Docker 部署时 MySQL 数据持久化在 `mysql_data` volume 中
 - 爬虫使用 **纯 axios HTTP 请求**，无需浏览器
 
@@ -826,6 +823,9 @@ ghcr.nju.edu.cn/openclaw/openclaw:latest
 - **趋势图**：Dashboard 新增"查看近1月走势"按钮 → Dialog 弹窗 → Recharts 折线图
 - **API**：新增 `/api/dashboard/xinfadi-trend` 接口
 - **定时调度**：每日 22:00 自动采集
+- **惠农网爬虫实现**：axios + Cheerio 替代 Playwright 占位函数，列表页解析（时间/产品/产地/价格），按报价日期去重，支持重新执行，定时每日 22:00
+- **爬虫模块化重构**：将 1065 行单文件拆分为 `crawlers/{base,bxx,huinong,xinfadi,jiangnan}.ts` + 索引，每数据源独立互不影响
+- **代码保护**：新增 `.trae/rules/project_rules.md` 项目规则 + `tools/verify-crawlers.ts` 完整性测试 + `npm run verify`
 
 ### V3.0 — 惠农网前端与行情计算增强
 

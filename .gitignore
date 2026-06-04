@@ -86,15 +86,10 @@ data/
 server/result.json
 server/huinong-result.json
 server/*.png
-server/*-page.html
-server/*-final.html
-server/*-direct.html
-server/*-full.html
-server/*-intermediate.html
-server/article.html
-server/search-*.html
-server/debug-*.html
-server/huinong-*.html
+server/*.html
+
+# 备份数据
+backup_openclaw_data/
 
 # OpenClaw 配置（含敏感信息，严禁提交）
 .openclaw/openclaw.json
