@@ -726,10 +726,31 @@ docker restart passion-fruit-openclaw
 
 > `gateway.bind` 可选值：`auto` | `lan` | `loopback` | `custom` | `tailnet`。Docker 部署必须用 `lan`。
 
-#### 4. 访问 OpenClaw
+#### 4. 获取网关令牌并访问 OpenClaw
 
-- 方式一：前端侧边栏点击「数据通知与配置」→ 新窗口打开
-- 方式二：直接访问 http://localhost:18789
+首次部署时，entrypoint.sh 会自动生成随机令牌，可在容器日志中查看：
+
+```bash
+docker logs passion-fruit-openclaw | findstr "认证令牌"
+```
+
+输出示例：
+```
+=============================================
+[init] OpenClaw 认证令牌: cd56e3b0e18fa180ac8130cf6ec193266dcf1a842ebc7e16
+[init] 请保存此令牌用于登录 Web UI
+=============================================
+```
+
+如果需要查看已保存的令牌：
+
+```bash
+docker exec passion-fruit-openclaw cat /home/node/.openclaw/openclaw.json | findstr "token"
+```
+
+访问方式：
+- 方式一：前端侧边栏点击「数据通知与配置」→ 点击「打开 OpenClaw」按钮
+- 方式二：浏览器直接访问 http://localhost:18789，输入令牌后点击 Connect
 
 ### 访问项目数据库
 

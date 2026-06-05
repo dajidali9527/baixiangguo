@@ -95,3 +95,7 @@ backup_openclaw_data/
 .openclaw/openclaw.json
 .openclaw/secrets/
 .openclaw/storage/
+
+# Docker 镜像文件（大文件，不应提交）
+*.tar
+*.tar.gz

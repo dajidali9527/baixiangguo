@@ -1,7 +1,16 @@
 #!/usr/bin/env node
-process.env.NODE_PATH = '/usr/local/lib/node_modules';
-require('module').Module._initPaths();
-const mysql = require('mysql2/promise');
+// 尝试多个可能的 mysql2 路径
+let mysql;
+const paths = [
+  '/usr/local/lib/node_modules/mysql2/promise',
+  '/usr/lib/node_modules/mysql2/promise',
+  '/opt/node_modules/mysql2/promise',
+  'mysql2/promise'
+];
+for (const p of paths) {
+  try { mysql = require(p); break; } catch(e) { continue; }
+}
+if (!mysql) { console.error('Error: Cannot find module mysql2/promise. Tried:', paths.join(', ')); process.exit(1); }
 const sql = process.argv[2];
 if (!sql) { console.error('Usage: node query-db.js "SQL"'); process.exit(1); }
 (async () => {

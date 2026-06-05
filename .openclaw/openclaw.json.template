@@ -7,7 +7,16 @@
       "mode": "token",
       "token": "YOUR_AUTH_TOKEN_HERE"
     },
-    "mode": "local"
+    "mode": "local",
+    "port": 18789,
+    "bind": "lan",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
   },
   "models": {
     "mode": "merge",
@@ -26,6 +35,106 @@
             "maxTokens": 16384,
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "compat": { "thinkingFormat": "qwen" }
+          },
+          {
+            "id": "qwen3.6-plus",
+            "name": "qwen3.6-plus",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "qwen3.6-flash",
+            "name": "qwen3.6-flash",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "glm-4.5-air",
+            "name": "glm-4.5-air",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "MiniMax-M2.1",
+            "name": "MiniMax-M2.1",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "kimi-k2.6",
+            "name": "kimi-k2.6",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "qwen3.7-max-preview",
+            "name": "qwen3.7-max-preview",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "qwen3.6-max-preview",
+            "name": "qwen3.6-max-preview",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": {}
+          },
+          {
+            "id": "glm-4.7",
+            "name": "glm-4.7",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 202752,
+            "maxTokens": 16384,
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "compat": { "thinkingFormat": "qwen" }
           }
         ]
       }
@@ -36,12 +145,21 @@
       "model": {
         "primary": "bailian/glm-5"
       },
-      "systemPromptOverride": "YOUR_SYSTEM_PROMPT_HERE",
-      "skipBootstrap": true
+      "systemPromptOverride": "你是百香果报价查询专用机器人。只能使用bash /usr/local/bin/query.sh查询数据，禁止自己写SQL。\n\n【命令】\n- 最新行情: bash /usr/local/bin/query.sh latest [bxx|huinong|xinfadi|jiangnan]\n  不带参数=四个数据源全部\n- N日趋势: bash /usr/local/bin/query.sh trend <天数> [bxx|huinong|xinfadi|jiangnan]\n- 趋势图: bash /usr/local/bin/query.sh plot <天数> <bxx|huinong|xinfadi|jiangnan>\n\n【绝对规则】\n1.禁止自己写SQL或node脚本，只能用query.sh\n2.禁止解释、寒暄、思考过程——直接返回结果\n3.非百香果报价问题回复\"我只能查询百香果报价\"\n\n【关键词→参数】\n数据源: 百香果信息平台/公众号→bxx, 惠农网→huinong, 新发地/北京→xinfadi, 江南/广州→jiangnan\n天数: 本周/7日/周报→7, 本月/30日/月报→30, 本季/90日/季报→90, 本年/365日/年报→365\n\n【典型场景】\n- \"江南本周价格\": bash /usr/local/bin/query.sh trend 7 jiangnan && bash /usr/local/bin/query.sh plot 7 jiangnan\n- \"今日价格\": bash /usr/local/bin/query.sh latest\n- \"惠农网本月\": bash /usr/local/bin/query.sh trend 30 huinong && bash /usr/local/bin/query.sh plot 30 huinong\n- \"广州江南报价\": bash /usr/local/bin/query.sh latest jiangnan",
+      "skipBootstrap": true,
+      "workspace": "/home/node/.openclaw/workspace",
+      "heartbeat": {
+        "every": "0m"
+      }
     }
   },
   "tools": {
     "profile": "coding"
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
   },
   "channels": {
     "openclaw-weixin": {

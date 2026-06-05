@@ -20,6 +20,7 @@ services:
       retries: 5
 
   server:
+    image: 11baixiangguo2-server:latest
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -49,6 +50,7 @@ services:
       - SYS_ADMIN
 
   client:
+    image: 11baixiangguo2-client:latest
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -63,16 +65,23 @@ services:
 
   openclaw:
     image: ghcr.nju.edu.cn/openclaw/openclaw:latest
+    build:
+      context: ./.openclaw
+      dockerfile: Dockerfile
     container_name: passion-fruit-openclaw
     restart: unless-stopped
     environment:
       TZ: Asia/Shanghai
+      BAILIAN_API_KEY: ${BAILIAN_API_KEY:-sk-3dfc03f09fe0483d91ff2ad84bfe2d13}
     ports:
       - "18789:18789"
     volumes:
       - openclaw_data:/home/node/.openclaw
       - ./.openclaw/skills:/home/node/.openclaw/skills:ro
       - ./.openclaw/scripts/query-db.js:/usr/local/bin/query-db.js:ro
+      - ./.openclaw/scripts/query.sh:/usr/local/bin/query.sh:ro
+      - ./.openclaw/entrypoint.sh:/home/node/entrypoint.sh:ro
+    entrypoint: ["sh", "/home/node/entrypoint.sh"]
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
       interval: 15s
