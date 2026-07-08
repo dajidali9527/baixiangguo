@@ -301,13 +301,15 @@ export function VisitorPage() {
             loading,
           })}
         </div>
-        <div className="mt-6 text-center text-xs text-gray-400">
-          {activeMarket === 'jiangnan' ? (
-            <p>数据来源: <a href="https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">广州江南果菜批发市场</a></p>
-          ) : (
-            <p>数据来源: <a href="http://www.xinfadi.com.cn/priceDetail.html" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">北京新发地农产品批发市场</a></p>
-          )}
-          <p className="mt-1">价格仅供参考, 实际交易价格以市场为准</p>
+        <div className="mt-6 flex items-center justify-between text-xs text-gray-400">
+          <div>
+            {activeMarket === 'jiangnan' ? (
+              <p>数据来源: <a href="https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">广州江南果菜批发市场</a></p>
+            ) : (
+              <p>数据来源: <a href="http://www.xinfadi.com.cn/priceDetail.html" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">北京新发地农产品批发市场</a></p>
+            )}
+          </div>
+          <a href="/admin/login" className="px-3 py-1 bg-gray-100 text-gray-500 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors">登录</a>
         </div>
       </div>
     </div>

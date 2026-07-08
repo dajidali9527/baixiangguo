@@ -233,13 +233,13 @@ async function saveBxxData(sourceId: number, date: Date, data: BxxPriceData[]): 
     await client.query('BEGIN');
     const recordDate = formatDateForDb(date);
     await client.query(
-      'DELETE FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3',
+      'DELETE FROM pf_price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3',
       ['bxx', sourceId, recordDate]
     );
     let savedCount = 0;
     for (const item of data) {
       await client.query(
-        `INSERT INTO price_records
+        `INSERT INTO pf_price_records
          (source_type, source_id, province, region, high_price, low_price, avg_price, price_type, spec, remark, record_date)
          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
         ['bxx', sourceId, item.province, item.region, item.price, item.price, item.price, item.priceType, item.spec, item.remark, recordDate]
@@ -248,7 +248,7 @@ async function saveBxxData(sourceId: number, date: Date, data: BxxPriceData[]): 
     }
     await client.query('COMMIT');
     const verify = await client.query(
-      'SELECT COUNT(*) as cnt FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3',
+      'SELECT COUNT(*) as cnt FROM pf_price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3',
       ['bxx', sourceId, recordDate]
     );
     await logCrawl(sourceId, 'info', `保存验证: ${recordDate} 实际存入 ${verify.rows[0].cnt} 条，parseBxxData 返回 ${data.length} 条`);
@@ -267,7 +267,7 @@ export async function crawlBxx(sourceId: number = 1, executionType: string = 'ma
   let sourceName = '百香果信息平台';
   let sourceType = '自媒体';
   try {
-    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    const result = await pool.query('SELECT name, type FROM pf_data_sources WHERE id = $1', [sourceId]);
     if (result.rows.length > 0) {
       sourceName = result.rows[0].name;
       sourceType = result.rows[0].type;

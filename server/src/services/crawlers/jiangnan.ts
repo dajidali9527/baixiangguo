@@ -51,7 +51,7 @@ async function saveJiangnanData(sourceId: number, items: JiangnanApiItem[]): Pro
       const exists = await checkDataExists(sourceId, recordDate, origin, 'jiangnan');
       if (!exists) {
         await client.query(
-          `INSERT INTO price_records
+          `INSERT INTO pf_price_records
            (source_type, source_id, name, high_price, low_price, avg_price, spec, origin, record_date)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
           [
@@ -121,7 +121,7 @@ export async function crawlJiangnan(sourceId: number = 4, executionType: string 
   let sourceName = '广州江南百香果';
   let sourceType = '大型批发市场';
   try {
-    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    const result = await pool.query('SELECT name, type FROM pf_data_sources WHERE id = $1', [sourceId]);
     if (result.rows.length > 0) {
       sourceName = result.rows[0].name;
       sourceType = result.rows[0].type;

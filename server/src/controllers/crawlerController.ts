@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { crawlBxx, crawlHuinong, crawlXinfadi, crawlJiangnan } from '../services/crawlerService.js';
+import { crawlXinfadi, crawlJiangnan } from '../services/crawlerService.js';
+import pool from '../config/database.js';
 
 let isCrawling = false;
 
@@ -12,12 +13,24 @@ export async function manualCrawl(req: Request, res: Response) {
     });
   }
 
-  const { sourceId = 1 } = req.body;
+  const { sourceId = 3 } = req.body;
 
-  if (sourceId !== 1 && sourceId !== 2 && sourceId !== 3 && sourceId !== 4) {
+  // 检查数据源是否存在且已启用
+  const sourceResult = await pool.query('SELECT id, name, enabled FROM pf_data_sources WHERE id = $1', [sourceId]);
+  const source = sourceResult.rows[0];
+  
+  if (!source) {
     return res.status(400).json({
       code: 400,
-      message: '不支持的数据源，目前仅支持ID 1、2、3和4',
+      message: '数据源不存在',
+      data: null
+    });
+  }
+  
+  if (!source.enabled) {
+    return res.status(400).json({
+      code: 400,
+      message: `${source.name} 数据源已禁用`,
       data: null
     });
   }
@@ -26,14 +39,16 @@ export async function manualCrawl(req: Request, res: Response) {
 
   try {
     let result;
-    if (sourceId === 1) {
-      result = await crawlBxx(sourceId, '手动点击立即执行');
-    } else if (sourceId === 2) {
-      result = await crawlHuinong(sourceId, '手动点击立即执行');
-    } else if (sourceId === 3) {
+    if (sourceId === 3) {
       result = await crawlXinfadi(sourceId, '手动点击立即执行');
-    } else {
+    } else if (sourceId === 4) {
       result = await crawlJiangnan(sourceId, '手动点击立即执行');
+    } else {
+      return res.status(400).json({
+        code: 400,
+        message: '不支持的数据源',
+        data: null
+      });
     }
     
     res.json({

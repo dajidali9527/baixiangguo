@@ -62,7 +62,7 @@ export async function createTaskExecution(
 ): Promise<number> {
   try {
     const result = await pool.query(
-      'INSERT INTO task_executions (source_id, source_name, source_type, status, execution_type, execution_time) VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING id',
+      'INSERT INTO pf_task_executions (source_id, source_name, source_type, status, execution_type, execution_time) VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING id',
       [sourceId, sourceName, sourceType, status, executionType]
     );
     return result.rows[0]?.id || 0;
@@ -81,7 +81,7 @@ export async function updateTaskExecution(
 ): Promise<void> {
   try {
     await pool.query(
-      'UPDATE task_executions SET status = $1, duration = $2, records = $3, error_message = $4 WHERE id = $5',
+      'UPDATE pf_task_executions SET status = $1, duration = $2, records = $3, error_message = $4 WHERE id = $5',
       [status, duration, records, errorMessage || '', taskId]
     );
   } catch (err) {
@@ -98,7 +98,7 @@ export async function updateDataSourceStatus(
 ): Promise<void> {
   try {
     await pool.query(
-      'UPDATE data_sources SET last_run = NOW(), status = $1, duration = $2, records = $3, execution_type = $4 WHERE id = $5',
+      'UPDATE pf_data_sources SET last_run = NOW(), status = $1, duration = $2, records = $3, execution_type = $4 WHERE id = $5',
       [status, duration, records, executionType, sourceId]
     );
   } catch (err) {
@@ -110,7 +110,7 @@ export async function logCrawl(sourceId: number | null, level: 'info' | 'success
   try {
     const safeMessage = message.length > 5000 ? message.substring(0, 5000) + '...[truncated]' : message;
     await pool.query(
-      'INSERT INTO crawl_logs (source_id, level, message) VALUES ($1, $2, $3)',
+      'INSERT INTO pf_crawl_logs (source_id, level, message) VALUES ($1, $2, $3)',
       [sourceId, level, safeMessage]
     );
   } catch (err) {
@@ -122,13 +122,13 @@ export async function checkDataExists(sourceId: number, recordDate: string, cate
   try {
     if (sourceType === 'jiangnan') {
       const result = await pool.query(
-        'SELECT id FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND origin = $4 LIMIT 1',
+        'SELECT id FROM pf_price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND origin = $4 LIMIT 1',
         [sourceType, sourceId, recordDate, category2]
       );
       return result.rows.length > 0;
     } else {
       const result = await pool.query(
-        'SELECT id FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND category2 = $4 LIMIT 1',
+        'SELECT id FROM pf_price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND category2 = $4 LIMIT 1',
         [sourceType, sourceId, recordDate, category2]
       );
       return result.rows.length > 0;
@@ -142,7 +142,7 @@ export async function checkDataExists(sourceId: number, recordDate: string, cate
 export async function getLatestDateFromDb(sourceId: number, sourceType: string = 'bxx'): Promise<Date> {
   try {
     const result = await pool.query(
-      'SELECT MAX(record_date) as last_date FROM price_records WHERE source_type = $1 AND source_id = $2',
+      'SELECT MAX(record_date) as last_date FROM pf_price_records WHERE source_type = $1 AND source_id = $2',
       [sourceType, sourceId]
     );
     const lastDate = result.rows[0]?.last_date;

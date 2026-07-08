@@ -6,7 +6,7 @@ async function getHuinongRecent7DaysForOrigin(origin: string) {
   try {
     const result = await pool.query(
       `SELECT avg_price as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records
+       FROM pf_price_records
        WHERE source_type = 'huinong' AND origin = $1
        ORDER BY record_date DESC
        LIMIT 7`,
@@ -36,7 +36,7 @@ async function calculateRiseFall(origin: string, currentDate: string, currentPri
   try {
     const result = await pool.query(
       `SELECT avg_price as price
-       FROM price_records
+       FROM pf_price_records
        WHERE source_type = 'huinong' AND origin = $1 AND record_date < $2
        ORDER BY record_date DESC
        LIMIT 1`,
@@ -67,8 +67,8 @@ export async function getDashboardData(req: Request, res: Response) {
       `SELECT id, province, region, high_price as "highPrice", low_price as "lowPrice",
               avg_price as "avgPrice", price_type as "priceType", spec, remark,
               TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records WHERE source_type = 'bxx'
-       AND record_date = (SELECT MAX(record_date) FROM price_records WHERE source_type = 'bxx')
+       FROM pf_price_records WHERE source_type = 'bxx'
+       AND record_date = (SELECT MAX(record_date) FROM pf_price_records WHERE source_type = 'bxx')
        ORDER BY id DESC`
     );
     const bxxRecords = bxxResult.rows;
@@ -76,7 +76,7 @@ export async function getDashboardData(req: Request, res: Response) {
     // 惠农网数据：获取基础数据，然后补充本地计算的近7日统计和升/降
     const huinongBaseResult = await pool.query(
       `SELECT id, TO_CHAR(record_date, 'YYYY-MM-DD') as date, product, origin, avg_price as "avgPrice"
-       FROM price_records WHERE source_type = 'huinong' ORDER BY record_date DESC, id DESC LIMIT 50`
+       FROM pf_price_records WHERE source_type = 'huinong' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
     const huinongBaseRecords = huinongBaseResult.rows as Array<{ origin: string; date: string; avgPrice: number; [key: string]: unknown }>;
 
@@ -93,14 +93,14 @@ export async function getDashboardData(req: Request, res: Response) {
     const xinfadiResult = await pool.query(
       `SELECT id, category1, category2, name, low_price as "lowPrice", avg_price as "avgPrice",
               high_price as "highPrice", spec, origin, unit, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records WHERE source_type = 'xinfadi' ORDER BY record_date DESC, id DESC LIMIT 50`
+       FROM pf_price_records WHERE source_type = 'xinfadi' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
     const xinfadiRecords = xinfadiResult.rows;
 
     const jiangnanResult = await pool.query(
       `SELECT id, name, origin, high_price as "highPrice", low_price as "lowPrice",
               avg_price as "refPrice", spec, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records WHERE source_type = 'jiangnan' ORDER BY record_date DESC, id DESC LIMIT 50`
+       FROM pf_price_records WHERE source_type = 'jiangnan' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
     const jiangnanRecords = jiangnanResult.rows;
 
@@ -132,7 +132,7 @@ export async function getHuinongTrendChart(req: Request, res: Response) {
     const limit = Number(days) || 7;
     const result = await pool.query(
       `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records
+       FROM pf_price_records
        WHERE source_type = 'huinong' AND origin = $1
        ORDER BY record_date DESC
        LIMIT $2`,
@@ -158,7 +158,7 @@ export async function getXinfadiTrendChart(req: Request, res: Response) {
     const limit = Number(days) || 30;
     const result = await pool.query(
       `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records
+       FROM pf_price_records
        WHERE source_type = 'xinfadi'
        ORDER BY record_date DESC
        LIMIT $1`,
@@ -184,7 +184,7 @@ export async function getJiangnanTrendChart(req: Request, res: Response) {
     const limit = Number(days) || 30;
     const result = await pool.query(
       `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records
+       FROM pf_price_records
        WHERE source_type = 'jiangnan'
        ORDER BY record_date DESC
        LIMIT $1`,

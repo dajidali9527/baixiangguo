@@ -61,13 +61,13 @@ async function saveHuinongData(sourceId: number, data: HuinongPriceData[], isRee
     if (isReexecute && data.length > 0) {
       const recordDate = data[0].recordDate;
       await client.query(
-        'DELETE FROM price_records WHERE source_id = $1 AND record_date = $2 AND source_type = $3',
+        'DELETE FROM pf_price_records WHERE source_id = $1 AND record_date = $2 AND source_type = $3',
         [sourceId, recordDate, 'huinong']
       );
     }
     for (const item of data) {
       await client.query(
-        `INSERT INTO price_records (source_id, source_type, product, origin, avg_price, record_date)
+        `INSERT INTO pf_price_records (source_id, source_type, product, origin, avg_price, record_date)
          VALUES ($1, 'huinong', $2, $3, $4, $5)`,
         [sourceId, item.product, item.origin, item.dailyPrice, item.recordDate]
       );
@@ -89,7 +89,7 @@ export async function crawlHuinong(sourceId: number = 2, executionType: string =
   let sourceName = '惠农网黄金百香果';
   let sourceType = '电商平台';
   try {
-    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    const result = await pool.query('SELECT name, type FROM pf_data_sources WHERE id = $1', [sourceId]);
     if (result.rows.length > 0) {
       sourceName = result.rows[0].name;
       sourceType = result.rows[0].type;

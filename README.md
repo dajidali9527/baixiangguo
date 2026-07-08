@@ -6,16 +6,17 @@
 
 自动追踪多个数据源的黄金百香果价格行情，提供访客快速查询、数据采集、历史查询、配置管理、趋势图表等功能。
 
-| 模块 | 目录        | 技术栈                                                          |
-| -- | --------- | ------------------------------------------------------------ |
+| 模块 | 目录        | 技术栈                                                         |
+| -- | --------- | ----------------------------------------------------------- |
 | 前端 | `client/` | React 18 + Vite 6 + TypeScript + Tailwind CSS 3 + shadcn/ui |
-| 后端 | `server/` | Express 4 + TypeScript + PostgreSQL 16 + axios               |
+| 后端 | `server/` | Express 4 + TypeScript + PostgreSQL 16 + axios              |
 
 ## 技术栈详情
 
 ### 前端
 
 - **框架**：React 18.3.1 + Vite 6.3.5 + TypeScript
+- **路由**：react-router-dom 7（SPA 路由模式）
 - **样式**：Tailwind CSS 3.4.17 + CSS Variables (shadcn/ui 主题)
 - **UI 组件**：Radix UI（Label、Slot、Switch、Tabs）+ 自定义 shadcn/ui 组件
 - **图表**：Recharts 2.15.2（走势图）
@@ -26,6 +27,7 @@
 
 - **框架**：Express 4.21 + TypeScript 5.6
 - **数据库**：PostgreSQL 16 + pg 8.13（连接池）
+- **认证**：JWT（jsonwebtoken）+ bcryptjs 密码哈希
 - **爬虫**：axios（HTTP 请求）+ Cheerio 1.2（HTML 解析）+ Playwright（BXX 爬虫）
 - **定时任务**：node-schedule 2.1.1
 - **开发热重载**：tsx 4.19
@@ -79,7 +81,9 @@ docker-compose up -d --build
 
 启动后访问：
 
-- 前端页面：<http://localhost:3000/>
+- 访客页面（公开）：<http://localhost:3000/>
+- 管理后台（需登录）：<http://localhost:3000/admin>
+- 登录页面：<http://localhost:3000/admin/login>
 - 后端 API：<http://localhost:3001/api/>
 
 ```bash
@@ -113,9 +117,8 @@ docker-compose down -v
 用户需要在自己的电脑上完成以下准备：
 
 1. 安装 Docker Desktop
-   - Windows: https://www.docker.com/products/docker-desktop/
+   - Windows: <https://www.docker.com/products/docker-desktop/>
    - Linux: 按照发行版的 Docker 安装指南
-
 2. 配置 Docker 国内镜像加速（同上述"配置 Docker 国内镜像加速"）
 
 #### 步骤 4：启动项目
@@ -132,13 +135,14 @@ docker-compose up -d --build
 #### 步骤 5：访问应用
 
 启动成功后，用户可以通过浏览器访问：
+
 - 前端页面：<http://localhost:3000/>
 
 ## 更新代码（不删除数据）
 
 ### 重要说明
 
-项目使用 Docker Volume 来持久化数据，**只要不使用 `docker-compose down -v` 命令，数据就不会丢失**。
+项目使用 Docker Volume 来持久化数据，**只要不使用** **`docker-compose down -v`** **命令，数据就不会丢失**。
 
 数据库数据存储在 `postgres_data` volume 中。
 
@@ -161,7 +165,7 @@ docker exec passion-fruit-postgres pg_dump -U root passion_fruit > backup_$(date
 docker-compose down
 ```
 
-注意：**不要加 `-v` 参数**，否则会删除数据卷！
+注意：**不要加** **`-v`** **参数**，否则会删除数据卷！
 
 #### 步骤 3：更新代码
 
@@ -198,6 +202,7 @@ docker volume ls
 ```
 
 项目使用的数据卷：
+
 - `11baixiangguo2_postgres_data` - PostgreSQL 数据库数据
 
 ### 备份数据卷
@@ -284,6 +289,7 @@ npm run dev
 │   │   │   ├── history.ts               # 历史数据 API（分页/搜索）
 │   │   │   └── types.ts                 # API 公共类型定义
 │   │   ├── app/
+│   │   │   ├── AuthContext.tsx           # 认证上下文（登录状态管理、JWT token）
 │   │   │   ├── components/
 │   │   │   │   ├── ui/                  # shadcn/ui 9个组件
 │   │   │   │   │   ├── badge.tsx        # 徽章
@@ -299,9 +305,10 @@ npm run dev
 │   │   │   │   ├── ConfigPage.tsx       # 数据采集配置与日志页
 │   │   │   │   ├── DashboardPage.tsx    # 最新行情数据页（含走势图弹窗）
 │   │   │   │   ├── HistoryPage.tsx      # 数据采集历史页（分页/搜索）
-│   │   │   │   ├── VisitorPage.tsx      # 访客快速查询页（移动端优先，默认首页）
-│   │   │   │   └── Sidebar.tsx          # 侧边栏导航
-│   │   │   └── App.tsx                  # 根组件（路由切换，默认 visitor）
+│   │   │   │   ├── LoginPage.tsx        # 登录页面
+│   │   │   │   ├── VisitorPage.tsx      # 访客快速查询页（移动端优先，独立路由 /）
+│   │   │   │   └── Sidebar.tsx          # 侧边栏导航（含退出登录）
+│   │   │   └── App.tsx                  # 根组件（react-router 路由模式）
 │   │   ├── styles/
 │   │   │   └── index.css                # Tailwind + CSS Variables 主题
 │   │   └── main.tsx                     # 入口
@@ -319,15 +326,19 @@ npm run dev
 │   │   │   ├── init-db.ts               # 数据库初始化 + 表迁移 + 脏数据清理
 │   │   │   └── init-data.sql            # 建表 DDL + 种子数据（PostgreSQL 语法）
 │   │   ├── controllers/
+│   │   │   ├── authController.ts       # 登录/验证 token API
 │   │   │   ├── configController.ts      # 数据源 CRUD + 任务状态 + 执行日志
 │   │   │   ├── crawlerController.ts     # 手动触发爬虫（互斥锁防重入）
 │   │   │   ├── dashboardController.ts   # 行情数据 + 走势图数据（含7日统计计算）
 │   │   │   └── historyController.ts     # 历史数据分页查询
+│   │   ├── middleware/
+│   │   │   └── auth.ts                  # JWT 认证中间件（authMiddleware + adminMiddleware）
 │   │   ├── routes/
-│   │   │   ├── config.ts                # /api/config/*
-│   │   │   ├── crawler.ts               # /api/crawler/*
-│   │   │   ├── dashboard.ts             # /api/dashboard/*
-│   │   │   └── history.ts               # /api/history/*
+│   │   │   ├── auth.ts                  # /api/auth/*
+│   │   │   ├── config.ts                # /api/config/*（需登录）
+│   │   │   ├── crawler.ts               # /api/crawler/*（需登录）
+│   │   │   ├── dashboard.ts             # /api/dashboard/*（公开）
+│   │   │   └── history.ts               # /api/history/*（需登录）
 │   │   ├── services/
 │   │   │   ├── crawlerService.ts        # 爬虫引擎 re-export（bxx + huinong + xinfadi + jiangnan）
 │   │   │   ├── schedulerService.ts      # 定时调度 + 启动自动采集
@@ -338,7 +349,7 @@ npm run dev
 │   │   │       ├── xinfadi.ts           # 北京新发地爬虫（axios API）
 │   │   │       ├── jiangnan.ts          # 广州江南爬虫（axios API）
 │   │   │       └── index.ts             # 统一导出
-│   │   └── index.ts                     # Express 入口 + 数据库重连 + 调度启动
+│   │   └── index.ts                     # Express 入口 + 认证路由 + 数据库重连 + 调度启动
 │   ├── Dockerfile                       # 多阶段构建（含 Chromium，BXX 爬虫需要）
 │   ├── tsconfig.json
 │   └── package.json
@@ -352,15 +363,15 @@ npm run dev
 
 ## 数据源说明
 
-| ID | 名称       | 类型     | 平台    | 采集方式                   | 频率            | 状态 |
-| -- | -------- | ------ | ----- | ---------------------- | ------------- | -- |
-| 1  | 百香果信息平台  | 自媒体    | 微信公众号 | Playwright 搜狗微信搜索 → 文章解析           | 每周二/四/六 22:00 | ✅ |
-| 2 | 惠农网黄金百香果 | 电商平台 | 惠农网 | axios + Cheerio 行情大厅 API             | 每日 22:00 | ✅ |
-| 3  | 北京新发地百香果 | 大型批发市场 | 北京新发地 | axios POST 请求 `getPriceData.html` | 每日 22:00 | ✅ |
-| 4  | 广州江南百香果 | 大型批发市场 | 广州江南果菜批发市场 | axios GET 请求 `/api/dailypricelist` | 每日 22:00 | ✅ |
+| ID | 名称       | 类型     | 平台         | 采集方式                               | 频率            | 状态 |
+| -- | -------- | ------ | ---------- | ---------------------------------- | ------------- | -- |
+| 1  | 百香果信息平台  | 自媒体    | 微信公众号      | Playwright 搜狗微信搜索 → 文章解析           | 每周二/四/六 22:00 | ✅  |
+| 2  | 惠农网黄金百香果 | 电商平台   | 惠农网        | axios + Cheerio 行情大厅 API           | 每日 22:00      | ✅  |
+| 3  | 北京新发地百香果 | 大型批发市场 | 北京新发地      | axios POST 请求 `getPriceData.html`  | 每日 22:00      | ✅  |
+| 4  | 广州江南百香果  | 大型批发市场 | 广州江南果菜批发市场 | axios GET 请求 `/api/dailypricelist` | 每日 22:00      | ✅  |
 
 > **说明**：
-> 
+>
 > - 百香果信息平台（源1）：Playwright 浏览器自动化，搜狗微信搜索公众号文章 → 解析表格提取价格数据
 > - 惠农网（源2）：惠农网行情大厅 API，采集黄金百香果最新价格与7日均价
 > - 北京新发地（源3）：已完整实现！
@@ -388,69 +399,94 @@ npm run dev
 > 数据库为 PostgreSQL 16，字符集 UTF-8，时区 Asia/Shanghai。
 > 主键使用 `SERIAL`（自增整数），布尔/小整数使用 `SMALLINT`，占位符风格 `$1, $2, ...`。
 
-### data_sources（数据源配置表）
+### data\_sources（数据源配置表）
 
-| 字段              | 类型                     | 说明                             |
-| --------------- | ---------------------- | ------------------------------ |
-| id              | SERIAL PK              | 主键                             |
-| type            | VARCHAR(50)            | 类型（自媒体/电商平台/大型批发市场）            |
-| platform        | VARCHAR(100)           | 平台名称                           |
-| name            | VARCHAR(100)           | 数据源名称                          |
-| url             | VARCHAR(500)           | 数据源 URL                        |
-| scope           | VARCHAR(500)           | 采集数据范围描述                       |
-| schedule        | VARCHAR(200)           | 采集周期                           |
-| enabled         | SMALLINT               | 是否启用（0/1）                      |
-| status          | VARCHAR(20)            | 最近执行状态（success/failed/running） |
-| last_run        | VARCHAR(50)            | 上次执行时间                         |
-| duration        | VARCHAR(20)            | 执行时长                           |
-| records         | INT                    | 最近采集记录数                        |
-| execution_type  | VARCHAR(100)           | 执行类型                           |
+| 字段              | 类型           | 说明                             |
+| --------------- | ------------ | ------------------------------ |
+| id              | SERIAL PK    | 主键                             |
+| type            | VARCHAR(50)  | 类型（自媒体/电商平台/大型批发市场）            |
+| platform        | VARCHAR(100) | 平台名称                           |
+| name            | VARCHAR(100) | 数据源名称                          |
+| url             | VARCHAR(500) | 数据源 URL                        |
+| scope           | VARCHAR(500) | 采集数据范围描述                       |
+| schedule        | VARCHAR(200) | 采集周期                           |
+| enabled         | SMALLINT     | 是否启用（0/1）                      |
+| status          | VARCHAR(20)  | 最近执行状态（success/failed/running） |
+| last\_run       | VARCHAR(50)  | 上次执行时间                         |
+| duration        | VARCHAR(20)  | 执行时长                           |
+| records         | INT          | 最近采集记录数                        |
+| execution\_type | VARCHAR(100) | 执行类型                           |
 
-### price_records（价格记录表）
+### price\_records（价格记录表）
 
-| 字段                         | 类型                     | 说明                                                     |
-| -------------------------- | ---------------------- | ------------------------------------------------------ |
-| id                         | SERIAL PK              | 主键                                                     |
-| source_type                | VARCHAR(20)            | 来源类型（bxx/huinong/xinfadi/jiangnan）                     |
-| source_id                  | INT FK                 | 关联数据源 ID                                               |
-| name / product             | VARCHAR(100)           | 产品名称                                                   |
-| province / region / origin | VARCHAR                | 产地信息                                                   |
-| high_price                 | DECIMAL(10,2)          | 最高价 / 近7日最高价                                           |
-| low_price                  | DECIMAL(10,2)          | 最低价 / 近7日最低价                                           |
-| avg_price                  | DECIMAL(10,2)          | 均价 / 当日最新价格                                            |
-| avg7_price                 | DECIMAL(10,2)          | 近7日均价（惠农网专用）                                           |
-| rise_fall                  | VARCHAR(10)            | 升/降（惠农网专用）                                             |
-| trend_chart                | VARCHAR(500)           | 走势图链接（惠农网专用）                                           |
-| price_type                 | VARCHAR(20)            | 价类（产地价/批发价）                                            |
-| spec / unit                | VARCHAR                | 规格 / 单位                                                |
-| category1 / category2      | VARCHAR(50)            | 一/二级分类（新发地专用）                                          |
-| record_date                | DATE                   | 报价日期                                                   |
-| **索引**                     | <br />                 | source_type, record_date, (source_id, record_date)     |
+| 字段                         | 类型            | 说明                                                     |
+| -------------------------- | ------------- | ------------------------------------------------------ |
+| id                         | SERIAL PK     | 主键                                                     |
+| source\_type               | VARCHAR(20)   | 来源类型（bxx/huinong/xinfadi/jiangnan）                     |
+| source\_id                 | INT FK        | 关联数据源 ID                                               |
+| name / product             | VARCHAR(100)  | 产品名称                                                   |
+| province / region / origin | VARCHAR       | 产地信息                                                   |
+| high\_price                | DECIMAL(10,2) | 最高价 / 近7日最高价                                           |
+| low\_price                 | DECIMAL(10,2) | 最低价 / 近7日最低价                                           |
+| avg\_price                 | DECIMAL(10,2) | 均价 / 当日最新价格                                            |
+| avg7\_price                | DECIMAL(10,2) | 近7日均价（惠农网专用）                                           |
+| rise\_fall                 | VARCHAR(10)   | 升/降（惠农网专用）                                             |
+| trend\_chart               | VARCHAR(500)  | 走势图链接（惠农网专用）                                           |
+| price\_type                | VARCHAR(20)   | 价类（产地价/批发价）                                            |
+| spec / unit                | VARCHAR       | 规格 / 单位                                                |
+| category1 / category2      | VARCHAR(50)   | 一/二级分类（新发地专用）                                          |
+| record\_date               | DATE          | 报价日期                                                   |
+| **索引**                     | <br />        | source\_type, record\_date, (source\_id, record\_date) |
 
-### crawl_logs（采集日志表）
+### crawl\_logs（采集日志表）
 
-| 字段         | 类型                     | 说明                     |
-| ---------- | ---------------------- | ---------------------- |
-| id         | SERIAL PK              | 主键                     |
-| source_id  | INT FK                 | 关联数据源 ID               |
-| level      | VARCHAR(20)            | 级别（info/success/error） |
-| message    | TEXT                   | 日志详情                   |
+| 字段         | 类型          | 说明                     |
+| ---------- | ----------- | ---------------------- |
+| id         | SERIAL PK   | 主键                     |
+| source\_id | INT FK      | 关联数据源 ID               |
+| level      | VARCHAR(20) | 级别（info/success/error） |
+| message    | TEXT        | 日志详情                   |
 
-### task_executions（任务执行记录表）
+### task\_executions（任务执行记录表）
 
-| 字段                                       | 类型                     | 说明               |
-| ---------------------------------------- | ---------------------- | ---------------- |
-| id                                       | SERIAL PK              | 主键               |
-| source_id / source_name / source_type    | VARCHAR                | 数据源信息冗余          |
-| status                                   | VARCHAR(20)            | 执行状态             |
-| execution_type                           | VARCHAR(100)           | 触发类型（手动/定时/系统启动） |
-| execution_time                           | TIMESTAMP              | 执行时间             |
-| duration / records                       | VARCHAR/INT            | 执行耗时 / 记录数       |
-| error_message                            | TEXT                   | 错误信息             |
+| 字段                                       | 类型           | 说明               |
+| ---------------------------------------- | ------------ | ---------------- |
+| id                                       | SERIAL PK    | 主键               |
+| source\_id / source\_name / source\_type | VARCHAR      | 数据源信息冗余          |
+| status                                   | VARCHAR(20)  | 执行状态             |
+| execution\_type                          | VARCHAR(100) | 触发类型（手动/定时/系统启动） |
+| execution\_time                          | TIMESTAMP    | 执行时间             |
+| duration / records                       | VARCHAR/INT  | 执行耗时 / 记录数       |
+| error\_message                           | TEXT         | 错误信息             |
+
+### users（用户表）
+
+| 字段            | 类型           | 说明                       |
+| ------------- | ------------ | ------------------------ |
+| id            | SERIAL PK    | 主键                       |
+| username      | VARCHAR(50)  | 登录名（唯一）                  |
+| password\_hash | VARCHAR(200) | 密码哈希（bcrypt）             |
+| role          | VARCHAR(20)  | 角色（admin/user）           |
+| display\_name | VARCHAR(100) | 显示名称                     |
+| last\_login   | TIMESTAMP    | 最后登录时间                   |
+
+> 默认管理员账户：用户名 `1860139182`，密码 `admin123`
 
 ***
 
 ## API 接口
+
+### 权限说明
+
+- **公开接口**（无需登录）：`/api/auth/*`、`/api/dashboard/*`、`/api/health`
+- **需登录接口**：`/api/history/*`、`/api/config/*`、`/api/crawler/*`（请求头需携带 `Authorization: Bearer <token>`）
+
+### Auth — 登录认证
+
+| 方法   | 路径               | 说明                     |
+| ---- | ---------------- | ---------------------- |
+| POST | `/api/auth/login` | 登录，body: `{ username, password }`，返回 JWT token |
+| GET  | `/api/auth/verify` | 验证 token 有效性（需 Bearer token） |
 
 ### Dashboard — 最新行情数据
 
@@ -479,14 +515,14 @@ npm run dev
 | --- | ------------------------- | ----------------------------------- |
 | GET | `/api/config/sources`     | 获取数据源列表                             |
 | PUT | `/api/config/sources/:id` | 更新数据源配置（url/scope/schedule/enabled） |
-| GET | `/api/config/tasks`       | 获取任务执行记录（来自 task_executions 表）     |
+| GET | `/api/config/tasks`       | 获取任务执行记录（来自 task\_executions 表）     |
 | GET | `/api/config/logs`        | 获取采集日志（最近 100 条）                    |
 
 ### Crawler — 数据抓取
 
-| 方法  | 路径                    | 说明              |
-| --- | --------------------- | --------------- |
-| POST | `/api/crawler/manual` | 手动触发数据抓取，body: `{ sourceId: 1|2|3|4 }`，有互斥锁防重入 |
+| <br /> | <br />                | <br />                         | 方法 | 路径 | 说明            |
+| :----- | :-------------------- | :----------------------------- | -- | -- | ------------- |
+| POST   | `/api/crawler/manual` | 手动触发数据抓取，body: \`{ sourceId: 1 | 2  | 3  | 4 }\`，有互斥锁防重入 |
 
 ### Health
 
@@ -498,12 +534,26 @@ npm run dev
 
 ## 前端页面一览
 
-| 页面      | 组件              | 状态 | 功能                                                  |
-| ------- | --------------- | -- | --------------------------------------------------- |
-| 访客快速查询  | `VisitorPage`   | ✅  | **移动端优先默认首页**，匿名访客日常查询：北京新发地/广州江南本日价格、本周价格（最高/最低/均价）、本周/本月趋势图（Recharts 折线图） |
-| 最新行情数据  | `DashboardPage` | ✅  | 4 个数据源 Tab 切换，展示最新价格表格、数据源均价、走势图弹窗（Recharts 折线图）    |
-| 数据采集配置  | `ConfigPage`    | ✅  | 3 个子 Tab：数据源配置（4 张卡片 + 一键执行全部）+ 任务状态（统计卡片 + 表格）+ 执行日志 |
-| 数据采集历史  | `HistoryPage`   | ✅  | 4 个数据源 Tab 切换，关键词搜索 + 日期筛选 + 分页（含页码组件）              |
+### 路由结构
+
+| 路径               | 页面         | 权限   | 说明                  |
+| ---------------- | ---------- | ---- | ------------------- |
+| `/`              | 访客页面       | 公开   | 匿名用户可直接访问，竖屏移动端优先   |
+| `/admin/login`   | 登录页面       | 公开   | 管理员登录入口             |
+| `/admin`         | 管理后台-访客模式  | 需登录  | 登录后带侧边栏的访客页面        |
+| `/admin/dashboard` | 最新行情数据（横屏） | 需登录  | 4 个数据源 Tab 切换       |
+| `/admin/config`  | 数据采集配置     | 需登录  | 数据源配置 + 任务状态 + 执行日志 |
+| `/admin/history` | 数据采集历史     | 需登录  | 分页/搜索历史价格数据         |
+
+### 页面详情
+
+| 页面     | 组件              | 状态 | 功能                                                                          |
+| ------ | --------------- | -- | --------------------------------------------------------------------------- |
+| 访客快速查询 | `VisitorPage`   | ✅  | **独立路由 `/`，匿名可访问**，移动端优先竖屏：北京新发地/广州江南本日价格、本周价格（最高/最低/均价）、本周/本月趋势图（Recharts 折线图） |
+| 登录页面   | `LoginPage`     | ✅  | 账号密码登录，JWT token 认证，登录后跳转管理后台                                               |
+| 最新行情数据 | `DashboardPage` | ✅  | 4 个数据源 Tab 切换，展示最新价格表格、数据源均价、走势图弹窗（Recharts 折线图）                            |
+| 数据采集配置 | `ConfigPage`    | ✅  | 3 个子 Tab：数据源配置（4 张卡片 + 一键执行全部）+ 任务状态（统计卡片 + 表格）+ 执行日志                       |
+| 数据采集历史 | `HistoryPage`   | ✅  | 4 个数据源 Tab 切换，关键词搜索 + 日期筛选 + 分页（含页码组件）                                      |
 
 ### 访客快速查询页面（VisitorPage）
 
@@ -577,6 +627,7 @@ npm run dev
 7. **入库存储**：保存到 `price_records` 表，字段映射：`category1=prodCat`, `category2=prodPcat`, `name=prodName`, `low_price=lowPrice`, `high_price=highPrice`, `avg_price=avgPrice`, `spec=specInfo`, `origin=place`, `unit=unitInfo`, `record_date=pubDate`（截取日期部分）
 
 **广州江南（源4）**：
+
 - API：`GET https://www.jnmarket.net/api/dailypricelist?pageNum=1&pageSize=500&kind=2&productName=百香果`
 - 去重：按发布日期 + 产地去重
 - 失败重试：最多 3 次，每次间隔 2-5 秒
@@ -665,25 +716,47 @@ registry=https://registry.npmmirror.com
 
 ## 功能状态一览
 
-| 功能                    | 前端         | 后端 API | 数据库        | 状态        |
-| --------------------- | ---------- | ------ | ---------- | --------- |
-| 访客快速查询（移动端优先）         | ✅          | ✅      | PostgreSQL | 完成        |
-| 最新行情数据（4 Tab）         | ✅          | ✅      | PostgreSQL | 完成        |
-| 数据采集配置（4 Tab）         | ✅          | ✅      | PostgreSQL | 完成        |
-| 数据采集历史（分页/搜索）         | ✅          | ✅      | PostgreSQL | 完成        |
-| 百香果信息平台爬虫（Playwright）| ✅          | ✅      | PostgreSQL | 完成        |
-| 惠农网爬虫（axios + Cheerio）| ✅          | ✅      | PostgreSQL | 完成        |
-| 北京新发地爬虫（axios）        | ✅          | ✅      | PostgreSQL | 完成        |
-| 广州江南数据源（axios）        | ✅          | ✅      | PostgreSQL | 完成        |
-| 价格走势图（Recharts）       | ✅          | ✅      | PostgreSQL | 完成        |
-| 定时调度（node-schedule）   | —          | ✅      | —          | 完成        |
-| 执行日志记录                | ✅          | ✅      | PostgreSQL | 完成        |
+| 功能                     | 前端 | 后端 API | 数据库        | 状态 |
+| ---------------------- | -- | ------ | ---------- | -- |
+| 登录认证（JWT + bcrypt）     | ✅  | ✅      | PostgreSQL | 完成 |
+| 访客快速查询（移动端优先，独立路由）     | ✅  | ✅      | PostgreSQL | 完成 |
+| 最新行情数据（4 Tab）          | ✅  | ✅      | PostgreSQL | 完成 |
+| 数据采集配置（4 Tab）          | ✅  | ✅      | PostgreSQL | 完成 |
+| 数据采集历史（分页/搜索）          | ✅  | ✅      | PostgreSQL | 完成 |
+| 百香果信息平台爬虫（Playwright）  | ✅  | ✅      | PostgreSQL | 完成 |
+| 惠农网爬虫（axios + Cheerio） | ✅  | ✅      | PostgreSQL | 完成 |
+| 北京新发地爬虫（axios）         | ✅  | ✅      | PostgreSQL | 完成 |
+| 广州江南数据源（axios）         | ✅  | ✅      | PostgreSQL | 完成 |
+| 价格走势图（Recharts）        | ✅  | ✅      | PostgreSQL | 完成 |
+| 定时调度（node-schedule）    | —  | ✅      | —          | 完成 |
+| 执行日志记录                 | ✅  | ✅      | PostgreSQL | 完成 |
 
 ***
 
 ## 版本历史
 
-### V8.0 — 项目精简（当前）
+### V9.0 — 登录功能与路由改造（当前）
+
+- **新增登录功能**：JWT（jsonwebtoken）+ bcryptjs 密码哈希认证
+  - 后端：`authController.ts`（登录/验证 API）、`middleware/auth.ts`（JWT 认证中间件）
+  - 前端：`LoginPage.tsx` 登录页面、`AuthContext.tsx` 认证上下文
+  - 默认管理员账户：用户名 `1860139182`，密码 `admin123`
+  - 数据库新增 `pf_users` 用户表
+- **权限分层**：
+  - 公开接口：`/api/auth/*`、`/api/dashboard/*`、`/api/health`
+  - 需登录接口：`/api/history/*`、`/api/config/*`、`/api/crawler/*`
+- **前端路由改造**（react-router-dom）：
+  - `/` — 访客页面（公开，匿名可访问，竖屏移动端优先，独立 URL）
+  - `/admin/login` — 登录页面
+  - `/admin` — 管理后台（需登录，带侧边栏）
+  - `/admin/dashboard` — 最新行情数据（横屏）
+  - `/admin/config` — 数据采集配置
+  - `/admin/history` — 数据采集历史
+- **侧边栏增强**：显示当前用户、退出登录按钮
+- **API 请求自动携带 JWT token**：axios 请求拦截器自动附加 `Authorization: Bearer <token>`
+- **401 自动跳转登录**：axios 响应拦截器检测 401 状态码，自动跳转登录页
+
+### V8.0 — 项目精简
 
 - **删除 OpenClaw**：移除 OpenClaw 相关全部代码与配置（后端 `openclawController`、路由 `openclaw.ts`、前端 `OpenclawConfigPage.tsx`、`.openclaw/` 目录、Docker 服务、`openclaw_data` 数据卷、Dockerfile 中的 Docker CLI 安装）
 - **数据库迁移**：MySQL 8.0 → PostgreSQL 16
@@ -781,6 +854,7 @@ registry=https://registry.npmmirror.com
 #### 问题 1："unable to fetch descriptor which reports content size of zero"
 
 **错误信息：**
+
 ```
 ERROR: unable to fetch descriptor (sha256:...) which reports content size of zero: invalid argument
 ```
@@ -801,6 +875,7 @@ docker system prune -af
 ```
 
 清理完成后，重新运行：
+
 ```bash
 docker-compose up -d --build
 ```
@@ -879,7 +954,9 @@ docker-compose up -d --build
 ### 获取帮助
 
 如果以上方案都无法解决问题：
+
 1. 保存完整的错误日志
 2. 记录 Docker 版本：`docker --version`
 3. 记录系统环境（Windows/Linux，版本号）
 4. 查阅项目 Issues 或寻求技术支持
+

@@ -38,7 +38,7 @@ async function saveXinfadiData(sourceId: number, items: XinfadiApiItem[]): Promi
       const exists = await checkDataExists(sourceId, recordDate, item.prodPcat, 'xinfadi');
       if (!exists) {
         await client.query(
-          `INSERT INTO price_records
+          `INSERT INTO pf_price_records
            (source_type, source_id, category1, category2, name, high_price, low_price, avg_price, spec, origin, unit, record_date)
            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
           [
@@ -110,7 +110,7 @@ export async function crawlXinfadi(sourceId: number = 3, executionType: string =
   let sourceName = '北京新发地百香果';
   let sourceType = '大型批发市场';
   try {
-    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    const result = await pool.query('SELECT name, type FROM pf_data_sources WHERE id = $1', [sourceId]);
     if (result.rows.length > 0) {
       sourceName = result.rows[0].name;
       sourceType = result.rows[0].type;

@@ -5,85 +5,21 @@ import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { CheckCircle2, XCircle, Clock, Play, RefreshCw, X } from 'lucide-react';
+import { CheckCircle2, XCircle, Clock, Play, RefreshCw, X, Power } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { fetchTaskStatus, fetchExecutionLogs, manualCrawl } from '../../api/config';
+import { fetchTaskStatus, fetchExecutionLogs, manualCrawl, fetchDataSources, updateDataSource } from '../../api/config';
 import type { DataSource, TaskLog } from '../../api/types';
 
-const dataSourceConfig: DataSource = {
-  id: 1,
-  type: '自媒体',
-  platform: '微信公众号',
-  name: '百香果信息平台',
-  url: 'https://weixin.sogou.com/',
-  scope: '最新发布的文章："百香果信息平台：黄金百香果价格行情"',
-  schedule: '系统启动后；手动点击立即执行；每周二、四、六晚上22:00',
-  enabled: true,
-  status: 'success',
-  lastRun: '',
-  duration: '',
-  records: 0,
-  executionType: ''
-};
+const initialLogs: TaskLog[] = [];
 
-const dataSourceConfig2: DataSource = {
-  id: 2,
-  type: '电商平台',
-  platform: '惠农网',
-  name: '惠农网黄金百香果',
-  url: 'https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/',
-  scope: '行情大厅-水果-百香果-黄金百香果，最新价格与7日均价',
-  schedule: '系统启动后；手动点击立即执行；每日晚上22:00',
-  enabled: true,
-  status: 'success',
-  lastRun: '',
-  duration: '',
-  records: 0,
-  executionType: ''
-};
+const defaultTasks: DataSource[] = [];
 
-const dataSourceConfig3: DataSource = {
-  id: 3,
-  type: '大型批发市场',
-  platform: '北京新发地',
-  name: '北京新发地百香果',
-  url: 'http://www.xinfadi.com.cn/priceDetail.html',
-  scope: '最新价格与最近1月的均价与走势',
-  schedule: '系统启动后；手动点击立即执行；每日晚上22:00',
-  enabled: true,
-  status: 'success',
-  lastRun: '',
-  duration: '',
-  records: 0,
-  executionType: ''
-};
-
-const dataSourceConfig4: DataSource = {
-  id: 4,
-  type: '大型批发市场',
-  platform: '广州江南果菜批发市场',
-  name: '广州江南百香果',
-  url: 'https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice',
-  scope: '最新价格与最近1月的均价与走势',
-  schedule: '系统启动后；手动点击立即执行；每日晚上22:00',
-  enabled: true,
-  status: 'success',
-  lastRun: '',
-  duration: '',
-  records: 0,
-  executionType: ''
-};
-
-const initialLogs: TaskLog[] = [
-  { time: '00:00:00', level: 'info', message: '等待系统启动...' },
-];
-
-const defaultTasks: DataSource[] = [
-  { id: 1, type: '自媒体', platform: '', name: '百香果信息平台', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
-  { id: 2, type: '电商平台', platform: '', name: '惠农网黄金百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
-  { id: 3, type: '大型批发市场', platform: '', name: '北京新发地百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
-  { id: 4, type: '大型批发市场', platform: '', name: '广州江南百香果', url: '', scope: '', schedule: '', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '等待执行', executionTime: '' },
+const defaultSources: DataSource[] = [
+  { id: 1, type: '自媒体', platform: '微信公众号', name: '百香果信息平台', url: 'https://weixin.sogou.com/', scope: '最新发布的文章："百香果信息平台：黄金百香果价格行情"', schedule: '系统启动后；手动点击立即执行；每周二、四、六晚上22:00', enabled: false, status: 'success', lastRun: '', duration: '', records: 0, executionType: '' },
+  { id: 2, type: '电商平台', platform: '惠农网', name: '惠农网黄金百香果', url: 'https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/', scope: '行情大厅-水果-百香果-黄金百香果，最新价格与7日均价', schedule: '系统启动后；手动点击立即执行；每日晚上22:00', enabled: false, status: 'success', lastRun: '', duration: '', records: 0, executionType: '' },
+  { id: 3, type: '大型批发市场', platform: '北京新发地', name: '北京新发地百香果', url: 'http://www.xinfadi.com.cn/priceDetail.html', scope: '最新价格与最近1月的均价与走势', schedule: '系统启动后；手动点击立即执行；每日晚上22:00', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '' },
+  { id: 4, type: '大型批发市场', platform: '广州江南果菜批发市场', name: '广州江南百香果', url: 'https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice', scope: '最新价格与最近1月的均价与走势', schedule: '系统启动后；手动点击立即执行；每日晚上22:00', enabled: true, status: 'success', lastRun: '', duration: '', records: 0, executionType: '' },
 ];
 
 const configuredSources = [
@@ -95,6 +31,7 @@ const configuredSources = [
 
 export function ConfigPage() {
   const [taskList, setTaskList] = useState<DataSource[]>(defaultTasks);
+  const [sourcesList, setSourcesList] = useState<DataSource[]>(defaultSources);
   const [logs, setLogs] = useState<TaskLog[]>(initialLogs);
   const [isCrawling, setIsCrawling] = useState(false);
   const [notification, setNotification] = useState<{ type: 'success' | 'error' | 'info'; message: string } | null>(null);
@@ -107,22 +44,38 @@ export function ConfigPage() {
     setNotification(null);
   }, []);
 
+  const loadSources = useCallback(async () => {
+    try {
+      const res: any = await fetchDataSources();
+      if (res.code === 200 && res.data) {
+        setSourcesList(res.data.length > 0 ? res.data : defaultSources);
+      }
+    } catch (error) {
+      console.error('加载数据源失败:', error);
+    }
+  }, []);
+
   const loadData = useCallback(async () => {
     try {
-      const [sourcesRes, logsRes] = await Promise.all([
-        fetchTaskStatus(),
-        fetchExecutionLogs()
+      const [sourcesRes, logsRes, tasksRes] = await Promise.all([
+        fetchDataSources(),
+        fetchExecutionLogs(),
+        fetchTaskStatus()
       ]);
 
       const sourcesData: any = sourcesRes as any;
       if (sourcesData.code === 200 && sourcesData.data) {
-        const list = sourcesData.data as DataSource[];
-        setTaskList(list.length > 0 ? list : defaultTasks);
+        setSourcesList(sourcesData.data.length > 0 ? sourcesData.data : defaultSources);
       }
 
       const logsData: any = logsRes as any;
       if (logsData.code === 200 && logsData.data) {
         setLogs(logsData.data.list || initialLogs);
+      }
+
+      const tasksData: any = tasksRes as any;
+      if (tasksData.code === 200 && tasksData.data) {
+        setTaskList(tasksData.data.length > 0 ? tasksData.data : defaultTasks);
       }
     } catch (error) {
       console.error('加载数据失败:', error);
@@ -137,6 +90,34 @@ export function ConfigPage() {
       }
     };
   }, [loadData]);
+
+  const handleToggleEnabled = async (sourceId: number, currentEnabled: boolean) => {
+    try {
+      const source = sourcesList.find(s => s.id === sourceId);
+      if (!source) return;
+      
+      const res: any = await updateDataSource(sourceId, {
+        url: source.url,
+        scope: source.scope,
+        schedule: source.schedule,
+        enabled: !currentEnabled
+      });
+      
+      if (res.code === 200) {
+        setSourcesList(prev => prev.map(s => s.id === sourceId ? { ...s, enabled: !currentEnabled } : s));
+        setNotification({ type: 'success', message: `${source.name} 已${!currentEnabled ? '启用' : '禁用'}` });
+      } else {
+        setNotification({ type: 'error', message: res.message || '更新失败' });
+      }
+    } catch (error: any) {
+      setNotification({ type: 'error', message: error.response?.data?.message || '更新失败' });
+    } finally {
+      if (crawlTimerRef.current) {
+        clearTimeout(crawlTimerRef.current);
+      }
+      crawlTimerRef.current = setTimeout(() => setNotification(null), 3000);
+    }
+  };
 
   const handleCrawlSingle = async (sourceId: number, sourceName: string) => {
     if (isBusy) return;
@@ -166,7 +147,8 @@ export function ConfigPage() {
     let successCount = 0;
     let failCount = 0;
     try {
-      for (const source of configuredSources) {
+      const enabledSources = sourcesList.filter(s => s.enabled);
+      for (const source of enabledSources) {
         try {
           const res: any = await manualCrawl(source.id);
           if (res.code === 200) {
@@ -238,129 +220,55 @@ export function ConfigPage() {
 
         {/* 数据源配置 */}
         <TabsContent value="sources" className="mt-6">
-          <Card className="p-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg">{dataSourceConfig.name}</h3>
-                  <Badge variant="outline">{dataSourceConfig.type}</Badge>
+          {sourcesList.map((source, index) => (
+            <Card key={source.id} className={`p-6 ${index > 0 ? 'mt-6' : ''}`}>
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-lg">{source.name}</h3>
+                    <Badge variant="outline">{source.type}</Badge>
+                    <Badge className={source.enabled ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}>
+                      <Power className="w-3 h-3 mr-1" />
+                      {source.enabled ? '已启用' : '已禁用'}
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-gray-500">{source.platform}</p>
                 </div>
-                <p className="text-sm text-gray-500">{dataSourceConfig.platform}</p>
-              </div>
-              <Button onClick={() => handleCrawlSingle(dataSourceConfig.id, dataSourceConfig.name)} disabled={isBusy}>
-                <Play className="w-4 h-4 mr-2" />
-                立即执行采集
-              </Button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <Label className="text-sm">数据源URL</Label>
-                <Input value={dataSourceConfig.url} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据范围</Label>
-                <Textarea value={dataSourceConfig.scope} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据周期</Label>
-                <Input value={dataSourceConfig.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-6 mt-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg">{dataSourceConfig2.name}</h3>
-                  <Badge variant="outline">{dataSourceConfig2.type}</Badge>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleToggleEnabled(source.id, source.enabled)}
+                    className={source.enabled ? 'text-red-600 hover:text-red-700' : 'text-green-600 hover:text-green-700'}
+                  >
+                    <Power className="w-4 h-4 mr-1" />
+                    {source.enabled ? '禁用' : '启用'}
+                  </Button>
+                  {source.enabled && (
+                    <Button onClick={() => handleCrawlSingle(source.id, source.name)} disabled={isBusy} size="sm">
+                      <Play className="w-4 h-4 mr-1" />
+                      立即执行
+                    </Button>
+                  )}
                 </div>
-                <p className="text-sm text-gray-500">{dataSourceConfig2.platform}</p>
               </div>
-              <Button onClick={() => handleCrawlSingle(dataSourceConfig2.id, dataSourceConfig2.name)} disabled={isBusy}>
-                <Play className="w-4 h-4 mr-2" />
-                立即执行采集
-              </Button>
-            </div>
 
-            <div className="space-y-4">
-              <div>
-                <Label className="text-sm">数据源URL</Label>
-                <Input value={dataSourceConfig2.url} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据范围</Label>
-                <Textarea value={dataSourceConfig2.scope} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据周期</Label>
-                <Input value={dataSourceConfig2.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-6 mt-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg">{dataSourceConfig3.name}</h3>
-                  <Badge variant="outline">{dataSourceConfig3.type}</Badge>
+              <div className="space-y-4">
+                <div>
+                  <Label className="text-sm">数据源URL</Label>
+                  <Input value={source.url || ''} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
                 </div>
-                <p className="text-sm text-gray-500">{dataSourceConfig3.platform}</p>
-              </div>
-              <Button onClick={() => handleCrawlSingle(dataSourceConfig3.id, dataSourceConfig3.name)} disabled={isBusy}>
-                <Play className="w-4 h-4 mr-2" />
-                立即执行采集
-              </Button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <Label className="text-sm">数据源URL</Label>
-                <Input value={dataSourceConfig3.url} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据范围</Label>
-                <Textarea value={dataSourceConfig3.scope} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据周期</Label>
-                <Input value={dataSourceConfig3.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-6 mt-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-lg">{dataSourceConfig4.name}</h3>
-                  <Badge variant="outline">{dataSourceConfig4.type}</Badge>
+                <div>
+                  <Label className="text-sm">采集数据范围</Label>
+                  <Textarea value={source.scope || ''} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
                 </div>
-                <p className="text-sm text-gray-500">{dataSourceConfig4.platform}</p>
+                <div>
+                  <Label className="text-sm">采集数据周期</Label>
+                  <Input value={source.schedule || ''} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
+                </div>
               </div>
-              <Button onClick={() => handleCrawlSingle(dataSourceConfig4.id, dataSourceConfig4.name)} disabled={isBusy}>
-                <Play className="w-4 h-4 mr-2" />
-                立即执行采集
-              </Button>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <Label className="text-sm">数据源URL</Label>
-                <Input value={dataSourceConfig4.url} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据范围</Label>
-                <Textarea value={dataSourceConfig4.scope} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" rows={2} />
-              </div>
-              <div>
-                <Label className="text-sm">采集数据周期</Label>
-                <Input value={dataSourceConfig4.schedule} readOnly className="mt-2 bg-gray-50 text-gray-600 cursor-default" />
-              </div>
-            </div>
-          </Card>
+            </Card>
+          ))}
         </TabsContent>
 
         {/* 任务状态 */}

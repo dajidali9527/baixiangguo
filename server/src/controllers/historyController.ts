@@ -27,7 +27,7 @@ export async function getHistoryData(req: Request, res: Response) {
     }
 
     const countResult = await pool.query(
-      `SELECT COUNT(*) as total FROM price_records ${whereClause}`,
+      `SELECT COUNT(*) as total FROM pf_price_records ${whereClause}`,
       params
     );
     const total = Number(countResult.rows[0].total);
@@ -37,7 +37,7 @@ export async function getHistoryData(req: Request, res: Response) {
               avg_price as "avgPrice", avg7_price as "avg7Price", rise_fall as "riseFall", trend_chart as "trendChart",
               price_type as "priceType", spec, unit, category1, category2,
               remark, TO_CHAR(record_date, 'YYYY-MM-DD') as date
-       FROM price_records ${whereClause} ORDER BY record_date DESC, id DESC LIMIT $${paramIdx} OFFSET $${paramIdx + 1}`,
+       FROM pf_price_records ${whereClause} ORDER BY record_date DESC, id DESC LIMIT $${paramIdx} OFFSET $${paramIdx + 1}`,
       [...params, pageSize, offset]
     );
 

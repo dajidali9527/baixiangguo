@@ -5,6 +5,8 @@ import { dashboardRouter } from './routes/dashboard.js';
 import { historyRouter } from './routes/history.js';
 import { configRouter } from './routes/config.js';
 import { crawlerRouter } from './routes/crawler.js';
+import { authRoute } from './routes/auth.js';
+import { authMiddleware } from './middleware/auth.js';
 import { initTables } from './config/init-db.js';
 import { runInitialCrawl, startScheduler } from './services/schedulerService.js';
 
@@ -14,14 +16,17 @@ const PORT = parseInt(process.env.PORT || '3001', 10);
 app.use(cors());
 app.use(express.json());
 
+// 公开接口（无需登录）
+app.use('/api/auth', authRoute);
 app.use('/api/dashboard', dashboardRouter);
-app.use('/api/history', historyRouter);
-app.use('/api/config', configRouter);
-app.use('/api/crawler', crawlerRouter);
-
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// 需要登录的接口
+app.use('/api/history', authMiddleware, historyRouter);
+app.use('/api/config', authMiddleware, configRouter);
+app.use('/api/crawler', authMiddleware, crawlerRouter);
 
 async function start() {
   let retries = 10;
@@ -41,12 +46,10 @@ async function start() {
       await new Promise((r) => setTimeout(r, 3000));
     }
   }
-
   startScheduler();
   setTimeout(() => {
     runInitialCrawl();
   }, 5000);
-
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
