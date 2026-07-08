@@ -21,9 +21,6 @@ services:
     environment:
       TZ: Asia/Shanghai
       NODE_ENV: production
-    shm_size: '2gb'
-    cap_add:
-      - SYS_ADMIN
     logging:
       driver: json-file
       options:

@@ -17,8 +17,7 @@
     "express": "^4.21.0",
     "jsonwebtoken": "^9.0.3",
     "node-schedule": "^2.1.1",
-    "pg": "^8.13.0",
-    "playwright": "^1.44.0"
+    "pg": "^8.13.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

@@ -1,4 +1,3 @@
-import { chromium, Browser } from 'playwright';
 import * as cheerio from 'cheerio';
 import pool from '../../config/database.js';
 import { logCrawl, createTaskExecution, updateTaskExecution, updateDataSourceStatus, checkDataExists, getLatestDateFromDb, getValidDatesBetween, randomDelay, toDateOnly, formatDateForDb, MIN_DATE } from './base.js';
@@ -12,12 +11,18 @@ interface BxxPriceData {
   remark: string;
 }
 
-let browser: Browser | null = null;
+let browser: any = null;
 
-async function getBrowser(): Promise<Browser> {
+async function getBrowser() {
   if (!browser) {
+    let playwright: any;
+    try {
+      playwright = await import('playwright');
+    } catch {
+      throw new Error('playwright 未安装，百香果信息平台爬虫需要 playwright。请运行: npm install playwright');
+    }
     const execPath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || process.env.CHROMIUM_PATH;
-    browser = await chromium.launch({
+    browser = await playwright.chromium.launch({
       headless: true,
       slowMo: 100,
       executablePath: execPath || undefined,
