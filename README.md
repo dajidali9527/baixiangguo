@@ -138,6 +138,108 @@ docker-compose up -d --build
 
 - 前端页面：<http://localhost:3000/>
 
+## 部署到腾讯云服务器（baixiangguo.zerosolo.xyz）
+
+本项目已部署到腾讯云服务器，域名 `baixiangguo.zerosolo.xyz`，HTTPS 访问。
+
+### 部署架构（适配 TengXunYun 基础设施）
+
+本项目自带的 `docker-compose.yml`（三容器：postgres + server + client）适用于本地和最终用户部署。**腾讯云部署采用适配服务器现有架构的方式**：
+
+| 组件 | 本地 docker-compose.yml | 腾讯云部署 |
+|------|------------------------|------------|
+| 前端 | client 容器（nginx:alpine，端口 3000） | 静态产物放 `/opt/www/baixiangguo/`，宿主机 Nginx 直接分发 |
+| 后端 | server 容器（端口 3001） | Docker 容器 `passion-fruit-server`，端口映射 3002:3001（避开 yun 后端的 3001） |
+| 数据库 | postgres 容器（独立 postgres_data 卷） | 复用现有 txy-postgres 容器（tengxunyun 数据库，pf_ 表前缀隔离） |
+| Nginx | client 容器内置 nginx.conf | 宿主机 systemd 管理的 Nginx，配置在 `/etc/nginx/conf.d/baixiangguo.conf` |
+| 网络 | 项目内部 bridge 网络 | 加入外部网络 `tengxunyun-prod_txy-net`，连接现有 postgres |
+
+### 关键文件
+
+| 文件 | 位置 | 说明 |
+|------|------|------|
+| 基础设施编排 | `23zeroSoloDeploy/docker-compose.baixiangguo.yml` | 仅启动后端 server 容器 |
+| 环境变量模板 | `23zeroSoloDeploy/env/baixiangguo.env.prod.example` | 数据库连接配置模板 |
+| Nginx 站点配置 | `23zeroSoloDeploy/nginx/conf.d/baixiangguo.conf` | HTTPS + SPA + /api/ 反代到 3002 |
+| Nginx 限流 zone | `23zeroSoloDeploy/nginx/nginx.conf` | 添加 baixiangguo_limit/baixiangguo_conn zone |
+| SSL 证书 | `/etc/nginx/ssl/baixiangguo.zerosolo.xyz_bundle.crt` | HTTPS 证书 |
+| 前端产物 | `/opt/www/baixiangguo/` | 构建后的静态文件（index.html + assets/） |
+| 后端代码 | `/opt/tengxunyun/app/repos/baixiangguo/` | git clone 的源码（用于 Docker 构建） |
+
+### 数据库隔离
+
+百香果系统使用 `pf_` 表前缀与服务器上其他系统隔离（不用 schema），共 5 张表：
+
+- `pf_data_sources` - 数据源配置
+- `pf_price_records` - 价格记录
+- `pf_crawl_logs` - 采集日志
+- `pf_task_executions` - 任务执行记录
+- `pf_users` - 系统用户
+
+数据库连接信息（生产环境，存于服务器 `/opt/tengxunyun/app/env/baixiangguo.env.prod`）：
+
+```
+DB_HOST=txy-postgres     # Docker 容器名（在 txy-net 网络下）
+DB_PORT=5432
+DB_USER=tengxunyun
+DB_PASSWORD=<强密码>
+DB_NAME=tengxunyun      # 与其他系统共用数据库
+```
+
+### 首次部署步骤
+
+完整部署流程详见 `23zeroSoloDeploy/readme.md` 的「仅部署百香果价格查询系统」章节。核心步骤：
+
+1. **本地构建前端**：`cd client && npm install && npm run build`，打包 `dist/*` 为 zip
+2. **上传 SSL 证书**：`scp baixiangguo.zerosolo.xyz_*.crt *.key ubuntu@124.221.41.199:/tmp/`，移动到 `/etc/nginx/ssl/`
+3. **上传前端产物**：`scp baixiangguo-dist.zip ubuntu@124.221.41.199:/tmp/`，解压到 `/opt/www/baixiangguo/`
+4. **克隆后端代码**：`cd /opt/tengxunyun/app/repos && sudo git clone https://github.com/dajidali9527/baixiangguo.git`
+5. **上传编排文件**：`scp docker-compose.baixiangguo.yml ubuntu@124.221.41.199:/tmp/`，移动到 `/opt/tengxunyun/app/`
+6. **创建 env 文件**：在服务器 `/opt/tengxunyun/app/env/baixiangguo.env.prod` 填入数据库连接信息
+7. **构建并启动后端**：`cd /opt/tengxunyun/app && sudo docker compose --env-file env/baixiangguo.env.prod -f docker-compose.baixiangguo.yml up -d --build`
+8. **部署 Nginx 配置**：`sudo cp nginx/conf.d/baixiangguo.conf /etc/nginx/conf.d/` + 更新 `nginx.conf` 添加限流 zone + `sudo nginx -t && sudo nginx -s reload`
+
+### 更新部署（不影响其他系统）
+
+**更新前端**（无需重启后端）：
+
+```bash
+# 本地构建并上传
+cd client && npm run build
+Compress-Archive -Path dist\* -DestinationPath baixiangguo-dist.zip -Force
+scp baixiangguo-dist.zip ubuntu@124.221.41.199:/tmp/
+
+# 服务器替换产物
+ssh ubuntu@124.221.41.199
+sudo rm -rf /opt/www/baixiangguo/*
+sudo unzip -q /tmp/baixiangguo-dist.zip -d /opt/www/baixiangguo/
+# 无需重载 nginx（index.html 已设置 no-cache）
+```
+
+**更新后端**（重新构建镜像）：
+
+```bash
+ssh ubuntu@124.221.41.199
+cd /opt/tengxunyun/app/repos/baixiangguo && sudo git pull origin master
+cd /opt/tengxunyun/app
+sudo docker compose --env-file env/baixiangguo.env.prod -f docker-compose.baixiangguo.yml up -d --build
+```
+
+### 验证访问
+
+- 前端（访客页面）：<https://baixiangguo.zerosolo.xyz/>
+- 管理后台：<https://baixiangguo.zerosolo.xyz/admin>
+- 登录页：<https://baixiangguo.zerosolo.xyz/admin/login>
+- API 健康检查：<https://baixiangguo.zerosolo.xyz/api/health>
+- API 行情数据：<https://baixiangguo.zerosolo.xyz/api/dashboard>
+
+### 默认管理员账户
+
+- 用户名：`1860139182`
+- 密码：`admin123`
+
+> 数据库表在首次启动时自动创建（init-db.ts 检测 pf_data_sources 表是否存在，不存在则执行 init-data.sql）。定时任务每日 22:00 自动采集北京新发地和广州江南数据（bxx 和 huinong 数据源默认禁用，需要 Playwright/Chromium 环境才能启用）。
+
 ## 更新代码（不删除数据）
 
 ### 重要说明
