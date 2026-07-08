@@ -36,59 +36,49 @@ function extractHuinongListItems(html: string): HuinongPriceData[] {
   const $ = cheerio.load(html);
   const items: HuinongPriceData[] = [];
   const seen = new Set<string>();
-
   $('a[href*="/hangqing/cd-"]').each((_, a) => {
     const li = $(a).closest('li.market-list-item');
     if (!li.length) return;
-
     const date = sanitize(li.find('span.time').text());
     const product = sanitize(li.find('span.product').text());
     const origin = sanitize(li.find('span.place').text());
     const priceText = sanitize(li.find('span.price').text()).replace(/[^\d.]/g, '');
     const dailyPrice = parseFloat(priceText);
-
     if (!date || !product || !origin || isNaN(dailyPrice) || dailyPrice <= 0) return;
-
     const key = `${date}|${product}|${origin}`;
     if (seen.has(key)) return;
     seen.add(key);
-
     items.push({ recordDate: date, product, origin, dailyPrice });
   });
-
   return items;
 }
 
 async function saveHuinongData(sourceId: number, data: HuinongPriceData[], isReexecute: boolean = false): Promise<number> {
   let savedCount = 0;
-  const connection = await pool.getConnection();
-
+  const client = await pool.connect();
   try {
-    await connection.beginTransaction();
-
+    await client.query('BEGIN');
     if (isReexecute && data.length > 0) {
       const recordDate = data[0].recordDate;
-      await connection.query(
-        'DELETE FROM price_records WHERE source_id = ? AND record_date = ? AND source_type = ?',
+      await client.query(
+        'DELETE FROM price_records WHERE source_id = $1 AND record_date = $2 AND source_type = $3',
         [sourceId, recordDate, 'huinong']
       );
     }
-
     for (const item of data) {
-      await connection.query(
+      await client.query(
         `INSERT INTO price_records (source_id, source_type, product, origin, avg_price, record_date)
-         VALUES (?, 'huinong', ?, ?, ?, ?)`,
+         VALUES ($1, 'huinong', $2, $3, $4, $5)`,
         [sourceId, item.product, item.origin, item.dailyPrice, item.recordDate]
       );
       savedCount++;
     }
-
-    await connection.commit();
+    await client.query('COMMIT');
   } catch (err) {
-    await connection.rollback();
+    await client.query('ROLLBACK');
     console.error('Failed to save huinong data:', err);
   } finally {
-    connection.release();
+    client.release();
   }
   return savedCount;
 }
@@ -96,15 +86,13 @@ async function saveHuinongData(sourceId: number, data: HuinongPriceData[], isRee
 export async function crawlHuinong(sourceId: number = 2, executionType: string = 'manual'): Promise<{ success: boolean; records: number; message: string }> {
   const startTime = Date.now();
   await logCrawl(sourceId, 'info', `惠农网黄金百香果采集开始(${executionType})`);
-
   let sourceName = '惠农网黄金百香果';
   let sourceType = '电商平台';
   try {
-    const [rows] = await pool.query('SELECT name, type FROM data_sources WHERE id = ?', [sourceId]);
-    const sources = rows as any[];
-    if (sources.length > 0) {
-      sourceName = sources[0].name;
-      sourceType = sources[0].type;
+    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    if (result.rows.length > 0) {
+      sourceName = result.rows[0].name;
+      sourceType = result.rows[0].type;
     }
   } catch (err) {
     console.error('Failed to get source info:', err);
@@ -115,11 +103,9 @@ export async function crawlHuinong(sourceId: number = 2, executionType: string =
   try {
     const allData: HuinongPriceData[] = [];
     let targetRecordDate = '';
-
     for (let pageNum = 1; pageNum <= HUINONG_MAX_PAGES; pageNum++) {
       const listUrl = `${HUINONG_LIST_URL}${pageNum}/`;
       await logCrawl(sourceId, 'info', `列表页 ${pageNum}: ${listUrl}`);
-
       let listHtml: string;
       try {
         listHtml = await fetchHuinongHtml(listUrl, `${HUINONG_BASE}/`);
@@ -127,19 +113,15 @@ export async function crawlHuinong(sourceId: number = 2, executionType: string =
         await logCrawl(sourceId, 'error', `列表页 ${pageNum} 请求失败，跳过`);
         continue;
       }
-
       const items = extractHuinongListItems(listHtml);
       await logCrawl(sourceId, 'info', `列表页 ${pageNum} 解析到 ${items.length} 条`);
-
       if (items.length === 0) {
         await logCrawl(sourceId, 'info', '没有更多数据');
         break;
       }
-
       if (!targetRecordDate) {
         targetRecordDate = items[0].recordDate;
         await logCrawl(sourceId, 'info', `目标报价日期: ${targetRecordDate}`);
-
         const isReexecute = executionType.includes('重新执行');
         if (!isReexecute) {
           const exists = await checkDataExists(sourceId, targetRecordDate, '', 'huinong');
@@ -152,20 +134,16 @@ export async function crawlHuinong(sourceId: number = 2, executionType: string =
           }
         }
       }
-
       for (const item of items) {
         if (item.recordDate !== targetRecordDate) continue;
-
         allData.push(item);
         await logCrawl(sourceId, 'info', `${item.recordDate} | ${item.product} | ${item.origin} | ${item.dailyPrice}`);
         await randomDelay(3000, 8000);
       }
-
       if (pageNum < HUINONG_MAX_PAGES) {
         await randomDelay(3000, 8000);
       }
     }
-
     if (allData.length === 0) {
       const duration = ((Date.now() - startTime) / 1000).toFixed(1);
       await logCrawl(sourceId, 'info', '未获取到新数据');
@@ -173,16 +151,13 @@ export async function crawlHuinong(sourceId: number = 2, executionType: string =
       await updateTaskExecution(taskId, 'success', `${duration}s`, 0);
       return { success: true, records: 0, message: '未获取到新数据' };
     }
-
     const isReexecute = executionType.includes('重新执行');
     const savedCount = await saveHuinongData(sourceId, allData, isReexecute);
-
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     const message = `惠农网黄金百香果采集完成，共 ${allData.length} 条，保存 ${savedCount} 条`;
     await logCrawl(sourceId, 'success', message);
     await updateDataSourceStatus(sourceId, 'success', duration, savedCount, executionType);
     await updateTaskExecution(taskId, 'success', `${duration}s`, savedCount);
-
     return { success: true, records: savedCount, message };
   } catch (err) {
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);

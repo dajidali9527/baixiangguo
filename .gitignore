@@ -88,14 +88,6 @@ server/huinong-result.json
 server/*.png
 server/*.html
 
-# 备份数据
-backup_openclaw_data/
-
-# OpenClaw 配置（含敏感信息，严禁提交）
-.openclaw/openclaw.json
-.openclaw/secrets/
-.openclaw/storage/
-
 # Docker 镜像文件（大文件，不应提交）
 *.tar
 *.tar.gz

@@ -40,23 +40,20 @@ interface JiangnanApiResponse {
 }
 
 async function saveJiangnanData(sourceId: number, items: JiangnanApiItem[]): Promise<number> {
-  const connection = await pool.getConnection();
+  const client = await pool.connect();
   try {
     let savedCount = 0;
-
     for (const item of items) {
       const recordDate = item.priceDate;
-
       const name = item.productName || '百香果';
       const origin = item.provenanceName || '广西/云南/海南';
       const spec = item.standard || '泡沫箱';
-
       const exists = await checkDataExists(sourceId, recordDate, origin, 'jiangnan');
       if (!exists) {
-        await connection.query(
-          `INSERT INTO price_records 
+        await client.query(
+          `INSERT INTO price_records
            (source_type, source_id, name, high_price, low_price, avg_price, spec, origin, record_date)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
           [
             'jiangnan',
             sourceId,
@@ -76,13 +73,12 @@ async function saveJiangnanData(sourceId: number, items: JiangnanApiItem[]): Pro
   } catch (err) {
     throw err;
   } finally {
-    connection.release();
+    client.release();
   }
 }
 
 async function fetchJiangnanWithRetry(retries: number = 3): Promise<JiangnanApiResponse> {
   let lastError: Error | null = null;
-
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const response = await axios.get(
@@ -104,11 +100,9 @@ async function fetchJiangnanWithRetry(retries: number = 3): Promise<JiangnanApiR
           })
         }
       );
-
       if (response.data && typeof response.data === 'object') {
         return response.data;
       }
-
       throw new Error('Invalid response format');
     } catch (error) {
       lastError = error as Error;
@@ -118,22 +112,19 @@ async function fetchJiangnanWithRetry(retries: number = 3): Promise<JiangnanApiR
       }
     }
   }
-
   throw lastError || new Error('Failed after retries');
 }
 
 export async function crawlJiangnan(sourceId: number = 4, executionType: string = 'manual'): Promise<{ success: boolean; records: number; message: string }> {
   const startTime = Date.now();
   await logCrawl(sourceId, 'info', `开始执行广州江南百香果抓取(${executionType})`);
-
   let sourceName = '广州江南百香果';
   let sourceType = '大型批发市场';
   try {
-    const [rows] = await pool.query('SELECT name, type FROM data_sources WHERE id = ?', [sourceId]);
-    const sources = rows as any[];
-    if (sources.length > 0) {
-      sourceName = sources[0].name;
-      sourceType = sources[0].type;
+    const result = await pool.query('SELECT name, type FROM data_sources WHERE id = $1', [sourceId]);
+    if (result.rows.length > 0) {
+      sourceName = result.rows[0].name;
+      sourceType = result.rows[0].type;
     }
   } catch (err) {
     console.error('Failed to get source info:', err);
@@ -151,7 +142,6 @@ export async function crawlJiangnan(sourceId: number = 4, executionType: string 
     const todayOnly = toDateOnly(today);
     const startDate = new Date(latestDbDateOnly);
     startDate.setDate(startDate.getDate() + 1);
-
     const actualStartDate = startDate < MIN_DATE ? MIN_DATE : startDate;
     if (actualStartDate > todayOnly) {
       await logCrawl(sourceId, 'info', '没有待检查的日期');
@@ -162,10 +152,8 @@ export async function crawlJiangnan(sourceId: number = 4, executionType: string 
     }
 
     await logCrawl(sourceId, 'info', `检查日期范围: ${formatDateForDb(actualStartDate)} 至 ${formatDateForDb(todayOnly)}`);
-
     await logCrawl(sourceId, 'info', '正在请求广州江南API...');
     const apiResponse = await fetchJiangnanWithRetry();
-
     await logCrawl(sourceId, 'info', `API返回百香果数据: ${apiResponse.rows.length} 条`);
 
     if (apiResponse.rows.length === 0) {
@@ -188,7 +176,6 @@ export async function crawlJiangnan(sourceId: number = 4, executionType: string 
     await logCrawl(sourceId, 'success', message);
     await updateDataSourceStatus(sourceId, status, duration, savedCount, executionType);
     await updateTaskExecution(taskId, status, `${duration}s`, savedCount);
-
     return { success: true, records: savedCount, message };
   } catch (err) {
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);

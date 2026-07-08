@@ -4,15 +4,15 @@ import pool from '../config/database.js';
 // 获取某个产地的近7日历史数据（用于计算统计）
 async function getHuinongRecent7DaysForOrigin(origin: string) {
   try {
-    const [records] = await pool.query(
-      `SELECT avg_price as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const result = await pool.query(
+      `SELECT avg_price as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records
-       WHERE source_type = 'huinong' AND origin = ?
+       WHERE source_type = 'huinong' AND origin = $1
        ORDER BY record_date DESC
        LIMIT 7`,
       [origin]
     );
-    return records as Array<{ price: number; date: string }>;
+    return result.rows as Array<{ price: number; date: string }>;
   } catch (err) {
     console.error('Get huinong 7 days error:', err);
     return [];
@@ -34,23 +34,20 @@ function calculate7DayStats(records: Array<{ price: number }>) {
 // 计算升/降值（对比前一天）
 async function calculateRiseFall(origin: string, currentDate: string, currentPrice: number) {
   try {
-    const [records] = await pool.query(
+    const result = await pool.query(
       `SELECT avg_price as price
        FROM price_records
-       WHERE source_type = 'huinong' AND origin = ? AND record_date < ?
+       WHERE source_type = 'huinong' AND origin = $1 AND record_date < $2
        ORDER BY record_date DESC
        LIMIT 1`,
       [origin, currentDate]
     );
-    
-    const prevRecords = records as Array<{ price: number }>;
+    const prevRecords = result.rows as Array<{ price: number }>;
     if (!prevRecords.length) {
       return '-';
     }
-    
     const prevPrice = Number(prevRecords[0].price);
     const diff = currentPrice - prevPrice;
-    
     if (diff > 0) {
       return `+${diff.toFixed(2)}`;
     } else if (diff < 0) {
@@ -66,24 +63,26 @@ async function calculateRiseFall(origin: string, currentDate: string, currentPri
 
 export async function getDashboardData(req: Request, res: Response) {
   try {
-    const [bxxRecords] = await pool.query(
-      `SELECT id, province, region, high_price as highPrice, low_price as lowPrice,
-              avg_price as avgPrice, price_type as priceType, spec, remark,
-              DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const bxxResult = await pool.query(
+      `SELECT id, province, region, high_price as "highPrice", low_price as "lowPrice",
+              avg_price as "avgPrice", price_type as "priceType", spec, remark,
+              TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records WHERE source_type = 'bxx'
        AND record_date = (SELECT MAX(record_date) FROM price_records WHERE source_type = 'bxx')
        ORDER BY id DESC`
     );
+    const bxxRecords = bxxResult.rows;
 
     // 惠农网数据：获取基础数据，然后补充本地计算的近7日统计和升/降
-    const [huinongBaseRecords] = await pool.query(
-      `SELECT id, DATE_FORMAT(record_date, '%Y-%m-%d') as date, product, origin, avg_price as avgPrice
+    const huinongBaseResult = await pool.query(
+      `SELECT id, TO_CHAR(record_date, 'YYYY-MM-DD') as date, product, origin, avg_price as "avgPrice"
        FROM price_records WHERE source_type = 'huinong' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
+    const huinongBaseRecords = huinongBaseResult.rows as Array<{ origin: string; date: string; avgPrice: number; [key: string]: unknown }>;
 
     // 为每条记录补充近7日统计数据和升/降
     const huinongRecordsWithStats = await Promise.all(
-      (huinongBaseRecords as Array<{ origin: string; date: string; avgPrice: number; [key: string]: unknown }>).map(async (record) => {
+      huinongBaseRecords.map(async (record) => {
         const recent7Days = await getHuinongRecent7DaysForOrigin(record.origin);
         const stats = calculate7DayStats(recent7Days);
         const riseFall = await calculateRiseFall(record.origin, record.date, record.avgPrice);
@@ -91,16 +90,19 @@ export async function getDashboardData(req: Request, res: Response) {
       })
     );
 
-    const [xinfadiRecords] = await pool.query(
-      `SELECT id, category1, category2, name, low_price as lowPrice, avg_price as avgPrice,
-              high_price as highPrice, spec, origin, unit, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const xinfadiResult = await pool.query(
+      `SELECT id, category1, category2, name, low_price as "lowPrice", avg_price as "avgPrice",
+              high_price as "highPrice", spec, origin, unit, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records WHERE source_type = 'xinfadi' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
-    const [jiangnanRecords] = await pool.query(
-      `SELECT id, name, origin, high_price as highPrice, low_price as lowPrice,
-              avg_price as refPrice, spec, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const xinfadiRecords = xinfadiResult.rows;
+
+    const jiangnanResult = await pool.query(
+      `SELECT id, name, origin, high_price as "highPrice", low_price as "lowPrice",
+              avg_price as "refPrice", spec, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records WHERE source_type = 'jiangnan' ORDER BY record_date DESC, id DESC LIMIT 50`
     );
+    const jiangnanRecords = jiangnanResult.rows;
 
     const avgPrice = (records: Record<string, unknown>[], field: string) =>
       records.length > 0
@@ -128,19 +130,16 @@ export async function getHuinongTrendChart(req: Request, res: Response) {
   try {
     const { origin, days = 7 } = req.query;
     const limit = Number(days) || 7;
-
-    const [records] = await pool.query(
-      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const result = await pool.query(
+      `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records
-       WHERE source_type = 'huinong' AND origin = ?
+       WHERE source_type = 'huinong' AND origin = $1
        ORDER BY record_date DESC
-       LIMIT ?`,
+       LIMIT $2`,
       [origin, limit]
     );
-
     // 反转顺序，按日期从旧到新
-    const orderedRecords = (records as Array<{ price: number; date: string }>).reverse();
-
+    const orderedRecords = result.rows.reverse();
     res.json({
       code: 200,
       data: orderedRecords,
@@ -157,19 +156,16 @@ export async function getXinfadiTrendChart(req: Request, res: Response) {
   try {
     const { days = 30 } = req.query;
     const limit = Number(days) || 30;
-
-    const [records] = await pool.query(
-      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const result = await pool.query(
+      `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records
        WHERE source_type = 'xinfadi'
        ORDER BY record_date DESC
-       LIMIT ?`,
+       LIMIT $1`,
       [limit]
     );
-
     // 反转顺序，按日期从旧到新
-    const orderedRecords = (records as Array<{ price: number; date: string }>).reverse();
-
+    const orderedRecords = result.rows.reverse();
     res.json({
       code: 200,
       data: orderedRecords,
@@ -186,19 +182,16 @@ export async function getJiangnanTrendChart(req: Request, res: Response) {
   try {
     const { days = 30 } = req.query;
     const limit = Number(days) || 30;
-
-    const [records] = await pool.query(
-      `SELECT CAST(avg_price AS DOUBLE) as price, DATE_FORMAT(record_date, '%Y-%m-%d') as date
+    const result = await pool.query(
+      `SELECT CAST(avg_price AS DOUBLE PRECISION) as price, TO_CHAR(record_date, 'YYYY-MM-DD') as date
        FROM price_records
        WHERE source_type = 'jiangnan'
        ORDER BY record_date DESC
-       LIMIT ?`,
+       LIMIT $1`,
       [limit]
     );
-
     // 反转顺序，按日期从旧到新
-    const orderedRecords = (records as Array<{ price: number; date: string }>).reverse();
-
+    const orderedRecords = result.rows.reverse();
     res.json({
       code: 200,
       data: orderedRecords,

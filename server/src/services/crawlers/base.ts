@@ -61,11 +61,11 @@ export async function createTaskExecution(
   executionType: string
 ): Promise<number> {
   try {
-    const [result] = await pool.query(
-      'INSERT INTO task_executions (source_id, source_name, source_type, status, execution_type, execution_time) VALUES (?, ?, ?, ?, ?, NOW())',
+    const result = await pool.query(
+      'INSERT INTO task_executions (source_id, source_name, source_type, status, execution_type, execution_time) VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING id',
       [sourceId, sourceName, sourceType, status, executionType]
     );
-    return (result as any).insertId;
+    return result.rows[0]?.id || 0;
   } catch (err) {
     console.error('createTaskExecution error:', err);
     return 0;
@@ -81,7 +81,7 @@ export async function updateTaskExecution(
 ): Promise<void> {
   try {
     await pool.query(
-      'UPDATE task_executions SET status = ?, duration = ?, records = ?, error_message = ? WHERE id = ?',
+      'UPDATE task_executions SET status = $1, duration = $2, records = $3, error_message = $4 WHERE id = $5',
       [status, duration, records, errorMessage || '', taskId]
     );
   } catch (err) {
@@ -98,7 +98,7 @@ export async function updateDataSourceStatus(
 ): Promise<void> {
   try {
     await pool.query(
-      'UPDATE data_sources SET last_run = NOW(), status = ?, duration = ?, records = ?, execution_type = ? WHERE id = ?',
+      'UPDATE data_sources SET last_run = NOW(), status = $1, duration = $2, records = $3, execution_type = $4 WHERE id = $5',
       [status, duration, records, executionType, sourceId]
     );
   } catch (err) {
@@ -110,7 +110,7 @@ export async function logCrawl(sourceId: number | null, level: 'info' | 'success
   try {
     const safeMessage = message.length > 5000 ? message.substring(0, 5000) + '...[truncated]' : message;
     await pool.query(
-      'INSERT INTO crawl_logs (source_id, level, message) VALUES (?, ?, ?)',
+      'INSERT INTO crawl_logs (source_id, level, message) VALUES ($1, $2, $3)',
       [sourceId, level, safeMessage]
     );
   } catch (err) {
@@ -120,19 +120,19 @@ export async function logCrawl(sourceId: number | null, level: 'info' | 'success
 
 export async function checkDataExists(sourceId: number, recordDate: string, category2: string, sourceType: string = 'bxx'): Promise<boolean> {
   try {
-    let query = 'SELECT id FROM price_records WHERE source_type = ? AND source_id = ? AND record_date = ?';
-    const params: any[] = [sourceType, sourceId, recordDate];
-
     if (sourceType === 'jiangnan') {
-      query += ' AND origin = ? LIMIT 1';
-      params.push(category2);
+      const result = await pool.query(
+        'SELECT id FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND origin = $4 LIMIT 1',
+        [sourceType, sourceId, recordDate, category2]
+      );
+      return result.rows.length > 0;
     } else {
-      query += ' AND category2 = ? LIMIT 1';
-      params.push(category2);
+      const result = await pool.query(
+        'SELECT id FROM price_records WHERE source_type = $1 AND source_id = $2 AND record_date = $3 AND category2 = $4 LIMIT 1',
+        [sourceType, sourceId, recordDate, category2]
+      );
+      return result.rows.length > 0;
     }
-
-    const [rows] = await pool.query(query, params);
-    return (rows as any[]).length > 0;
   } catch (err) {
     console.error('Check data exists error:', err);
     return false;
@@ -141,13 +141,13 @@ export async function checkDataExists(sourceId: number, recordDate: string, cate
 
 export async function getLatestDateFromDb(sourceId: number, sourceType: string = 'bxx'): Promise<Date> {
   try {
-    const [rows] = await pool.query(
-      'SELECT MAX(record_date) as last_date FROM price_records WHERE source_type = ? AND source_id = ?',
+    const result = await pool.query(
+      'SELECT MAX(record_date) as last_date FROM price_records WHERE source_type = $1 AND source_id = $2',
       [sourceType, sourceId]
     );
-    const lastDateRow = rows as any[];
-    if (lastDateRow[0]?.last_date) {
-      return new Date(lastDateRow[0].last_date);
+    const lastDate = result.rows[0]?.last_date;
+    if (lastDate) {
+      return new Date(lastDate);
     }
     return new Date('2026-03-31');
   } catch (err) {

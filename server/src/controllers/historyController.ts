@@ -10,37 +10,40 @@ export async function getHistoryData(req: Request, res: Response) {
     const pageSize = parseInt((req.query.pageSize as string) || '15', 10);
     const offset = (page - 1) * pageSize;
 
-    let whereClause = `WHERE source_type = ?`;
+    let whereClause = `WHERE source_type = $1`;
     const params: (string | number)[] = [source];
+    let paramIdx = 2;
 
     if (keyword) {
-      whereClause += ` AND (province LIKE ? OR region LIKE ? OR product LIKE ? OR name LIKE ? OR origin LIKE ? OR price_type LIKE ? OR spec LIKE ?)`;
+      whereClause += ` AND (province LIKE $${paramIdx} OR region LIKE $${paramIdx} OR product LIKE $${paramIdx} OR name LIKE $${paramIdx} OR origin LIKE $${paramIdx} OR price_type LIKE $${paramIdx} OR spec LIKE $${paramIdx})`;
       const kw = `%${keyword}%`;
-      params.push(kw, kw, kw, kw, kw, kw, kw);
+      params.push(kw);
+      paramIdx++;
     }
     if (date) {
-      whereClause += ` AND record_date = ?`;
+      whereClause += ` AND record_date = $${paramIdx}`;
       params.push(date);
+      paramIdx++;
     }
 
-    const [countResult] = await pool.query(
+    const countResult = await pool.query(
       `SELECT COUNT(*) as total FROM price_records ${whereClause}`,
       params
     );
-    const total = (countResult as Record<string, number>[])[0].total;
+    const total = Number(countResult.rows[0].total);
 
-    const [records] = await pool.query(
-      `SELECT id, name, province, region, product, origin, high_price as highPrice, low_price as lowPrice,
-              avg_price as avgPrice, avg7_price as avg7Price, rise_fall as riseFall, trend_chart as trendChart,
-              price_type as priceType, spec, unit, category1, category2,
-              remark, DATE_FORMAT(record_date, '%Y-%m-%d') as date
-       FROM price_records ${whereClause} ORDER BY record_date DESC, id DESC LIMIT ? OFFSET ?`,
+    const recordsResult = await pool.query(
+      `SELECT id, name, province, region, product, origin, high_price as "highPrice", low_price as "lowPrice",
+              avg_price as "avgPrice", avg7_price as "avg7Price", rise_fall as "riseFall", trend_chart as "trendChart",
+              price_type as "priceType", spec, unit, category1, category2,
+              remark, TO_CHAR(record_date, 'YYYY-MM-DD') as date
+       FROM price_records ${whereClause} ORDER BY record_date DESC, id DESC LIMIT $${paramIdx} OFFSET $${paramIdx + 1}`,
       [...params, pageSize, offset]
     );
 
     res.json({
       code: 200,
-      data: { list: records, total, page, pageSize },
+      data: { list: recordsResult.rows, total, page, pageSize },
       message: 'ok',
     });
   } catch (err) {

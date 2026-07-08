@@ -44,5 +44,11 @@ cd server && npx tsx tools/verify-crawlers.ts
 |----|------|--------|----------|
 | 1  | 百香果信息平台 | Playwright + Cheerio | 每周二/四/六 22:00 |
 | 2  | 惠农网黄金百香果 | axios + Cheerio | 每日 22:00 |
-| 3  | 北京新发地百香果 | Playwright + axios | 每日 22:00 |
+| 3  | 北京新发地百香果 | axios（API） | 每日 22:00 |
 | 4  | 广州江南百香果 | axios（API） | 每日 22:00 |
+
+### 数据库
+- 使用 PostgreSQL 16（docker-compose 服务名 `postgres`）
+- 数据库驱动：`pg`（Node.js），占位符使用 `$1, $2, ...` 编号风格
+- 字符集 UTF-8，时区 Asia/Shanghai
+- 连接池配置在 `server/src/config/database.ts`

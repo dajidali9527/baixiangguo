@@ -1,20 +1,20 @@
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: passion-fruit-mysql
+  postgres:
+    image: postgres:16-alpine
+    container_name: passion-fruit-postgres
     restart: unless-stopped
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-time-zone=+08:00
     environment:
       TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
-      MYSQL_DATABASE: ${DB_NAME:-passion_fruit}
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-root}
+      POSTGRES_DB: ${DB_NAME:-passion_fruit}
     ports:
-      - "${DB_PORT:-3307}:3306"
+      - "${DB_PORT:-5432}:5432"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
       - ./server/src/config/init-data.sql:/docker-entrypoint-initdb.d/01-init-data.sql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-root} -d ${DB_NAME:-passion_fruit}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -30,21 +30,15 @@ services:
       - "${PORT:-3001}:3001"
     environment:
       TZ: Asia/Shanghai
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_USER: root
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-root}
       DB_PASSWORD: ${DB_PASSWORD:-root}
       DB_NAME: ${DB_NAME:-passion_fruit}
       PORT: 3001
-      OPENCLAW_STATE_DIR: /openclaw_data/openclaw-weixin
-    volumes:
-      - openclaw_data:/openclaw_data
-      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
-      openclaw:
-        condition: service_started
     shm_size: '2gb'
     cap_add:
       - SYS_ADMIN
@@ -63,31 +57,5 @@ services:
     depends_on:
       - server
 
-  openclaw:
-    image: ghcr.nju.edu.cn/openclaw/openclaw:latest
-    build:
-      context: ./.openclaw
-      dockerfile: Dockerfile
-    container_name: passion-fruit-openclaw
-    restart: unless-stopped
-    environment:
-      TZ: Asia/Shanghai
-      BAILIAN_API_KEY: ${BAILIAN_API_KEY:-sk-3dfc03f09fe0483d91ff2ad84bfe2d13}
-    ports:
-      - "18789:18789"
-    volumes:
-      - openclaw_data:/home/node/.openclaw
-      - ./.openclaw/skills:/home/node/.openclaw/skills:ro
-      - ./.openclaw/scripts/query-db.js:/usr/local/bin/query-db.js:ro
-      - ./.openclaw/scripts/query.sh:/usr/local/bin/query.sh:ro
-      - ./.openclaw/entrypoint.sh:/home/node/entrypoint.sh:ro
-    entrypoint: ["sh", "/home/node/entrypoint.sh"]
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:18789/health"]
-      interval: 15s
-      timeout: 5s
-      retries: 10
-
 volumes:
-  mysql_data:
-  openclaw_data:
+  postgres_data:

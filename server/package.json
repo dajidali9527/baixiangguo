@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=.env src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "verify": "tsx tools/verify-crawlers.ts"
@@ -14,7 +14,7 @@
     "cheerio": "^1.2.0",
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "mysql2": "^3.22.3",
+    "pg": "^8.13.0",
     "node-schedule": "^2.1.1",
     "playwright": "^1.44.0"
   },
@@ -23,6 +23,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
     "@types/node-schedule": "^2.1.7",
+    "@types/pg": "^8.11.10",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   }

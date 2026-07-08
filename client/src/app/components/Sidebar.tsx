@@ -1,4 +1,4 @@
-import { Settings, BarChart3, ListTodo, Bell, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Settings, BarChart3, ListTodo, ChevronRight, ChevronLeft, Eye } from 'lucide-react';
 import { useState } from 'react';
 
 interface SidebarProps {
@@ -9,10 +9,10 @@ interface SidebarProps {
 export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(true);
   const menuItems = [
-    { id: 'dashboard', label: '最新行情数据', icon: BarChart3, disabled: false },
+    { id: 'visitor', label: '最新行情数据（竖屏）', icon: Eye, disabled: false },
+    { id: 'dashboard', label: '最新行情数据（横屏）', icon: BarChart3, disabled: false },
     { id: 'config', label: '数据采集配置', icon: Settings, disabled: false },
     { id: 'history', label: '数据采集历史', icon: ListTodo, disabled: false },
-    { id: 'preview', label: '数据通知与配置', icon: Bell, disabled: false },
   ];
   const currentDate = new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' });
   const isCollapsed = collapsed;
@@ -41,8 +41,7 @@ export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
           const baseClass = 'w-full flex items-center ' + (isCollapsed ? 'justify-center' : 'gap-3') + ' px-3 py-3 rounded-lg mb-1 transition-colors ';
           const activeClass = isActive ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50';
           const disabledClass = item.disabled ? 'opacity-50 cursor-not-allowed' : '';
-          const externalClass = '';
-          const btnClass = baseClass + activeClass + ' ' + disabledClass + ' ' + externalClass;
+          const btnClass = baseClass + activeClass + ' ' + disabledClass;
           const tooltipText = isCollapsed ? item.label : undefined;
           return (
             <button
