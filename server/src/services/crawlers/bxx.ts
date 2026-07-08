@@ -17,6 +17,7 @@ async function getBrowser() {
   if (!browser) {
     let playwright: any;
     try {
+      // @ts-ignore - playwright 为可选依赖，仅 BXX 爬虫启用时需要
       playwright = await import('playwright');
     } catch {
       throw new Error('playwright 未安装，百香果信息平台爬虫需要 playwright。请运行: npm install playwright');
@@ -72,12 +73,12 @@ async function searchWeChatArticle(dateStr: string): Promise<string | null> {
     const results = await page.$$('.news-list li');
     for (let i = 0; i < results.length; i++) {
       const result = results[i];
-      const fullTitle = await result.$eval('h3 a', el => el.textContent?.trim() || '').catch(() => '');
-      const sourceSpan = await result.$eval('.s-p span', el => el.textContent?.trim() || '').catch(() => '');
+      const fullTitle = await result.$eval('h3 a', (el: any) => el.textContent?.trim() || '').catch(() => '');
+      const sourceSpan = await result.$eval('.s-p span', (el: any) => el.textContent?.trim() || '').catch(() => '');
       if (fullTitle.includes(dateStr) && sourceSpan.includes('百香果信息平台')) {
         await logCrawl(null, 'success', '找到匹配的文章！');
         await logCrawl(null, 'info', '正在获取文章链接...');
-        const articleUrl = await result.$eval('h3 a', el => el.getAttribute('href'));
+        const articleUrl = await result.$eval('h3 a', (el: any) => el.getAttribute('href'));
         if (!articleUrl) {
           await logCrawl(null, 'error', '获取文章链接失败');
           await context.close();
