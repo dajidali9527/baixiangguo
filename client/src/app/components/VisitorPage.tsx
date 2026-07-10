@@ -153,7 +153,7 @@ export function VisitorPage() {
             <LineChart data={data} margin={{ top: 5, right: 8, left: -10, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="date" tickFormatter={formatDateShort} tick={{ fontSize: 10 }} interval="preserveStartEnd" />
-              <YAxis domain={['auto', 'auto']} tick={{ fontSize: 10 }} tickFormatter={(v) => Number(v).toFixed(1)} />
+              <YAxis domain={['auto', 'auto']} tick={{ fontSize: 10 }} tickFormatter={(v) => Number(v).toFixed(2)} />
               <Tooltip
                 formatter={(value: number) => [`${Number(value).toFixed(2)} ${section.unit}`, '价格']}
                 labelFormatter={(label) => `日期: ${label}`}
@@ -177,15 +177,15 @@ export function VisitorPage() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="bg-gray-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">最低</div>
-                  <div className="text-base font-semibold text-green-600">{todayLow.toFixed(1)}</div>
+                  <div className="text-base font-semibold text-green-600">{todayLow.toFixed(2)}</div>
                 </div>
                 <div className="bg-orange-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">平均</div>
-                  <div className="text-lg font-bold text-orange-600">{todayAvg.toFixed(1)}</div>
+                  <div className="text-lg font-bold text-orange-600">{todayAvg.toFixed(2)}</div>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">最高</div>
-                  <div className="text-base font-semibold text-red-500">{todayHigh.toFixed(1)}</div>
+                  <div className="text-base font-semibold text-red-500">{todayHigh.toFixed(2)}</div>
                 </div>
               </div>
             ) : (
@@ -202,15 +202,15 @@ export function VisitorPage() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="bg-gray-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">最低</div>
-                  <div className="text-sm font-semibold text-green-600">{weekStats.low.toFixed(1)}</div>
+                  <div className="text-sm font-semibold text-green-600">{weekStats.low.toFixed(2)}</div>
                 </div>
                 <div className="bg-orange-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">均价</div>
-                  <div className="text-sm font-bold text-orange-600">{weekStats.avg.toFixed(1)}</div>
+                  <div className="text-sm font-bold text-orange-600">{weekStats.avg.toFixed(2)}</div>
                 </div>
                 <div className="bg-gray-50 rounded-lg p-2 text-center">
                   <div className="text-xs text-gray-500">最高</div>
-                  <div className="text-sm font-semibold text-red-500">{weekStats.high.toFixed(1)}</div>
+                  <div className="text-sm font-semibold text-red-500">{weekStats.high.toFixed(2)}</div>
                 </div>
               </div>
             ) : (

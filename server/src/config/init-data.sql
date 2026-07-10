@@ -129,7 +129,7 @@ CREATE INDEX IF NOT EXISTS idx_task_execution_time ON pf_task_executions (execut
 INSERT INTO pf_data_sources (id, type, platform, name, url, scope, schedule, enabled, status, last_run, duration, records, execution_type) VALUES
 (1, '自媒体', '微信公众号', '百香果信息平台', 'https://weixin.sogou.com/', '最新发布的文章："百香果信息平台：黄金百香果价格行情"', '手动点击立即执行；每周二、四、六晚上22:00', 0, 'success', '', '', 0, '每周二、四、六晚上22:00'),
 (2, '电商平台', '惠农网', '惠农网黄金百香果', 'https://www.cnhnb.com/hangqing/cdlist-2001332-12167-0-0-0-1/', '行情大厅-水果-百香果-黄金百香果，最新价格与7日均价', '手动点击立即执行；每日晚上22:00', 0, 'success', '', '', 0, '每日晚上22:00'),
-(3, '大型批发市场', '北京新发地', '北京新发地百香果', 'http://www.xinfadi.com.cn/priceDetail.html', '最新价格与最近1月的均价与走势', '手动点击立即执行；每日晚上22:00', 1, 'success', '', '', 0, '每日晚上22:00'),
+(3, '大型批发市场', '北京新发地', '北京新发地百香果', 'http://www.xinfadi.com.cn/priceDetail.html', '最新价格与最近1月的均价与走势', '手动点击立即执行；每日晚上22:10', 1, 'success', '', '', 0, '每日晚上22:10'),
 (4, '大型批发市场', '广州江南果菜批发市场', '广州江南百香果', 'https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice', '最新价格与最近1月的均价与走势', '手动点击立即执行；每日晚上22:00', 1, 'success', '', '', 0, '每日晚上22:00')
 ON CONFLICT (id) DO NOTHING;
 
