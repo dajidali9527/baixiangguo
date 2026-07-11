@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { fetchDashboardData, fetchXinfadiTrend, fetchJiangnanTrend } from '../../api/dashboard';
 import { Card } from './ui/card';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, X } from 'lucide-react';
 
 interface XinfadiRecord {
   id: number;
@@ -76,6 +76,7 @@ export function VisitorPage() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [activeMarket, setActiveMarket] = useState<'xinfadi' | 'jiangnan'>('jiangnan');
+  const [showReward, setShowReward] = useState(false);
   const loadData = async (isRefresh = false) => {
     if (isRefresh) {
       setRefreshing(true);
@@ -302,15 +303,33 @@ export function VisitorPage() {
           })}
         </div>
         <div className="mt-6 flex items-center justify-between text-xs text-gray-400">
-          <div>
+          <div className="flex items-center gap-3">
             {activeMarket === 'jiangnan' ? (
               <p>数据来源: <a href="https://www.jnmarket.net/fruitsvegetables/dailyprice/fruitprice" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">广州江南果菜批发市场</a></p>
             ) : (
               <p>数据来源: <a href="http://www.xinfadi.com.cn/priceDetail.html" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">北京新发地农产品批发市场</a></p>
             )}
+            <span onClick={() => setShowReward(true)} className="cursor-pointer hover:underline">留言</span>
           </div>
           <a href="/admin/login" className="px-3 py-1 bg-gray-100 text-gray-500 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors">登录</a>
         </div>
+        {showReward && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+            onClick={() => setShowReward(false)}
+          >
+            <div className="relative bg-white rounded-2xl p-4 max-w-xs mx-4" onClick={(e) => e.stopPropagation()}>
+              <button
+                onClick={() => setShowReward(false)}
+                className="absolute -top-3 -right-3 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-100"
+              >
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+              <p className="text-center text-sm font-medium text-gray-700 mb-3">打赏留言</p>
+              <img src="/reward.jpg" alt="打赏码" className="w-full rounded-lg" />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
