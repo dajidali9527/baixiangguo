@@ -91,3 +91,6 @@ server/*.html
 # Docker 镜像文件（大文件，不应提交）
 *.tar
 *.tar.gz
+
+# 压缩包
+*.zip
